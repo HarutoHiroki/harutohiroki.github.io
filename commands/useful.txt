@@ -1,0 +1,22 @@
+/about - About the bot.
+/botvote - Vote for the bot on discordbots.org.
+/avatar - Displays a user's avatar.
+/ping - Pings the bot.
+/serverinfo - Displays info about the server.
+/uptime - Shows how long the bot has been running for.
+/suggest - Suggest something to the developer to add to the bot.
+/invitebot - DMs you an Invite link for the bot.
+/userinfo - Displays info about your account.
+/botstats - Shows the stats of the bot.
+/vpsstats - Shows the stats of the VPS that the bot is running on.
+/coins - Shows you the amount of coins you have.
+/pay - Pay someone coins.
+/level - Shows you your Level and XP.
+/vote - Vote for something.
+/timer - Creates a timer.
+/getrole - Get a self assignable role.
+/abandonrole - Abandon a self assignable role.
+/anime - Provides info about an anime
+/manga - Provides info about an manga
+/coinsleaderboard (or you can use /cbl it's shorter) - Send Coins Leaderboard
+/colorsearch - Search a color using it's hex code.

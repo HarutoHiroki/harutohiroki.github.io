@@ -1,0 +1,26 @@
+/dadjoke - Sends a horrible joke that will make you cringe
+/copypasta - Sends one of 4 well known copypastas from the internet
+/roll - Roll a random number
+/rps - Play Rock, Paper, Scissors against the bot
+/customcom - Custom bot commands (UPCOMING FEATURE)
+/8ball - Ask the bot a Question
+/wallpaper - Sends a random Anime Wallpaper
+/ngif - Sends a random Neko Gif
+/kitsune - Fox Girls OwO
+/neko - Sends a Neko image
+/cat - Sends a random Cat
+/dog - Sends a random Dog
+/shibe - Sends a random Shibe
+/nep - Sends a random Neptunia gif or image OwO
+/coinflip - Flip a Coin!
+/gamble - Gamble for a chance of winning more coins.
+/urban - Search urban dictionary.
+/advice - Send a Life Advice!
+/triggered - TRIGGERED!!!
+/credits - Sends a list of contributors.
+/animemes - Send a post from r/animemes
+/moe - Send a moe pic
+/amiajoke - Am I A Joke to you?
+/woosh - r/woosh
+/truth - The Scroll of Truth speaks the truth
+/owoify - OwO-ify a message.
