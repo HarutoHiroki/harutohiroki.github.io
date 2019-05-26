@@ -45,7 +45,7 @@
     <script src="https://modesta.alexflipnote.dev/js/navbar.js"></script>
   </head>
   <body>
-    <div class="fullscreen">
+    <section class="fullscreen" id="top">
         <div class="background" style="background-image: url('assets/images/background.jpg');"></div>
         <div class="center-object">
             <div class="container">
@@ -66,8 +66,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
+        <a href="#information"><div id="fade" class="arrow bounce"></div></a>
+    </section>
+    <section class="container" id="information">
+        <a href="#top" id="myBtn" title="Go to top">Back to Top</a>
         <div class="demo-container" id="moderation">
             <h3 class="title">Moderation</h3>
             <div class="container">
@@ -2619,7 +2621,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <footer class="center box-container primary no-border-radius">
         <p class="no-margin">
             <a href="/">Home</a>
