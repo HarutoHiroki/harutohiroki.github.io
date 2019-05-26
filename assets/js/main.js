@@ -5,7 +5,16 @@ window.addEventListener('scroll', function() {
   else logoContainer.classList.remove('arrow--scrolled');
 });
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+const prevScrollpos = 0;
+window.onscroll = function() {
+  scrollFunction()
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos < currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-55px";
+  }
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -13,10 +22,4 @@ function scrollFunction() {
   } else {
     document.getElementById("myBtn").style.display = "none";
   }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
