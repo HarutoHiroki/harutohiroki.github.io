@@ -74,2552 +74,828 @@
         <div class="demo-container" id="moderation">
             <h3 class="title">Moderation</h3>
             <div class="container">
-                <div class="flex-grid">
-                        <div class="col-xs-2">
-                            <p>
-                               <b>Name</b>
-                            </p>
-                        </div>
-                        <div class="col-xs-6">
-                            <p>
-                                <b>Description</b>
-                            </p>
-                        </div>
-                        <div class="col-xs 3">
-                            <p>
-                                <b>Usage</b>
-                            </p>
-                        </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /softban
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Soft bans a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /softban [mention] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /ban
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Bans a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /ban [mention] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                         /hackban
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Hackban/Force ban a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /hackban [user id] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /unban
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Unbans a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /unban [mention] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /kick
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Kicks a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /kick [mention] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /mute
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Mutes a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /mute [mention] [reason]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /unmute
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Unmute a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /unmute [mention] [reason]
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /tempmute
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Temporary mutes the mentioned user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /tempmute [mention] (time)
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /warn
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Warns a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /warn [mention] [reason]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /hackwarn
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Warns the user using their IDs
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /hackwarn [UserID] [reason]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /clearwarns
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Clears a user's warning
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /clearwarns [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /warnlevel
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Check user's warning
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /warnlevel [mention]
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /lockdown
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Locks a channel
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /lockdown
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /timedlockdown
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Lockdown but with a timer
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /timedlockdown <duration>
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /unlockdown
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Unlockdown a channel
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /unlockdown
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /addrole
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Adds a role to a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /addrole [mention] [role name]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /removerole
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Removes a role from a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /removerole [mention] [role name]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /prefix
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Change the Bot's prefix
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /prefix [new prefix]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /votekick
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Votes to kick someone!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /votekick [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /rename
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Renames someone.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /rename [mention] [new nickname]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /purge
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Purge messages
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /purge all|bots|user|images <amount>
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /selfrole
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Setup Selfrole function for your server!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /selfrole clear|list|add roleID
-                        </p>
-                    </div>
-                </div>
+            <table style="width:100%">
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+              </tr>
+
+                <tr>
+                    <td width="20%">/softban</td>
+                    <td width="50%">Soft bans a user</td>
+                    <td width="30%">/softban [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/ban</td>
+                    <td width="50%">Bans a user</td>
+                    <td width="30%">/ban [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/hackban</td>
+                    <td width="50%">Hackban/Force ban a user</td>
+                    <td width="30%">/hackban [user id] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/unban</td>
+                    <td width="50%">Unbans a user</td>
+                    <td width="30%">/unban [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/kick </td>
+                    <td width="50%">Kicks a user</td>
+                    <td width="30%">/kick [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/mute</td>
+                    <td width="50%">Mutes a user</td>
+                    <td width="30%">/mute [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/unmute</td>
+                    <td width="50%">Unmute a user</td>
+                    <td width="30%">/unmute [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/tempmute     </td>
+                    <td width="50%">Temporary mutes the mentioned user</td>
+                    <td width="30%">/tempmute [mention] (time)</td>
+                </tr>
+                <tr>
+                    <td width="20%">/warn         </td>
+                    <td width="50%">Warns a user</td>
+                    <td width="30%">/warn [mention] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/hackwarn     </td>
+                    <td width="50%">Warns the user using their IDs</td>
+                    <td width="30%">/hackwarn [UserID] [reason]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/clearwarns   </td>
+                    <td width="50%">Clears a user's warning</td>
+                    <td width="30%">/clearwarns [mention]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/warnlevel    </td>
+                    <td width="50%">Check user's warning</td>
+                    <td width="30%">/warnlevel [mention]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/lockdown     </td>
+                    <td width="50%">Locks a channel</td>
+                    <td width="30%">/lockdown</td>
+                </tr>
+                <tr>
+                    <td width="20%">/timedlockdown</td>
+                    <td width="50%">Lockdown but with a timer</td>
+                    <td width="30%">/timedlockdown</td>
+                </tr>
+                <tr>
+                    <td width="20%">/unlockdown   </td>
+                    <td width="50%">Unlockdown a channel</td>
+                    <td width="30%">/unlockdown</td>
+                </tr>
+                <tr>
+                    <td width="20%">/addrole      </td>
+                    <td width="50%">Adds a role to a user</td>
+                    <td width="30%">/addrole [mention] [role name]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/removerole   </td>
+                    <td width="50%">Removes a role from a user</td>
+                    <td width="30%">/removerole [mention] [role name]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/prefix       </td>
+                    <td width="50%">Change the Bot's prefix</td>
+                    <td width="30%">/prefix [new prefix]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/votekick     </td>
+                    <td width="50%">Votes to kick someone!</td>
+                    <td width="30%">/votekick [mention]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/rename       </td>
+                    <td width="50%">Renames someone.</td>
+                    <td width="30%">/rename [mention] [new nickname]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/purge        </td>
+                    <td width="50%">Purge messages</td>
+                    <td width="30%">/purge all|bots|user|images</td>
+                </tr>        
+                <tr>
+                    <td width="20%">/selfrole     </td>
+                    <td width="50%">Setup Selfrole function for your server!</td>
+                    <td width="30%">/selfrole clear|list|add roleID</td>
+                </tr>
+        </table>
             </div>
         </div>
         <div class="demo-container" id="music">
             <h3 class="title">Music</h3>
             <div class="container">
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                           <b>Name</b>
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            <b>Description</b>
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            <b>Usage</b>
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            -------------------------
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            -------------------------------Youtube Commands--------------------
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            -------------------------------------------
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /play
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play a song from YouTube.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /play (song name)
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /pause
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Pause the current song.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /pause
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /skip
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Skip the current song.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /skip
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /resume
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Resume the paused song.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /resume
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /stop
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Stop the music and clear the queue.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /stop
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /queue
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            List the song queue.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /queue
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /nowplaying
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Show the now playing song.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /nowplaying
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /loop
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Loop the current playlist
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /loop
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /volume
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Set Radio volume.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /volume [volume]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /disconnect
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Disconnect from voice channel
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /disconnect
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            -------------------------
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            -------------------------------Radio Commands----------------------
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            -------------------------------------------
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /jpop
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play listen.moe radio (J-Pop channel)
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /jpop
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /kpop
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play listen.moe radio (K-Pop channel)
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /kpop
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /qt
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play qtradio.moe radio
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /qt
-                        </p>
-                    </div>
-                </div>           
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /qtnp
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            qtradio.moe now playing
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /qtnp
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /radioplay
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play your own radio from it's url
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /radioplay [link]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /disconnect
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Disconnect from voice channel
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /disconnect
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <table style="width:100%">
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+              </tr>
+
+            <tr>
+                <td width="20%">---------------------------</td>
+                <td width="50%">-------------------------Youtube Commands--------------------</td>
+                <td width="30%">------------------------------------------</td>
+            </tr>
+            <tr>
+                <td width="20%">/play</td>
+                <td width="50%">Play a song from YouTube.</td>
+                <td width="30%">/play (song name)</td>
+            </tr>
+            <tr>
+                <td width="20%">/pause</td>
+                <td width="50%">Pause the current song.</td>
+                <td width="30%">/pause</td>
+            </tr>
+            <tr>
+                <td width="20%">/skip</td>
+                <td width="50%">Skip the current song.</td>
+                <td width="30%">/skip</td>
+            </tr>
+            <tr>
+                <td width="20%">/resume</td>
+                <td width="50%">Resume the paused song.</td>
+                <td width="30%">/resume</td>
+            </tr>
+            <tr>
+                <td width="20%">/stop</td>
+                <td width="50%">Stop the music and clear the queue.</td>
+                <td width="30%">/stop</td>
+            </tr>
+            <tr>
+                <td width="20%">/queue</td>
+                <td width="50%">List the song queue.</td>
+                <td width="30%">/queue</td>
+            </tr>
+            <tr>
+                <td width="20%">/nowplaying</td>
+                <td width="50%">Show the now playing song.</td>
+                <td width="30%">/nowplaying</td>
+            </tr>
+            <tr>
+                <td width="20%">/loop</td>
+                <td width="50%">Loop the current playlist</td>
+                <td width="30%">/loop</td>
+            </tr>
+            <tr>
+                <td width="20%">/volume</td>
+                <td width="50%">Set Radio volume.</td>
+                <td width="30%">/volume [volume]</td>
+            </tr>
+            <tr>
+                <td width="20%">/disconnect</td>
+                <td width="50%">Disconnect from voice channel</td>
+                <td width="30%">/disconnect</td>
+            </tr>
+            <tr>
+                <td width="20%">---------------------------</td>
+                <td width="50%">-------------------------Radio Commands----------------------</td>
+                <td width="30%">------------------------------------------</td>
+            </tr>
+            <tr>
+                <td width="20%">/jpop</td>
+                <td width="50%">Play listen.moe radio (J-Pop channel)</td>
+                <td width="30%">/jpop</td>
+            </tr>
+            <tr>
+                <td width="20%">/kpop</td>
+                <td width="50%">Play listen.moe radio (K-Pop channel)</td>
+                <td width="30%">/kpop</td>
+            </tr>
+            <tr>
+                <td width="20%">/qt</td>
+                <td width="50%">Play qtradio.moe radio</td>
+                <td width="30%">/qt</td>
+            </tr>
+            <tr>
+                <td width="20%">/qtnp</td>
+                <td width="50%">qtradio.moe now playing</td>
+                <td width="30%">/qtnp</td>
+            </tr>
+            <tr>
+                <td width="20%">/radioplay</td>
+                <td width="50%">Play your own radio from it's url</td>
+                <td width="30%">/radioplay [link]</td>
+            </tr>
+            <tr>
+                <td width="20%">/disconnect</td>
+                <td width="50%">Disconnect from voice channel</td>
+                <td width="30%">undefined</td>
+            </tr>
+        </table>
+        </div>
         </div>
         <div class="demo-container" id="fun">
             <h3 class="title">Fun</h3>
             <div class="container">
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                           <b>Name</b>
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            <b>Description</b>
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            <b>Usage</b>
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /dadjoke
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a horrible joke that will make you cringe
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /dadjoke
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /copypasta
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends one of 4 well known copypastas from the internet
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /copypasta
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /roll
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Roll a random number
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /roll
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /rps
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Play Rock, Paper, Scissors against the bot
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /rps rock|paper|scissors
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /8ball
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Ask the bot a Question
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /8ball <question>
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /wallpaper
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Anime Wallpaper
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /wallpaper
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /ngif
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Neko Gif
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /ngif
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /kitsune
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Fox Girls OwO
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /kitsune
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /neko
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a Neko image
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /neko
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /cat
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Cat
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /cat
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /dog
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Dog
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /dog
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /shibe
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Shibe
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /shibe
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /nep
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random Neptunia gif or image OwO
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /nep
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /coinflip
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Flip a Coin!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /coinflip
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /gamble
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Gamble for a chance of winning more coins.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /gamble [amount]
-                        </p>
-                    </div>
-                </div>       
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /urban
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Search urban dictionary.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /urban [word]
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /advice
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Send a Life Advice!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /advice
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /triggered
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            TRIGGERED!!!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /triggered
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /credits
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a list of contributors.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /credits
-                        </p>
-                    </div>
-                </div>       
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /animemes
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Send a post from r/animemes
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /animemes
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /moe
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Send a moe pic
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /moe
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /amiajoke
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Am I A Joke to you?
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /amiajoke (mention)
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /woosh
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            r/woosh
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /woosh (mention)
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /truth
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            The Scroll of Truth speaks the truth
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /truth [truth]
-                        </p>
-                    </div>
-                </div>          
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /owoify
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            OwO-ify a message.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /owoify [message]
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <table style="width:100%">
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+              </tr>
+            <tr>
+                <td width="20%">/dadjoke</td>
+                <td width="50%">Sends a horrible joke that will make you cringe</td>
+                <td width="30%">/dadjoke</td>
+            </tr>
+            <tr>
+                <td width="20%">/copypasta</td>
+                <td width="50%">Sends one of 4 well known copypastas from the internet</td>
+                <td width="30%">/copypasta</td>
+            </tr>
+            <tr>
+                <td width="20%">/roll</td>
+                <td width="50%">Roll a random number</td>
+                <td width="30%">/roll</td>
+            </tr>
+            <tr>
+                <td width="20%">/rps</td>
+                <td width="50%">Play Rock, Paper, Scissors against the bot</td>
+                <td width="30%">/rps rock|paper|scissors</td>
+            </tr>
+            <tr>
+                <td width="20%">/8ball</td>
+                <td width="50%">Ask the bot a Question</td>
+                <td width="30%">/8ball [question]</td>
+            </tr>
+            <tr>
+                <td width="20%">/wallpaper</td>
+                <td width="50%">Sends a random Anime Wallpaper</td>
+                <td width="30%">/wallpaper</td>
+            </tr>
+            <tr>
+                <td width="20%">/ngif</td>
+                <td width="50%">Sends a random Neko Gif</td>
+                <td width="30%">/ngif</td>
+            </tr>
+            <tr>
+                <td width="20%">/kitsune</td>
+                <td width="50%">Fox Girls OwO</td>
+                <td width="30%">/kitsune</td>
+            </tr>
+            <tr>
+                <td width="20%">/neko</td>
+                <td width="50%">Sends a Neko image</td>
+                <td width="30%">/neko</td>
+            </tr>
+            <tr>
+                <td width="20%">/cat</td>
+                <td width="50%">Sends a random Cat</td>
+                <td width="30%">/cat</td>
+            </tr>
+            <tr>
+                <td width="20%">/dog</td>
+                <td width="50%">Sends a random Dog</td>
+                <td width="30%">/dog</td>
+            </tr>
+            <tr>
+                <td width="20%">/shibe</td>
+                <td width="50%">Sends a random Shibe</td>
+                <td width="30%">/shibe</td>
+            </tr>
+            <tr>
+                <td width="20%">/nep</td>
+                <td width="50%">Sends a random Neptunia gif or image OwO</td>
+                <td width="30%">/nep</td>
+            </tr>
+            <tr>
+                <td width="20%">/coinflip</td>
+                <td width="50%">Flip a Coin!</td>
+                <td width="30%">/coinflip</td>
+            </tr>
+            <tr>
+                <td width="20%">/gamble</td>
+                <td width="50%">Gamble for a chance of winning more coins.</td>
+                <td width="30%">/gamble [amount]</td>
+            </tr>
+            <tr>
+                <td width="20%">/urban</td>
+                <td width="50%">Search urban dictionary.</td>
+                <td width="30%">/urban [word]</td>
+            </tr>
+            <tr>
+                <td width="20%">/advice</td>
+                <td width="50%">Send a Life Advice!</td>
+                <td width="30%">/advice</td>
+            </tr>
+            <tr>
+                <td width="20%">/triggered</td>
+                <td width="50%">TRIGGERED!!!</td>
+                <td width="30%">/triggered</td>
+            </tr>
+            <tr>
+                <td width="20%">/credits</td>
+                <td width="50%">Sends a list of contributors.</td>
+                <td width="30%">/credits</td>
+            </tr>
+            <tr>
+                <td width="20%">/animemes</td>
+                <td width="50%">Send a post from r/animemes</td>
+                <td width="30%">/animemes</td>
+            </tr>
+            <tr>
+                <td width="20%">/moe</td>
+                <td width="50%">Send a moe pic</td>
+                <td width="30%">/moe</td>
+            </tr>
+            <tr>
+                <td width="20%">/amiajoke</td>
+                <td width="50%">Am I A Joke to you?</td>
+                <td width="30%">/amiajoke (mention)</td>
+            </tr>
+            <tr>
+                <td width="20%">/woosh</td>
+                <td width="50%">r/woosh</td>
+                <td width="30%">/woosh (mention)</td>
+            </tr>
+            <tr>
+                <td width="20%">/truth</td>
+                <td width="50%">The Scroll of Truth speaks the truth</td>
+                <td width="30%">/truth [truth]</td>
+            </tr>
+            <tr>
+                <td width="20%">/owoify</td>
+                <td width="50%">OwO-ify a message.</td>
+                <td width="30%">undefined</td>
+            </tr>
+        </table>
+        </div>
         </div>
         <div class="demo-container" id="useful">
             <h3 class="title">Useful</h3>
-            <div class="container">            
-            <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                           <b>Name</b>
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            <b>Description</b>
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            <b>Usage</b>
-                        </p>
-                    </div>
-            </div>
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /about
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        About the bot.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /about
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /botvote
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Vote for the bot on discordbots.org.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /botvote
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /avatar
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Displays a user's avatar.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /avatar (mention)
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /ping
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Show the bot's responce time.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /ping
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /serverinfo
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Displays info about the server.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /serverinfo
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /uptime
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Shows how long the bot has been running for.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /uptime
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /bug
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Report a bug for the developers to fix it
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /bug [Bug found; how to reproduce]
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /suggest
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Suggest something to the developer to add to the bot.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /suggest [Suggestion]
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /invitebot
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        DMs you an Invite link for the bot.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /invitebot
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /userinfo
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Displays info about your account.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /userinfo (mention)
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /botstats
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Shows the stats of the bot.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /botstats
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /vpsstats
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Shows the stats of the VPS that the bot is running on.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /vpsstats
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /coins
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Shows you the amount of coins you have.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /coins (mention)
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /pay
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Pay someone coins.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /pay [mention] <amount>
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /level
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Shows you your Level and XP.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /level
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /vote
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Vote for something.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /vote (stuff to vote for)
-                    </p>
-                </div>
-            </div>    
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /timer
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Creates a timer.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /timer <amount>
-                    </p>
-                </div>
-            </div> 
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /getrole
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Get a self assignable role.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /getrole [role name]
-                    </p>
-                </div>
-            </div>    
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /abandonrole
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Abandon a self assignable role.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /abandonrole [role name]
-                    </p>
-                </div>
-            </div>
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /anime
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Provides info about an anime
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /anime [anime name]
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /manga
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Provides info about an manga
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /manga [manga name]
-                    </p>
-                </div>
-            </div>       
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /leaderboard
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Send XP Leaderboard
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /leaderboard
-                    </p>
-                </div>
-            </div>        
-            <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /colorsearch
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Search a color using it's hex code.
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /colorsearch [hex code]
-                    </p>
-                </div>
-            </div>
-            </div>
+            <div class="container">
+            <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td width="20%">/about</td>
+                <td width="50%">About the bot.</td>
+                <td width="30%">/about</td>
+            </tr>
+            <tr>
+                <td width="20%">/botvote</td>
+                <td width="50%">Vote for the bot on discordbots.org.</td>
+                <td width="30%">/botvote</td>
+            </tr>
+            <tr>
+                <td width="20%">/avatar</td>
+                <td width="50%">Displays a user's avatar.</td>
+                <td width="30%">/avatar (mention)</td>
+            </tr>
+            <tr>
+                <td width="20%">/ping</td>
+                <td width="50%">Show the bot's responce time.</td>
+                <td width="30%">/ping</td>
+            </tr>
+            <tr>
+                <td width="20%">/serverinfo</td>
+                <td width="50%">Displays info about the server.</td>
+                <td width="30%">/serverinfo</td>
+            </tr>
+            <tr>
+                <td width="20%">/uptime</td>
+                <td width="50%">Shows how long the bot has been running for.</td>
+                <td width="30%">/uptime</td>
+            </tr>
+            <tr>
+                <td width="20%">/bug</td>
+                <td width="50%">Report a bug for the developers to fix it</td>
+                <td width="30%">/bug [Bug found; how to reproduce]</td>
+            </tr>
+            <tr>
+                <td width="20%">/suggest</td>
+                <td width="50%">Suggest something to the developer to add to the bot.</td>
+                <td width="30%">/suggest [Suggestion]</td>
+            </tr>
+            <tr>
+                <td width="20%">/invitebot</td>
+                <td width="50%">DMs you an Invite link for the bot.</td>
+                <td width="30%">/invitebot</td>
+            </tr>
+            <tr>
+                <td width="20%">/userinfo</td>
+                <td width="50%">Displays info about your account.</td>
+                <td width="30%">/userinfo (mention)</td>
+            </tr>
+            <tr>
+                <td width="20%">/botstats</td>
+                <td width="50%">Shows the stats of the bot.</td>
+                <td width="30%">/botstats</td>
+            </tr>
+            <tr>
+                <td width="20%">/vpsstats</td>
+                <td width="50%">Shows the stats of the VPS that the bot is running on.</td>
+                <td width="30%">/vpsstats</td>
+            </tr>
+            <tr>
+                <td width="20%">/coins</td>
+                <td width="50%">Shows you the amount of coins you have.</td>
+                <td width="30%">/coins (mention)</td>
+            </tr>
+            <tr>
+                <td width="20%">/pay</td>
+                <td width="50%">Pay someone coins.</td>
+                <td width="30%">/pay [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/level</td>
+                <td width="50%">Shows you your Level and XP.</td>
+                <td width="30%">/level</td>
+            </tr>
+            <tr>
+                <td width="20%">/vote</td>
+                <td width="50%">Vote for something.</td>
+                <td width="30%">/vote (stuff to vote for)</td>
+            </tr>
+            <tr>
+                <td width="20%">/timer</td>
+                <td width="50%">Creates a timer.</td>
+                <td width="30%">/timer</td>
+            </tr>
+            <tr>
+                <td width="20%">/getrole</td>
+                <td width="50%">Get a self assignable role.</td>
+                <td width="30%">/getrole [role name]</td>
+            </tr>
+            <tr>
+                <td width="20%">/abandonrole</td>
+                <td width="50%">Abandon a self assignable role.</td>
+                <td width="30%">/abandonrole [role name]</td>
+            </tr>
+            <tr>
+                <td width="20%">/anime</td>
+                <td width="50%">Provides info about an anime</td>
+                <td width="30%">/anime [anime name]</td>
+            </tr>
+            <tr>
+                <td width="20%">/manga</td>
+                <td width="50%">Provides info about an manga</td>
+                <td width="30%">/manga [manga name]</td>
+            </tr>
+            <tr>
+                <td width="20%">/leaderboard</td>
+                <td width="50%">Send XP Leaderboard</td>
+                <td width="30%">/leaderboard</td>
+            </tr>
+            <tr>
+                <td width="20%">/colorsearch</td>
+                <td width="50%">Search a color using it's hex code.</td>
+                <td width="30%">/colorsearch [hex code]</td>
+            </tr>
+            <tr>
+                <td width="20%">/currency</td>
+                <td width="50%">Convert currencies</td>
+                <td width="30%">/currency (amount) [Base currency] [Target currency]</td>
+            </tr>
+        </table>
+        </div>
         </div>
         <div class="demo-container" id="action">
             <h3 class="title">Action</h3>
             <div class="container">
-                <div class="flex-grid">
-                        <div class="col-xs-2">
-                            <p>
-                               <b>Name</b>
-                            </p>
-                        </div>
-                        <div class="col-xs-6">
-                            <p>
-                                <b>Description</b>
-                            </p>
-                        </div>
-                        <div class="col-xs 3">
-                            <p>
-                                <b>Usage</b>
-                            </p>
-                        </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /hug
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Hugs someone (huggies)
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /hug [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /pat
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Pats someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /pat [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /kiss
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Kisses someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /kiss [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /tickle
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Tickles someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /tickle [mention]
-                        </p>
-                    </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /smug
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Smugs xD
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /smug [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /poke
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Poke someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /poke [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /spank
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Spanks someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /spank [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /cuddle
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Cuddles someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /cuddle [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /feed
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Feeds someone
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /feed [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /baka
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            B-BAKAA!!!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /baka [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /slap
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Slaps someone in their Face.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /slap [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /smack
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Smacks a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /smack [mention]
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /punch
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Punches a user
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /punch [mention]
-                        </p>
-                    </div>
-                </div>        
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /hammer
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Gives you a hammer to throw at a pleb
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /hammer [mention]
-                        </p>
-                    </div>
-                </div>          
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /fight
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Fight someone.
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /fight [mention].
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+
+            <tr>
+                <td width="20%">/hug</td>
+                <td width="50%">Hugs someone (huggies)</td>
+                <td width="30%">/hug [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/pat</td>
+                <td width="50%">Pats someone</td>
+                <td width="30%">/pat [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/kiss</td>
+                <td width="50%">Kisses someone</td>
+                <td width="30%">/kiss [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/tickle</td>
+                <td width="50%">Tickles someone</td>
+                <td width="30%">/tickle [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/smug</td>
+                <td width="50%">Smugs xD</td>
+                <td width="30%">/smug [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/poke</td>
+                <td width="50%">Poke someone</td>
+                <td width="30%">/poke [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/spank</td>
+                <td width="50%">Spanks someone</td>
+                <td width="30%">/spank [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/cuddle</td>
+                <td width="50%">Cuddles someone</td>
+                <td width="30%">/cuddle [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/feed</td>
+                <td width="50%">Feeds someone</td>
+                <td width="30%">/feed [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/baka</td>
+                <td width="50%">B-BAKAA!!!</td>
+                <td width="30%">/baka [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/slap</td>
+                <td width="50%">Slaps someone in their Face.</td>
+                <td width="30%">/slap [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/smack</td>
+                <td width="50%">Smacks a user</td>
+                <td width="30%">/smack [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/punch</td>
+                <td width="50%">Punches a user</td>
+                <td width="30%">/punch [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/hammer</td>
+                <td width="50%">Gives you a hammer to throw at a pleb</td>
+                <td width="30%">/hammer [mention]</td>
+            </tr>
+            <tr>
+                <td width="20%">/fight</td>
+                <td width="50%">Fight someone</td>
+                <td width="30%">/fight [mention]</td>
+            </tr>
+        </table>
+        </div>
         </div>
         <div class="demo-container" id="nsfw">
-            <h3 class="title">NSFW ( ͡° ͜ʖ ͡°)</h3>
+            <h3 class="title">NSFW( ͡° ͜ʖ ͡°)</h3>
             <div class="container">
-                <div class="flex-grid">
-                        <div class="col-xs-2">
-                            <p>
-                               <b>Name</b>
-                            </p>
-                        </div>
-                        <div class="col-xs-6">
-                            <p>
-                                <b>Description</b>
-                            </p>
-                        </div>
-                        <div class="col-xs 3">
-                            <p>
-                                <b>Usage</b>
-                            </p>
-                        </div>
-                </div>
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /feet
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Feets
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /feet
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /yuri
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Girl on Girl
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /yuri
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /hololewd
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        ...? Lewd
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /hololewd
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /lewdkemo
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Lewd Kenomimi
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /lewdkemo
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /solog
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Solo girl
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /solog
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /cum
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Cum
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /cum
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /erokemo
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Erotic Kenomimi
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /erokemo
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /les
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Girl on Girl, but animated
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /les
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /lewdk
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Lewd Kitsune
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /lewdk
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /lewdneko
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Lewd Neko
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /lewdneko
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /hentai
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Hentai
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /hentai
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /ero
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Erotic Girls
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /ero
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /boobs
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Bazoombas, Ta-tas, hungolomghnonoloughongous
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /boobs
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /eroyuri
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Erotic Girl on Girl
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /eroyuri
-                    </p>
-                </div>
-                </div>        
-                <div class="flex-grid">
-                <div class="col-xs-2">
-                    <p>
-                        /sboobs
-                    </p>
-                </div>
-                <div class="col-xs-6">
-                    <p>
-                        Small boobs
-                    </p>
-                </div>
-                <div class="col-xs 3">
-                    <p>
-                        /sboobs
-                    </p>
-                </div>
-                </div>
-            </div>
+            <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+
+            <tr>
+                <td width="20%">/feet</td>
+                <td width="50%">Feets</td>
+                <td width="30%">/feet</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/yuri</td>
+                <td width="50%">Girl on Girl</td>
+                <td width="30%">/yuri</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/hololewd</td>
+                <td width="50%">...? Lewd</td>
+                <td width="30%">/hololewd</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/lewdkemo</td>
+                <td width="50%">Lewd Kenomimi</td>
+                <td width="30%">/lewdkemo</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/solog</td>
+                <td width="50%">Solo girl</td>
+                <td width="30%">/solog</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/cum</td>
+                <td width="50%">Cum</td>
+                <td width="30%">/cum</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/erokemo</td>
+                <td width="50%">Erotic Kenomimi</td>
+                <td width="30%">/erokemo</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/les</td>
+                <td width="50%">Girl on Girl, but animated</td>
+                <td width="30%">/les</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/lewdk</td>
+                <td width="50%">Lewd Kitsune</td>
+                <td width="30%">/lewdk</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/lewdneko</td>
+                <td width="50%">Lewd Neko</td>
+                <td width="30%">/lewdneko</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/hentai</td>
+                <td width="50%">Hentai</td>
+                <td width="30%">/hentai</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/ero</td>
+                <td width="50%">Erotic Girls</td>
+                <td width="30%">/ero</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/boobs</td>
+                <td width="50%">Bazoombas, Ta-tas, hungolomghnonoloughongous</td>
+                <td width="30%">/boobs</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/eroyuri</td>
+                <td width="50%">Erotic Girl on Girl</td>
+                <td width="30%">/eroyuri</td>
+            </tr>
+        
+        
+            <tr>
+                <td width="20%">/sboobs</td>
+                <td width="50%">Small boobs</td>
+                <td width="30%">/sboobs</td>
+            </tr>
+        
+        
+        </table>
+        </div>
         </div>
         <div class="demo-container" id="emoji">
             <h3 class="title">Nitro Emotes</h3>
             <div class="container">
-                <div class="flex-grid">
-                        <div class="col-xs-2">
-                            <p>
-                               <b>Name</b>
-                            </p>
-                        </div>
-                        <div class="col-xs-6">
-                            <p>
-                                <b>Description</b>
-                            </p>
-                        </div>
-                        <div class="col-xs 3">
-                            <p>
-                                <b>Usage</b>
-                            </p>
-                        </div>
-                </div>
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /plantjerk
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Shaking eggplant
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /plantjerk
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /nou
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            NO U
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /nou
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /upvote
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Upvote ^
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /upvote
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /boi
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            BOIIIII
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /boi
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /angryping
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            PINGED!
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /angryping
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /yayyy
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Yayyyyyyy
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /yayyy
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /hyped
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            WEEEEEEEEEEEEEEEEEEEEEEEE
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /hyped
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /confusedrun
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            huh?
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /confusedrun
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /kthxbai
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            K, Thx, Bye
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /kthxbai
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /orangejustice
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Orange shirt kid
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /orangejustice
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /loading
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Loading...
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /loading
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /wesmart
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Smart boye
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /wesmart
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /ragequit
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            F**k this sh*t I'm out
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /ragequit
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /abooz
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Admin ABOOZ
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /abooz
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /pepetos
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Pepe De Frog obeying Terms of Service
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /pepetos
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /rainbowthink
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Rainbow thinking emoji
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /rainbowthink
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /crabrave
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Crab Rave Meme
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /crabrave
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /pissedoffping
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            REEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /pissedoffping
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /bbongo
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Balanced Bongo Cat
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /bbongo
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /bcheck
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Balanced Check mark
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /bcheck
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /catderp
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Derpy Cat
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /catderp
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /catsucc
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Perfectly normal cat sucking milk, not lewd at all :)
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /catsucc
-                        </p>
-                    </div>
-                </div>            
-                <div class="flex-grid">
-                    <div class="col-xs-2">
-                        <p>
-                            /randomnitro
-                        </p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>
-                            Sends a random nitro emoji
-                        </p>
-                    </div>
-                    <div class="col-xs 3">
-                        <p>
-                            /randomnitro
-                        </p>
-                    </div>
-                </div>
+                <table style="width:100%">
+                    <tr>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Usage</th>
+                    </tr>    <tr>
+                          <td width="20%">/plantjerk</td>
+                          <td width="50%">Shaking eggplant</td>
+                          <td width="30%">/plantjerk</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/nou</td>
+                          <td width="50%">NO U</td>
+                          <td width="30%">/nou</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/upvote</td>
+                          <td width="50%">Upvote ^</td>
+                          <td width="30%">/upvote</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/boi</td>
+                          <td width="50%">BOIIIII</td>
+                          <td width="30%">/boi</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/angryping</td>
+                          <td width="50%">PINGED!</td>
+                          <td width="30%">/angryping</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/yayyy</td>
+                          <td width="50%">Yayyyyyyy</td>
+                          <td width="30%">/yayyy</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/hyped</td>
+                          <td width="50%">WEEEEEEEEEEEEEEEEEEEEEEEE</td>
+                          <td width="30%">/hyped</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/confusedrun</td>
+                          <td width="50%">huh?</td>
+                          <td width="30%">/confusedrun</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/kthxbai</td>
+                          <td width="50%">K, Thx, Bye</td>
+                          <td width="30%">/kthxbai</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/orangejustice</td>
+                          <td width="50%">Orange shirt kid</td>
+                          <td width="30%">/orangejustice</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/loading</td>
+                          <td width="50%">Loading...</td>
+                          <td width="30%">/loading</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/wesmart</td>
+                          <td width="50%">Smart boye</td>
+                          <td width="30%">/wesmart</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/ragequit</td>
+                          <td width="50%">F**k this sh*t I'm out</td>
+                          <td width="30%">/ragequit</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/abooz</td>
+                          <td width="50%">Admin ABOOZ</td>
+                          <td width="30%">/abooz</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/pepetos</td>
+                          <td width="50%">Pepe De Frog obeying Terms of Service</td>
+                          <td width="30%">/pepetos</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/rainbowthink</td>
+                          <td width="50%">Rainbow thinking emoji</td>
+                          <td width="30%">/rainbowthink</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/crabrave</td>
+                          <td width="50%">Crab Rave Meme</td>
+                          <td width="30%">/crabrave</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/pissedoffping</td>
+                          <td width="50%">REEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</td>
+                          <td width="30%">/pissedoffping</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/bbongo</td>
+                          <td width="50%">Balanced Bongo Cat</td>
+                          <td width="30%">/bbongo</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/bcheck</td>
+                          <td width="50%">Balanced Check mark</td>
+                          <td width="30%">/bcheck</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/catderp</td>
+                          <td width="50%">Derpy Cat</td>
+                          <td width="30%">/catderp</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/catsucc</td>
+                          <td width="50%">Perfectly normal cat sucking milk, not lewd at all :)</td>
+                          <td width="30%">/catsucc</td>
+                      </tr>
+                      <tr>
+                          <td width="20%">/randomnitro</td>
+                          <td width="50%">Sends a random nitro emoji</td>
+                          <td width="30%">/randomnitro</td>
+                      </tr>
+                  </table>
             </div>
         </div>
     </section>
@@ -2638,7 +914,7 @@
         <p class="no-margin">
             <a href="/">Home</a>
             ||||
-            <a href="/ehcommands.html">Beta Commands Page</a>
+            <a href="/ehcommands.html">Old Commands Page</a>
         </p>
     </footer>
   </body>
