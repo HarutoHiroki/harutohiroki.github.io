@@ -1,3 +1,14 @@
+.center-navbar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  vertical-align: middle;
+  width: 100%;
+}
 .one-full.column p, .one-full.column h1 {
   margin: 0;
 }
