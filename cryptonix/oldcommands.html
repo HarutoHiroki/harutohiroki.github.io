@@ -75,16 +75,12 @@
             <h3 class="title">Moderation</h3>
             <div class="container">
             <table style="width:100%">
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Usage</th>
-                </tr>
-                <tr>
-                  <td width="20%">/settings</td>
-                  <td width="50%">Bot's settings command</td>
-                  <td width="30%">/settings template|upload|current [file upload]</td>
-                </tr>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Usage</th>
+              </tr>
+
                 <tr>
                     <td width="20%">/softban</td>
                     <td width="50%">Soft bans a user</td>
@@ -136,6 +132,11 @@
                     <td width="30%">/warn [mention] [reason]</td>
                 </tr>
                 <tr>
+                    <td width="20%">/hackwarn     </td>
+                    <td width="50%">Warns the user using their IDs</td>
+                    <td width="30%">/hackwarn [UserID] [reason]</td>
+                </tr>
+                <tr>
                     <td width="20%">/clearwarns   </td>
                     <td width="50%">Clears a user's warning</td>
                     <td width="30%">/clearwarns [mention]</td>
@@ -171,6 +172,11 @@
                     <td width="30%">/removerole [mention] [role name]</td>
                 </tr>
                 <tr>
+                    <td width="20%">/prefix       </td>
+                    <td width="50%">Change the Bot's prefix</td>
+                    <td width="30%">/prefix [new prefix]</td>
+                </tr>
+                <tr>
                     <td width="20%">/votekick     </td>
                     <td width="50%">Votes to kick someone!</td>
                     <td width="30%">/votekick [mention]</td>
@@ -187,14 +193,44 @@
                 </tr>        
                 <tr>
                     <td width="20%">/selfrole</td>
-                    <td width="50%">List self assignable roles.</td>
-                    <td width="30%">/selfrole</td>
+                    <td width="50%">Setup Selfrole function for your server!</td>
+                    <td width="30%">/selfrole clear|list|add roleID</td>
+                </tr>
+                <tr>
+                    <td width="20%">/autoroleset</td>
+                    <td width="50%">Setup autorole function for your server!</td>
+                    <td width="30%">/autoroleset rolename</td>
+                </tr>
+                <tr>
+                    <td width="20%">/antilink</td>
+                    <td width="50%">Setup Antilink for the server</td>
+                    <td width="30%">/antilink on|off|stats</td>
+                </tr>
+                <tr>
+                    <td width="20%">/channelignore</td>
+                    <td width="50%">Tells Cryptonix X to ignore a channel</td>
+                    <td width="30%">/channelignore on|off [channelname]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/xpgain</td>
+                    <td width="50%">Enable or disable XP ranking system</td>
+                    <td width="30%">/xpgain on|off </td>
+                </tr>
+                <tr>
+                    <td width="20%">/autopunish</td>
+                    <td width="50%">Setup the auto-punish warning system for your server!</td>
+                    <td width="30%">/autopunish mute|ban on|off [number of warns]</td>
+                </tr>
+                <tr>
+                    <td width="20%">/welcomer</td>
+                    <td width="50%">Changes the welcome message for the server.</td>
+                    <td width="30%">welcomer (message)|(channel id) (no spaces around the "|")</td>
                 </tr>
         </table>
             </div>
         </div>
         <div class="demo-container" id="music">
-            <h3 class="title">Music (Buggy, use at own risk)</h3>
+            <h3 class="title">Music</h3>
             <div class="container">
             <table style="width:100%">
               <tr>
@@ -493,9 +529,9 @@
                 <td width="30%">/suggest [Suggestion]</td>
             </tr>
             <tr>
-                <td width="20%">/invite</td>
+                <td width="20%">/invitebot</td>
                 <td width="50%">DMs you an Invite link for the bot.</td>
-                <td width="30%">/invite</td>
+                <td width="30%">/invitebot</td>
             </tr>
             <tr>
                 <td width="20%">/userinfo</td>
@@ -511,11 +547,6 @@
                 <td width="20%">/vpsstats</td>
                 <td width="50%">Shows the stats of the VPS that the bot is running on.</td>
                 <td width="30%">/vpsstats</td>
-            </tr>
-            <tr>
-                <td width="20%">/autopunish</td>
-                <td width="50%">Auto punish status of this server</td>
-                <td width="30%">/autopunish</td>
             </tr>
             <tr>
                 <td width="20%">/coins</td>
@@ -578,9 +609,9 @@
                 <td width="30%">/currency (amount) [Base currency] [Target currency]</td>
             </tr>
             <tr>
-                <td width="20%">/duckduckgo</td>
-                <td width="50%">duckduckgo-sama</td>
-                <td width="30%">/duckduckgo [stuff you need to search]</td>
+                <td width="20%">/google</td>
+                <td width="50%">Google-sama</td>
+                <td width="30%">/google [stuff you need to google]</td>
             </tr>
         </table>
         </div>
@@ -594,11 +625,7 @@
                 <th>Description</th>
                 <th>Usage</th>
             </tr>
-            <tr>
-                <td width="20%">/f</td>
-                <td width="50%">Press F to pay respekt</td>
-                <td width="30%">/f (something here|or not)</td>
-            </tr>
+
             <tr>
                 <td width="20%">/hug</td>
                 <td width="50%">Hugs someone (huggies)</td>
