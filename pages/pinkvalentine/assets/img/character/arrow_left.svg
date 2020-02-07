@@ -1,0 +1,11 @@
+<svg id="character_arrow_left.svg" data-name="character/arrow_left.svg" xmlns="http://www.w3.org/2000/svg" width="25.031" height="42" viewBox="0 0 25.031 42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f091a9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="line" class="cls-1" d="M15.8,2719.68l19.328-17.91c2.652-2.46,6.607,1.54,3.944,4q-8.6,7.965-17.2,15.94l17.286,16.5c2.625,2.5-1.329,6.5-3.946,4q-9.706-9.27-19.412-18.53A2.865,2.865,0,0,1,15.8,2719.68Z" transform="translate(-14.969 -2701)"/>
+</svg>
