@@ -1,0 +1,36 @@
+.one-full.column p, .one-full.column h1 {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #303030;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #292929;
+}
+/* Change a bit default ModestaCSS values */
+.title { margin-bottom: 0; letter-spacing: 2px; }
+.fullscreen h1.title { letter-spacing: 2px; }
+.box-container p { font-size: 18px; margin-bottom: .2em; }
+
+/* Add some spacing to the info on "second page" for more depth */
+.info-container { padding-left: 2.5em; }
+
+/* R e s p o n s i v e */
+@media (max-width: 550px) {
+  .info-container { padding-left: 0; }
+}
+
+
+#profilepic {
+  width : 200px;
+  height: auto;
+}
