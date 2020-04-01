@@ -59,7 +59,7 @@ setInterval(function threeBar(){
         var e=document.getElementsByClassName("nav-bar");if(e.length){
           var n=e[0],l=n.querySelector(".nav-bars"),t=n.querySelector(".nav-close");
           l&&l.addEventListener("click",()=>{l.classList.toggle("nav--expand"); l.style.display = "none"}),
-          t&&t.addEventListener("click",()=>{l&&l.classList.remove("nav--expand"); l.style.display ="initial"})
+          t&&t.addEventListener("click",()=>{l&&l.classList.remove("nav--expand"); l.style.display ="block"})
         }
       }()
     }))
