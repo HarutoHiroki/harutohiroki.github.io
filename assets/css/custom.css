@@ -27,17 +27,6 @@ tr:nth-child(even) {
 /* R e s p o n s i v e */
 @media (max-width: 550px) {
   .info-container { padding-left: 0; }
-  .buttons .btn {
-    align-items: center;
-    display: flex;
-    font-size: 18px;
-    justify-content: center;
-    line-height: 20px;
-    padding: 20px 10px;
-    text-align: center;
-    white-space: pre-line;
-    width: auto;
-  }
 }
 
 @font-face {
