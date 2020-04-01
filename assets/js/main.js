@@ -37,7 +37,7 @@ setInterval(function threeBar(){
     document.getElementById("bar3").style.display = "none"
     document.getElementById("bar4").style.display = "none"
   }
-}, 1000)
+}, 69)
 
 
 !function(){
