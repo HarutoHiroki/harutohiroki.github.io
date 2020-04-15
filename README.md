@@ -1,5 +1,5 @@
 # harutohiroki.github.io
-My personal website
+My personal website to kind of show my capability with HTML, CSS and JS.
 
 Link: https://is-really.fun
 
