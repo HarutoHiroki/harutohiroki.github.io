@@ -51,3 +51,13 @@ font-style:normal;
   width : 200px;
   height: auto;
 }
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404047;
+}
