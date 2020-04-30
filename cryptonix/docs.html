@@ -46,7 +46,7 @@
   <body>
     <section class="container">
         <span>
-            <div class="box-container row">
+            <div class="box-container row" id="gettingstarted">
                 <div class="one-full column"><h3 class="turquoise-text">Getting Started:</h3></div>
                 <div class="one-full column">
                     <p>
@@ -56,7 +56,7 @@
                     </p>
                 </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="variables">
                 <div class="one-full column"><h3 class="turquoise-text">Variables:</h3></div>
                 <div class="demo-container">
                     <div class="container">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="prefix">
                 <div class="one-full column"><h3 class="turquoise-text">Prefix:</h3></div>
                 <div class="one-full column">
                     <p>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="logs">
               <div class="one-full column"><h3 class="turquoise-text">Logs:</h3></div>
               <div class="one-full column">
                   <p>
@@ -152,7 +152,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="antispam">
               <div class="one-full column"><h3 class="turquoise-text">Anti Spam:</h3></div>
               <div class="one-full column">
                 <p>
@@ -209,7 +209,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="punish">
               <div class="one-full column"><h3 class="turquoise-text">Punish:</h3></div>
               <div class="one-full column">
                   <p>
@@ -254,7 +254,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="selfroles">
               <div class="one-full column"><h3 class="turquoise-text">Self Roles:</h3></div>
               <div class="one-full column">
                   <p>
@@ -278,7 +278,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="antiads">
               <div class="one-full column"><h3 class="turquoise-text">Anti Ads:</h3></div>
               <div class="one-full column">
                   <p>
@@ -307,7 +307,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="strictmode">
               <div class="one-full column"><h3 class="turquoise-text">Strict Mode:</h3></div>
               <div class="one-full column">
                   <p>
@@ -335,7 +335,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="autorole">
               <div class="one-full column"><h3 class="turquoise-text">Auto Role:</h3></div>
               <div class="one-full column">
                   <p>
@@ -359,17 +359,26 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="xp">
               <div class="one-full column"><h3 class="turquoise-text">XP System:</h3></div>
               <div class="one-full column">
                   <p>
-                    Let users <span class="turquoise-text">level up</span> the more and more they talk in the guild.
+                    Have <span class="turquoise-text">Cryptonix X</span> give levels and being able to grant roles on getting a level that you define. 
+                    This can heavily boost your activity and make it rewarding to chat on your server. If you don’t want users to keep roles granted by 
+                    levels that a under the newly rewarded one, you can disable it by changing <span class="alizarin-text">rewardstacking</span> to <span class="alizarin-text">false</span> and avoid such issue.
                   </p>
               </div>
               <div class="one-full column"><p>‎</p></div>
               <div style="background: #303030 !important;border:1px solid #303030;color: #d0d0d0;">
                 <div style="background: #303030 !important;border:1px solid #303030;color: #d0d0d0;">
-                    <pre style="background: #303030 !important;border:1px solid #303030;color: #d0d0d0;"><code> "<span class="alizarin-text">xpgain</span>": <span class="turquoise-text">true</span>|<span class="turquoise-text">false</span>,</code></pre>
+                    <pre style="background: #303030 !important;border:1px solid #303030;color: #d0d0d0;"><code> "<span class="alizarin-text">xpgain</span>": <span class="turquoise-text">true</span>|<span class="turquoise-text">false</span>,
+ "<span class="alizarin-text">levelroles</span>": <span class="turquoise-text">true</span>|<span class="turquoise-text">false</span>,
+ "<span class="alizarin-text">rewardstacking</span>": <span class="turquoise-text">true</span>|<span class="turquoise-text">false</span>,
+ "<span class="alizarin-text">roles</span>": [
+   {"<span class="turquoise-text">level</span>":<span class="alizarin-text">5</span>, "<span class="turquoise-text">role"</span>:<span class="alizarin-text">"RoleID"</span>},
+   {"<span class="turquoise-text">level</span>":<span class="alizarin-text">10</span>, "<span class="turquoise-text">role"</span>:<span class="alizarin-text">"RoleID"</span>},
+   {"<span class="turquoise-text">level</span>":<span class="alizarin-text">15</span>, "<span class="turquoise-text">role"</span>:<span class="alizarin-text">"RoleID"</span>}
+ ],</code></pre>
                 </div>
               </div>
               <div class="one-full column"><p>‎</p></div>
@@ -377,9 +386,18 @@
                 <p>
                   "<span class="alizarin-text">xpgain</span>" - <span class="turquoise-text">true</span> = enabled | <span class="turquoise-text">false</span> = disabled
                 </p>
+                <p>
+                  "<span class="alizarin-text">levelroles</span>" - <span class="turquoise-text">true</span> = enabled | <span class="turquoise-text">false</span> = disabled
+                </p>
+                <p>
+                  "<span class="alizarin-text">rewardstacking</span>" - <span class="turquoise-text">true</span> = enabled | <span class="turquoise-text">false</span> = disabled (whether to stack rewards or not)
+                </p>
+                <p>
+                  "<span class="alizarin-text">roles</span>" - Array of roles you want to give to people when they reach a certain level.
+                </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="chatbot">
               <div class="one-full column"><h3 class="turquoise-text">Chat Bot:</h3></div>
               <div class="one-full column">
                   <p>
@@ -399,7 +417,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="channelignore">
               <div class="one-full column"><h3 class="turquoise-text">Channel Ignore:</h3></div>
               <div class="one-full column">
                   <p>
@@ -423,7 +441,7 @@
                 </p>
               </div>
             </div>
-            <div class="box-container row">
+            <div class="box-container row" id="welcomer">
               <div class="one-full column"><h3 class="turquoise-text">Welcomer:</h3></div>
               <div class="one-full column">
                   <p>
