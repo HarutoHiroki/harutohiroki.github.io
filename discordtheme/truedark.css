@@ -24,6 +24,7 @@ div[class*="app-"]:first-child{
 div[class*="withFrame-"]{
   margin-top:0;padding-top:4px
 }
+.theme-dark div[class*="autocomplete-"]{background-color:#080808 !important;border:0 !important;border-radius:0;box-shadow:none}
 .theme-dark nav[class*="guilds-"] div[class*="listItem"]:last-child div[class*="circleIconButton-"]{
   background-color:transparent
 }
