@@ -58,8 +58,13 @@ setInterval(function threeBar(){
       function(){
         var e=document.getElementsByClassName("nav-bar");if(e.length){
           var n=e[0],l=n.querySelector(".nav-bars"),t=n.querySelector(".nav-close");
-          l&&l.addEventListener("click",()=>{l.classList.toggle("nav--expand"); l.style.display = "none"}),
-          t&&t.addEventListener("click",()=>{l&&l.classList.remove("nav--expand"); l.style.display ="block"})
+          l&&l.addEventListener("click",()=>{l.style.display = "none"; l.classList.toggle("nav--expand");}),
+          t&&t.addEventListener("click",()=>{
+            l&&l.classList.remove("nav--expand"); 
+            setTimeout(function() {
+              l.style.display ="block";
+            }, 175);
+          })
         }
       }()
     }))
