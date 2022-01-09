@@ -43,7 +43,17 @@
     <script src="assets/js/smoothscroll.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/main.js" type="text/javascript" charset="utf-8"></script>
   </head>
+
   <body>
+    <span class="loader">
+      <img src="https://i.is-really.fun/logo.png">
+      <h1>LOADING</h1>
+      <script>
+        $(window).on("load",function(){
+            $(".loader").fadeOut("slow");
+        });
+      </script>
+    </span>
     <section class="fullscreen">
       <div class="background" style="background-image: url('assets/images/unknown.png');"></div>
         <div class="center-object">
