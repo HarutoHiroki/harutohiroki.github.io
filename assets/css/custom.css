@@ -135,3 +135,12 @@ font-style:normal;
     transform: rotate(360deg);
   }
 }
+
+.p-scroll__indicator {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+}
