@@ -1,7 +1,7 @@
 # harutohiroki.github.io
 My personal website to kind of show my capability with HTML, CSS and JS.
 
-Link: https://is-really.fun
+Link: https://harutohiroki.com/
 
 ## Source
 The first version of this website was originally built on AlexFlipnote's [Source](https://github.com/AlexFlipnote/alexflipnote.github.io), now with my own styling and flavor.
