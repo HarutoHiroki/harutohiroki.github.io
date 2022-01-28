@@ -30,7 +30,6 @@ window.addEventListener("load",(
   }
 ));
 
-/*
+
 window.onfocus = function(){document.getElementById("home-video").play();};
 window.onblur = function(){document.getElementById("home-video").pause();};
-*/
