@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #121414;
+  background-color: #151515;
   color: #fff;
   font-weight: normal;
   margin: 0
@@ -558,7 +558,7 @@ input[type="submit"]:hover {
 }
 ::-webkit-scrollbar {
   width: 7px;
-  background: #121414
+  background: #151515
 }
 ::-webkit-scrollbar-thumb {
   background: #d9d9d9;
