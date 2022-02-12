@@ -203,6 +203,9 @@ input[type="submit"]:hover {
   vertical-align: middle;
   width: 100%
 }
+.center-text {
+  text-align: center !important
+}
 .fullscreen {
   background-color: #181818;
   position: relative
