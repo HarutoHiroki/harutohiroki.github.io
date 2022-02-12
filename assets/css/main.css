@@ -3,7 +3,8 @@ body {
   background-color: #151515;
   color: #fff;
   font-weight: normal;
-  margin: 0
+  margin: 0;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -371,11 +372,7 @@ input[type="submit"]:hover {
   overflow-y: scroll
 }
 .nav-bar .nav .nav-scroller::-webkit-scrollbar {
-  width: 5px
-}
-.nav-bar .nav .nav-scroller::-webkit-scrollbar-thumb {
-  border: 3px solid #303030;
-  border-radius: 7px
+  width: 0px
 }
 .nav-bar .nav a {
   float: left;
