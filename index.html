@@ -40,6 +40,7 @@
     
     <!-- CSS -->
     <link href="assets/css/main.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/flair.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <!-- JavaScript -->
     <script src="assets/js/smoothscroll.min.js" type="text/javascript" charset="utf-8"></script>
@@ -47,7 +48,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
-  <body>
+  <body class= "sound_playing">
     <span class="loader">
       <img src="assets/images/logo.png">
       <h1>LOADING</h1>
@@ -62,30 +63,33 @@
       <!-- <div class="background" style="background-image: url('assets/images/unknown-min.png');"></div> -->
       <div class="background">
         <div class="video-container">
-          <video src="assets/images/bg.mp4" id="home-video" autoplay muted loop ></video>
+          <video src="assets/images/bg.mov" id="home-video" autoplay muted loop ></video>
         </div>
+        <audio id="bgm" autoplay loop>
+          <source src="assets/audio/Oku-No-In.mp3" type="audio/mp3">
+        </audio>
       </div>
 
       <!-- Navigation Button -->
-        <div class="center-object">
-          <header id="navbar" class="nav-bar" style="background-color: rgba(255, 255, 255, 0); position: absolute; left:12px; top: 18px; vertical-align: middle;">
-            <span class="nav-bars" style="background-color: rgba(255, 255, 255, 0); "></span>
-            <section class="nav" style="background-color: rgb(5, 5, 5, 0.99); padding-left:0%; top: 0px;">
-              <span class="nav-close" style="background-color: rgba(0, 0, 0, 1); height: 75px;"></span>
-              <div class="nav-scroller" style="width:100%" >
-                <a href="https://graphtool.harutohiroki.com" class="asbestos-text">GraphTool</a>
-                <a href="https://github.com/HarutoHiroki" class="asbestos-text">GitHub</a>
-                <a href="mailto:hhirokilive@gmail.com" class="asbestos-text">Contact</a>
-                <a href="https://discord.gg/sjtcnRb" class="asbestos-text">Discord</a>
-                <a href="https://www.paypal.me/realharutohiroki" class="asbestos-text">Donate</a>
-              </div>
-            </section>
-          </header>
+      <div class="center-object">
+        <header id="navbar" class="nav-bar" style="background-color: rgba(255, 255, 255, 0); position: absolute; left:12px; top: 18px; vertical-align: middle;">
+          <span class="nav-bars" style="background-color: rgba(255, 255, 255, 0); "></span>
+          <section class="nav" style="background-color: rgb(5, 5, 5, 0.99); padding-left:0%; top: 0px;">
+            <span class="nav-close" style="background-color: rgba(0, 0, 0, 1); height: 75px;"></span>
+            <div class="nav-scroller" style="width:100%" >
+              <a href="https://graphtool.harutohiroki.com" class="asbestos-text">GraphTool</a>
+              <a href="https://github.com/HarutoHiroki" class="asbestos-text">GitHub</a>
+              <a href="mailto:root@harutohiroki.com" class="asbestos-text">Contact</a>
+              <a href="https://discord.gg/sjtcnRb" class="asbestos-text">Discord</a>
+              <a href="https://ko-fi.com/harutohiroki" class="asbestos-text">Donate</a>
+            </div>
+          </section>
+        </header>
 
         <!-- Navigation Bar-->
         <div class="box-container center" style="position: absolute; top: 0px; vertical-align: middle; ">
           <a id="bar1" href="https://github.com/HarutoHiroki" class="btn" style="color: #7f8c8d; padding: 0 .4em;" target="_blank" >GitHub</a>   
-          <a id="bar2" href="https://www.paypal.me/realharutohiroki" class="btn" style="color: #7f8c8d; padding: 0 .4em;" target="_blank" >Donate</a>
+          <a id="bar2" href="https://ko-fi.com/harutohiroki" class="btn" style="color: #7f8c8d; padding: 0 .4em;" target="_blank" >Donate</a>
           <a href="/" >
             <img src="assets/images/logo.png" style="width: 105px; max-width: 105px; height: auto; vertical-align: middle; padding: 0 .4em;" alt="Logo" />
           </a>
@@ -104,6 +108,15 @@
           </div>
           <div class="box-container row"></div>
         </div>
+        <p class="bgm-toggle" style="position: absolute; margin: 0; bottom: 30; right: 5; font-size: 11.3px;">Sound</p>
+        <ul class="sound_vis bgm-toggle" style="position: absolute; bottom: 5; right: 5;">
+          <li class="sound_vis line1"></li>
+          <li class="sound_vis line2"></li>
+          <li class="sound_vis line3"></li>
+          <li class="sound_vis line4"></li>
+          <li class="sound_vis line5"></li>
+          <li class="sound_vis line6"></li>
+        </ul>
       </div>
     </section>
 
@@ -116,10 +129,10 @@
               I'm a freelance <span style="color: #1abc9c;">Programmer</span>, a <span style="color: #1abc9c;">VR Enthusiast</span>, 
               and a <span style="color: #1abc9c;">Music Lover</span>. 
             </p> 
-            <p>I've been coding for <span style="color: #e74c3c;">over 5 years </span>
+            <p>I've been coding for <span style="color: #e74c3c;">over 6 years </span>
               but I mostly focused on <span style="color: #1abc9c;">back-end</span>. 
-              This is my first time doing <span style="color: #1abc9c;">front-end designing</span>. 
-              Although this website is still in development, I'm really proud of it. I am also learning new languages and ways 
+              This is my first attempt at <span style="color: #1abc9c;">front-end designing</span>. 
+              Although this website is still constantly getting improved, I'm really proud of it. I am also learning new languages and ways 
               to make my code more organised than at the moment. Currently, languages that I'm fluent with are 
               <span style="color: #1abc9c;">HTML, CSS, JavaScript, Node.js, Java</span>. I also know a bit of <span style="color: #1abc9c;">Python and SQL</span>.
             </p>
@@ -132,8 +145,8 @@
               I love Programming and the feeling of successfully fixing bugs.  
             </p> 
             <p>
-              I also really really love listening to music of all genres. I am also a fan of In Ear Monitors (IEMs) and building custom keyboards. Other interests of 
-              mine inclue playing games and anything Virtual Reality.
+              I also really really love listening to music of all genres. I am also a fan of In Ear Monitors (IEMs) and building custom keyboards.
+              Other interests of mine includes anything Virtual Reality, from the technology behind Virtual Reality to playing VR games.
             </p>
           </div>
         </div>
@@ -155,57 +168,57 @@
     </section>
 
     <footer class="center box-container" style="border-radius: 0; background-color:black;">
-      <div class="box-container row center"></div>
-      <div class="box-container row center">
+      <div class="box-container row center" style="padding: 10px;"></div>
+      <div class="box-container row center" style="padding: 0px 16px 0px 16px">
         <p style="margin: 0;">
           Made with love from HarutoHiroki
         </p>
       </div>
-      <div class="box-container row center">
-        <a href="https://www.youtube.com/@harutohiroki" target="_blank" style="padding: 0 4px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff !important">
+      <div class="box-container row center" style="padding: 10px 16px 5px 16px">
+        <a href="https://www.youtube.com/@harutohiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: #fff !important">
             <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
           </svg>
         </a>
         
-        <a href="https://discord.gg/sjtcnRb" target="_blank" style="padding: 0 4px;">
+        <a href="https://discord.gg/sjtcnRb" target="_blank" style="padding: 0 4px; vertical-align: middle;">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" style="fill: #fff !important">
             <path d="M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.28-1.452-1.344-1.536-1.428.636 2.22h-13.608c-1.356 0-2.46-1.104-2.46-2.472v-16.224c0-1.368 1.104-2.472 2.46-2.472h16.08zm-4.632 15.672c2.652-.084 3.672-1.824 3.672-1.824 0-3.864-1.728-6.996-1.728-6.996-1.728-1.296-3.372-1.26-3.372-1.26l-.168.192c2.04.624 2.988 1.524 2.988 1.524-1.248-.684-2.472-1.02-3.612-1.152-.864-.096-1.692-.072-2.424.024l-.204.024c-.42.036-1.44.192-2.724.756-.444.204-.708.348-.708.348s.996-.948 3.156-1.572l-.12-.144s-1.644-.036-3.372 1.26c0 0-1.728 3.132-1.728 6.996 0 0 1.008 1.74 3.66 1.824 0 0 .444-.54.804-.996-1.524-.456-2.1-1.416-2.1-1.416l.336.204.048.036.047.027.014.006.047.027c.3.168.6.3.876.408.492.192 1.08.384 1.764.516.9.168 1.956.228 3.108.012.564-.096 1.14-.264 1.74-.516.42-.156.888-.384 1.38-.708 0 0-.6.984-2.172 1.428.36.456.792.972.792.972zm-5.58-5.604c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332.012-.732-.54-1.332-1.224-1.332zm4.38 0c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332 0-.732-.54-1.332-1.224-1.332z"/>
           </svg>
         </a>
-        
-        <a href="https://www.patreon.com/harutohiroki" target="_blank" style="padding: 0 4px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -4.5 256 256" style="fill: #fff !important">
-            <path d="M45.1355837,0 L45.1355837,246.35001 L0,246.35001 L0,0 L45.1355837,0 Z M163.657111,0 C214.65668,0 256,41.3433196 256,92.3428889 C256,143.342458 214.65668,184.685778 163.657111,184.685778 C112.657542,184.685778 71.3142222,143.342458 71.3142222,92.3428889 C71.3142222,41.3433196 112.657542,0 163.657111,0 Z"/>
-          </svg>
-        </a>
 
-        <a href="https://github.com/HarutoHiroki" target="_blank" style="padding: 0 4px;">
+        <a href="https://github.com/HarutoHiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff !important">
             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
         </a>
+        
+        <a href="https://ko-fi.com/harutohiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#fff" role="img">
+            <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/>
+          </svg>
+        </a>
 
-        <a href="https://www.twitter.com/hiroaki_haruto" target="_blank" style="padding: 0 4px;">
+        <a href="https://www.twitter.com/harutohiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff !important">
             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
           </svg>
         </a>
 
-        <a href="https://www.twitch.tv/harutohiroki" target="_blank" style="padding: 0 4px;">
+        <a href="https://www.twitch.tv/harutohiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff !important">
             <path d="M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z" fill-rule="evenodd" clip-rule="evenodd"/>
           </svg>
         </a>
 
-        <a href="https://throne.me/harutohiroki" target="_blank" style="padding: 0 4px;">
+        <a href="https://throne.me/harutohiroki" target="_blank" style="padding: 0 4px; vertical-align: middle;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 298 250" style="fill: #fff !important">
             <path d="M208.15,131.15c-.98,1.98-2.27,3.77-3.82,5.34l-51.27,52.46c-.89,1.24-2.42,2.02-4.1,2.02s-3.22-.78-4.21-2.15l-51.18-52.34c-.25-.24-.52-.53-.77-.82-5.36-6.01-6.39-14.69-2.61-22.09L144.29,7.55c1.05-1.63,2.77-2.55,4.67-2.55s3.61,.91,4.61,2.44l54.23,106.29c2.85,5.57,2.98,12.09,.35,17.42Zm-57.55,91.9L15.52,85.7l-.43-.44c-1-.8-2.15-1.21-3.39-1.21-1.81,.07-3.4,.86-4.38,2.16-.92,1.22-1.19,2.8-.77,4.48L45.86,225.98c.94,3.23,2.46,6.23,4.55,8.89,.25,.34,.53,.67,.8,.99,4.67,5.41,11.71,8.38,19.01,8.38,2.83,0,5.7-.44,8.48-1.38,20.24-6.7,41.43-10.46,63.03-11.15,1.83-.14,3.65-.25,5.46-.34,1.5-.08,2.89-.8,3.79-1.97,.89-1.14,1.23-2.58,.96-3.97-.17-.83-.62-1.63-1.33-2.37ZM289.18,84.9c-1.71-1.17-3.89-1.1-6.17,.26l-.56,.34-116.15,118.31c-1.93,1.96-1.94,5.04-.02,7l20.24,20.7c2.4,2.46,5.48,4.14,8.93,4.87,9.18,1.93,18.29,4.47,27.09,7.54,2.04,.71,4.17,1.06,6.31,1.06,2.65,0,5.3-.54,7.83-1.62,4.36-1.78,8.13-4.59,10.9-8.14,2.07-2.65,3.61-5.65,4.56-8.91l39.32-135.35c.16-.63,.22-1.26,.17-1.8,0-1.72-.92-3.32-2.45-4.28Z"/>
           </svg>
         </a>
       </div>
       <p style="margin: 0;">© 2019-23 HarutoHiroki</p>
-      <div class="box-container row center"></div>
+      <div class="box-container row center" style="padding: 10px;"></div>
     </footer>
 
   </body>
