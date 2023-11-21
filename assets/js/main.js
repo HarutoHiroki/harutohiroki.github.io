@@ -30,21 +30,19 @@ window.addEventListener("load",(
 
     let bgm = document.getElementById("bgm");
     bgm.volume = 0.15;
-    bgm.muted = false;
 
     document.querySelectorAll(".bgm-toggle").forEach(function (e) {
       e.addEventListener("click", function () {
         if (bgm.paused) {
           bgm.play();
-          return;
+          document.body.classList.add("sound_playing");
+        } else {
+          bgm.pause();
+          document.body.classList.remove("sound_playing");
         }
 
-        bgm.muted = !bgm.muted;
-
         if (bgm.muted) {
-          document.body.classList.remove("sound_playing");
         } else {
-          document.body.classList.add("sound_playing");
         }
       });
     });
