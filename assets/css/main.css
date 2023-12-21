@@ -312,6 +312,10 @@ input[type="submit"]:hover {
   padding: 0 4px;
   vertical-align: middle;
 }
+.bottom-bar btn {
+  padding: 0 4px;
+  vertical-align: middle;
+}
 .nav-bar {
   height: 3em;
   background: #303030;
