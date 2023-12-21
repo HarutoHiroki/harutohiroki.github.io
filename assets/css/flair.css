@@ -9,6 +9,11 @@ ul {
 }
 
 .bgm-toggle {
+  position: absolute; 
+  margin: 0; 
+  bottom: 30; 
+  right: 5; 
+  font-size: 11.3px;
   cursor: pointer;
 }
 

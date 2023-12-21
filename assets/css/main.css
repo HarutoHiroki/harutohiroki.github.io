@@ -286,14 +286,43 @@ input[type="submit"]:hover {
   font-size: 18px; 
   margin-bottom: .2em; 
 }
+.top-bar {
+  position: absolute;
+  top: 0px;
+  vertical-align: middle;
+}
+.top-bar a {
+  color: #7f8c8d;
+  padding: 0 .4em;
+}
+.top-bar a:hover {
+  color: #7f8c8d;
+}
+.top-bar img {
+  width: 105px;
+  max-width: 105px;
+  height: auto;
+  vertical-align: middle;
+  padding: 0 .4em;
+}
+.bottom-bar {
+  padding: 10px 16px 5px 16px;
+}
+.bottom-bar a {
+  padding: 0 4px;
+  vertical-align: middle;
+}
 .nav-bar {
   height: 3em;
   background: #303030;
-  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  left:12px;
+  top: 18px;
   flex-direction: row;
   vertical-align: middle;
   justify-content: center;
-  z-index: 5
+  z-index: 5;
 }
 .nav-bar .nav-bars {
   display: inline-block;
@@ -303,6 +332,7 @@ input[type="submit"]:hover {
   border-radius: 0 5px 5px 0;
   padding: 0 0.5em;
   background: url("https://api.iconify.design/ei:navicon.svg?color=white") no-repeat center center/contain;
+  background-color: rgba(255, 255, 255, 0);
   transition: background-color 200ms ease;
   -webkit-transition: background-color 200ms ease;
   -ms-transition: background-color 200ms ease;
@@ -331,9 +361,10 @@ input[type="submit"]:hover {
   cursor: pointer;
   left: 0;
   width: calc(100% - 1em);
-  height: 3em;
+  height: 75px;
   margin-top: -4em;
-  background: url('https://api.iconify.design/ic:outline-close.svg?color=white') no-repeat center center/contain #222
+  background: url('https://api.iconify.design/ic:outline-close.svg?color=white') no-repeat center center/contain #222;
+  background-color: rgba(0, 0, 0, 1);
 }
 .nav-bar.fixed {
   position: fixed;
@@ -356,8 +387,11 @@ input[type="submit"]:hover {
 .nav-bar .nav {
   position: fixed;
   left: 0;
+  top: 0px;
   padding: 1em;
+  padding-left:0%;
   background: #181818;
+  background-color: rgb(5, 5, 5, 0.99);
   display: flex;
   height: calc(100% - 5em);
   width:100%;
@@ -372,6 +406,7 @@ input[type="submit"]:hover {
 }
 .nav-bar .nav .nav-scroller {
   display: flex;
+  width:100%;
   flex-direction: column;
   overflow-y: scroll
 }
