@@ -510,11 +510,10 @@ input[type="submit"]:hover {
     display: flex;
     font-size: 18px;
     justify-content: center;
-    line-height: 20px;
-    padding: 20px 10px;
+    line-height: 10px;
+    padding: 15px 30px;
     text-align: center;
     white-space: pre-line;
-    width: calc(45% - 30px)
   }
   .buttons .btn i {
     margin-right: 10px
@@ -522,6 +521,15 @@ input[type="submit"]:hover {
   .buttons.one-line .btn {
     padding: 14px 8px;
     width: 75%
+  }
+  h1 {
+    font-size: 35px
+  }
+  h5 {
+    font-size: 24px !important
+  }
+  p {
+    font-size: 16px !important
   }
 }
 .center {
