@@ -5,12 +5,16 @@ setInterval(function threeBar(){
     document.getElementById("bar2").style.display = "initial";
     document.getElementById("bar3").style.display = "initial";
     document.getElementById("bar4").style.display = "initial";
+    document.getElementById("wakatime_svg").style.display = "initial";
+    document.getElementById("wakatime_svg_mobile").style.display = "none";
   } else {
     document.getElementById("navbar").style.display = "initial";
     document.getElementById("bar1").style.display = "none";
     document.getElementById("bar2").style.display = "none";
     document.getElementById("bar3").style.display = "none";
     document.getElementById("bar4").style.display = "none";
+    document.getElementById("wakatime_svg").style.display = "none";
+    document.getElementById("wakatime_svg_mobile").style.display = "block";
   }
 }, 69);
 
