@@ -1,18 +1,20 @@
 setInterval(function threeBar(){
   if (document.body.offsetWidth > 505) {
-    document.getElementById("navbar").style.display = "none";
+    document.getElementById("navdrop").style.display = "none";
     document.getElementById("bar1").style.display = "initial";
     document.getElementById("bar2").style.display = "initial";
     document.getElementById("bar3").style.display = "initial";
     document.getElementById("bar4").style.display = "initial";
+    document.getElementById("bar5").style.display = "initial";
     document.getElementById("wakatime_svg").style.display = "initial";
     document.getElementById("wakatime_svg_mobile").style.display = "none";
   } else {
-    document.getElementById("navbar").style.display = "initial";
+    document.getElementById("navdrop").style.display = "initial";
     document.getElementById("bar1").style.display = "none";
     document.getElementById("bar2").style.display = "none";
     document.getElementById("bar3").style.display = "none";
     document.getElementById("bar4").style.display = "none";
+    document.getElementById("bar5").style.display = "none";
     document.getElementById("wakatime_svg").style.display = "none";
     document.getElementById("wakatime_svg_mobile").style.display = "block";
   }
@@ -21,15 +23,19 @@ setInterval(function threeBar(){
 
 window.addEventListener("load",(
   function(){
-    var e=document.getElementsByClassName("nav-bar");if(e.length){
-      var n=e[0],l=n.querySelector(".nav-bars"),t=n.querySelector(".nav-close");
-      l&&l.addEventListener("click",()=>{l.style.display = "none"; l.classList.toggle("nav--expand");}),
-      t&&t.addEventListener("click",()=>{
-        l&&l.classList.remove("nav--expand"); // jshint ignore:line
-        setTimeout(function() {
-          l.style.display ="block";
-        }, 175);
-      }); // jshint ignore:line
+    var e=document.getElementsByClassName("nav-bar");
+    if(e.length){
+      var n=e[0],l=n.querySelector(".nav-bars"),b=n.querySelector(".nav-close-btn"),t=n.querySelector(".dropdown-content");
+      l&&l.addEventListener("click",() => {
+        l.style.display = "none"; 
+        b.style.display = "block";
+        t.style.display = "block";
+      }),
+      b&&b.addEventListener("click",() => {
+        b.style.display = "none"; 
+        t.style.display = "none";
+        l.style.display = "block"; 
+      });
     }
 
     let bgm = document.getElementById("bgm");

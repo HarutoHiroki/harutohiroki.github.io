@@ -1,3 +1,71 @@
+.bar {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  flex-direction: column;
+  top: 2%; 
+  width: 100%;
+}
+.bar-logo {
+  flex: 1;
+}
+.bar-btn {
+  margin-top:.5%;
+}
+
+.nav-bar .nav-close-btn {
+  float:left;
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+  border-radius: 0 5px 5px 0;
+  padding: 0 0.5em;
+  background: url("https://api.iconify.design/ic:outline-close.svg?color=white") no-repeat center center/contain;
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(5, 5, 5, 0.99);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: e8e6e3;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #000;}
+
+input[type=text], input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.fbarcontent {
+  margin-top: 1% !important;
+}
+
+a:hover {color: #1abc9c;}
+
 ul {
   list-style: none;
   vertical-align: baseline;
@@ -13,7 +81,7 @@ ul {
   margin: 0; 
   bottom: 30; 
   right: 5; 
-  font-size: 11.3px;
+  font-size: 11.3px !important;
   cursor: pointer;
 }
 
@@ -228,5 +296,4 @@ ul {
   width: 100%;
   height: 84%;
   transform: translate(15px, -15px);
-  margin-bottom: 3.5px;
 }
