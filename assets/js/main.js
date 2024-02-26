@@ -50,10 +50,6 @@ window.addEventListener("load",(
           bgm.pause();
           document.body.classList.remove("sound_playing");
         }
-
-        if (bgm.muted) {
-        } else {
-        }
       });
     });
   }
