@@ -591,6 +591,14 @@ input[type="submit"]:hover {
   height: 100vh;
   min-height: 55.959vw
 }
+.proj_links {
+  text-decoration-line: underline;
+  color: #1abc9c;
+}
+
+.proj_links:hover {
+  color: #00ffd9;
+}
 ::-webkit-scrollbar {
   width: 7px;
   background: #151515
