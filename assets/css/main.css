@@ -591,13 +591,15 @@ input[type="submit"]:hover {
   height: 100vh;
   min-height: 55.959vw
 }
-.proj_links {
-  text-decoration-line: underline;
+.proj_links a {
   color: #1abc9c;
 }
-
-.proj_links:hover {
+.proj_links a:hover {
+  text-decoration-line: underline;
   color: #00ffd9;
+}
+.alexflipnote_link {
+  color: #14bae4 !important;
 }
 ::-webkit-scrollbar {
   width: 7px;
