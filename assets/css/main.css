@@ -52,11 +52,11 @@ p {
   line-height: 1.3
 }
 a {
-  color: #1eaedb;
+  color: #ffffff;
   text-decoration: none
 }
 a:hover {
-  color: #0fa0ce
+  color: #1abc9c;
 }
 h1 {
   font-size: 3.8rem;
@@ -143,23 +143,6 @@ caption, tbody, tfoot, thead, tr, th, td  {
   justify-content: center;
   text-align: center
 }
-button {
-  background-color: #464646;
-  border: 0;
-  box-shadow: 0 3px 0 0 #141414;
-  color: #fff;
-  margin: 0.5em;
-  outline: none;
-  padding: 0.3em 0.8em;
-  position: relative
-}
-button.btn {
-  box-shadow: unset !important
-}
-button:active {
-  box-shadow: none !important;
-  top: 2
-}
 .btn,
 input[type="submit"] {
   backface-visibility: hidden;
@@ -227,9 +210,6 @@ input[type="submit"]:hover {
   -moz-transition: opacity 1s ease-in;
   -o-transition: opacity 1s ease-in;
   position: absolute
-}
-.nav-bar:not(.fixed)+.fullscreen .background {
-  height: calc(100% - 3em)
 }
 .fullscreen .me {
   justify-content: center;
