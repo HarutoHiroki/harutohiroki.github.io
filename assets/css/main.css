@@ -592,3 +592,31 @@ input[type="submit"]:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #404047;
 }
+
+@media (min-width: 511px) {
+  #navdrop {
+    display: none;
+  }
+  #bar1,
+  #bar2,
+  #bar3,
+  #bar4,
+  #bar5,
+  #br {
+    display: initial;
+  }
+}
+
+@media (max-width: 510px) {
+  #navdrop {
+    display: initial;
+  }
+  #bar1,
+  #bar2,
+  #bar3,
+  #bar4,
+  #bar5,
+  #br {
+    display: none;
+  }
+}

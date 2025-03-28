@@ -1,26 +1,3 @@
-setInterval(function threeBar(){
-  if (document.body.offsetWidth > 505) {
-    document.getElementById("navdrop").style.display = "none";
-    document.getElementById("bar1").style.display = "initial";
-    document.getElementById("bar2").style.display = "initial";
-    document.getElementById("bar3").style.display = "initial";
-    document.getElementById("bar4").style.display = "initial";
-    //document.getElementById("bar5").style.display = "initial";
-    document.getElementById("wakatime_svg").style.display = "initial";
-    document.getElementById("wakatime_svg_mobile").style.display = "none";
-  } else {
-    document.getElementById("navdrop").style.display = "initial";
-    document.getElementById("bar1").style.display = "none";
-    document.getElementById("bar2").style.display = "none";
-    document.getElementById("bar3").style.display = "none";
-    document.getElementById("bar4").style.display = "none";
-    //document.getElementById("bar5").style.display = "none";
-    document.getElementById("wakatime_svg").style.display = "none";
-    document.getElementById("wakatime_svg_mobile").style.display = "block";
-  }
-}, 69);
-
-
 window.addEventListener("load",(
   function(){
     var e=document.getElementsByClassName("nav-bar");
