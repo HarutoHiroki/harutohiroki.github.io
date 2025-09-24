@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Haruto's GraphTool",
+    "category": "Frontend",
+    "tagline": "Interactive graph visualizer",
+    "description": "A fork of the public CrinGraph repository, Haruto's GraphTool extends the original with realtime comparison and convenient import/export for headphone and in-ear monitor equalization, letting you load measurements, apply parametric and graphic EQ adjustments live, compare multiple profiles side-by-side, and quickly generate exportable EQ presets. Built for audiophiles and audio engineers who need fast iterative control when tuning listening profiles.",
+    "tech": "JavaScript, D3.js, Web Audio API",
+    "year": 2023,
+    "images": [
+      { "src": "assets/images/projects/graphtool-1.png", "alt": "Screenshot of Haruto's Graph Tool interface showing EQ curves" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://graphtool.harutohiroki.com/"},
+      {"label": "Source Code", "url": "https://github.com/HarutoHiroki/PublicGraphTool"}
+    ],
+    "notes": "Ongoing maintenance; accepts contributions."
+  },
+  {
+    "name": "Personal Website",
+    "category": "Frontend",
+    "tagline": "Portfolio and blog site",
+    "description": "My personal website, built to showcase my projects, share my blog posts, and provide a central hub for my online presence. The site features a clean, modern design with easy navigation to help visitors explore my work and learn more about me.",
+    "tech": "HTML, CSS, JavaScript, Web Audio API",
+    "year": 2019,
+    "images": [
+      { "src": "assets/images/projects/personal-1.png", "alt": "Personal website homepage" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://harutohiroki.github.io"}
+    ]
+  },
+  {
+    "name": "Starweaver Audio Labs",
+    "category": "Frontend",
+    "tagline": "Company website for audio hardware",
+    "description": "A website I built for my audio hardware startup, Starweaver Audio Labs. The site showcases our products, shares our story, and provides resources for audiophiles and audio engineers. It features a clean, modern design with intuitive navigation to help visitors explore our offerings and learn more about our mission to deliver high-quality audio solutions.",
+    "tech": "HTML, CSS, JavaScript",
+    "year": 2025,
+    "images": [
+      { "src": "assets/images/projects/starweaver-1.png", "alt": "Starweaver Audio Labs website homepage" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://starweaver.harutohiroki.com"}
+    ]
+  },
+  {
+    "name": "Paper++",
+    "category": "Backend",
+    "tagline": "Computer Vision Compiler",
+    "description": "A program that reads user submitted hand-written Java code on paper and compiles it into a runnable Java program. It uses computer vision techniques to detect and interpret the handwritten code, converting it into syntactically correct Java source code, while also detecting malicious code patterns to ensure security. Aimed at educators who wants to grade students' code written on paper.",
+    "tech": "Javascript, Java, Google Cloud Vision API, React.js, express.js",
+    "year": 2023,
+    "images": [
+      { "src": "assets/images/projects/paperpp-1.png", "alt": "Screenshot of Paper++ interface showing uploaded image and generated code" }
+    ],
+    "links": [
+      {"label": "DevPost", "url": "https://devpost.com/software/paper-pm7okl"},
+      {"label": "Source Code", "url": "https://github.com/HarutoHiroki/PaperPlusPlus"}
+    ]
+  },
+  {
+    "name": "Project Polaris",
+    "category": "Hardware",
+    "tagline": "High performance audio DAC",
+    "description": "A high performance audio DAC (digital-to-analog converter) designed for audiophiles and audio engineers who demand the best sound quality. The Polaris DAC features a custom PCB design with high-quality components, including a premium FPGA (York-Nano), low-noise linear power supply, and precision clocking to minimize jitter and distortion. The result is a clean, detailed sound that faithfully reproduces the original recording, making it ideal for critical listening and professional audio applications.",
+    "tech": "KiCad, FPGA (York-Nano), Audio DAC (AK4118 AEQ), Analog Devices Linear Regulators (LT3045, LT3094)",
+    "year": 2025,
+    "images": [
+      { "src": "assets/images/projects/polaris-1.png", "alt": "High performance audio DAC PCB prototype" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://starweaver.harutohiroki.com/products"}
+    ]
+  },
+  {
+    "name": "alexflipnote.js",
+    "category": "Backend",
+    "tagline": "Node.js library handling image generation and manipulation APIs from AlexFlipnote",
+    "description": "A Node.js library that provides easy access to the image generation and manipulation APIs from AlexFlipnote, a popular online image generation tool. Aimed at Discord.js developers, the library allows developers to easily integrate AlexFlipnote's image generation capabilities into their Discord bots, enabling them to create custom images and memes on-the-fly.",
+    "tech": "JavaScript, Node.js, Discord.js",
+    "year": 2020,
+    "images": [
+      { "src": "assets/images/projects/alexflipnote-1.png", "alt": "Screenshot of alexflipnote.js NPM page" }
+    ],
+    "links": [
+      {"label": "NPM", "url": "https://www.npmjs.com/package/alexflipnote.js"},
+      {"label": "Source Code", "url": "https://github.com/HarutoHiroki/alexflipnote.js"}
+    ]
+  }
+]

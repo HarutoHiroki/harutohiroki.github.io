@@ -27,6 +27,16 @@
   padding: 0 .3em;
 }
 
+.bar-btn a {
+  color: #7f8c8d !important;
+  padding: 0 .3em;
+}
+
+.bar-btn a:hover {
+  color: #fff !important;
+  filter:brightness(100%) !important;
+}
+
 .nav-bar .nav-close-btn {
   float:left;
   cursor: pointer;
@@ -291,4 +301,326 @@ ul {
   width: 100%;
   height: 80%;
   transform: translate(15px, -15px);
+}
+
+input[type=text], input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.fbarcontent {
+  margin-top: 1% !important;
+}
+
+a:hover {color: #1abc9c;}
+
+.fs {
+  position: relative
+}
+
+.fs .cont {
+  box-sizing: border-box;
+  margin: 0 auto 5em;
+  max-width: 1100px;
+  padding: 0 2em;
+  position: relative;
+}
+
+.co {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.tiles-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  gap: 18px;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* compatibility: if some code still expects a grid, use .tiles-grid */
+.tiles-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap: 28px;
+}
+
+/* NEW: full-width horizontal tile / bar layout */
+/* class names supported:
+   - .tile-bar (generic tile)
+   - .project-bar (used by generate_projects.js)
+*/
+.tile-bar,
+.project-bar {
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  margin-bottom: 12px;
+  color: #fff;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* hover lift */
+.tile-bar:hover,
+.project-bar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.45);
+}
+
+/* left media column */
+.tile-media,
+.project-media {
+  flex: 0 0 320px;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+}
+.tile-media img,
+.project-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* right info column */
+.tile-info,
+.project-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.tile-title-row,
+.project-title-row {
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+.tile-title,
+.project-title {
+  font-size: 1.35rem;
+  margin: 0;
+  color: #4fe7c9;
+}
+.tile-year,
+.project-year {
+  color:#cfd8d6;
+  font-size:0.95rem;
+  opacity:0.9;
+}
+.tile-tagline,
+.project-tagline {
+  margin: 6px 0 10px;
+  color: #dbe6e3;
+  font-style: italic;
+}
+.tile-desc,
+.project-desc {
+  margin: 0 0 10px;
+  color: #eaf6f3;
+  line-height: 1.55;
+}
+.tile-tech,
+.project-tech {
+  margin: 6px 0;
+  color: #bfeee0;
+}
+.project-links {
+  margin: 0;
+}
+.tile-links a,
+.project-links a {
+  color: #fff;
+  text-decoration: underline;
+}
+.tile-links a:hover,
+.project-links a:hover { opacity: 0.85; }
+
+/* small stacked variant (if you want an alternate compact tile) */
+.tile-compact {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* ---------- Removed / neutralized popup-specific styles ----------
+   (these rules are intentionally stripped/overridden so no popup UI shows) */
+.popup-view,
+.popup-card {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+.carousel-container { 
+  position: relative;
+}
+.carousel-images { position: relative; }
+.carousel-image { display: none; height:100%; }
+.carousel-image.active { display: block; }
+.carousel-container .prev-btn,
+.carousel-container .next-btn {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.carousel-container .prev-btn {
+  left: 0.5em;
+}
+.carousel-container .next-btn {
+  right: 0.5em;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(-50%) scale(1); }
+  50%  { transform: translateY(-50%) scale(0.9); }
+  100% { transform: translateY(-50%) scale(1); }
+}
+
+.carousel-container .prev-btn:active,
+.carousel-container .next-btn:active {
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: bounce 0.1s ease;
+}
+
+.loader-sw {
+  background-color: #151515;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  pointer-events: none;
+}
+.loader-sw img {
+  display: inline-block;
+  width: 175px;
+  height: auto;
+}
+.loader-sw h1 {
+  margin: 30px 0px 0px 6px;
+  color: white;
+  letter-spacing: 4px;
+  text-align: center;
+  width: 9.5ch;
+  animation: typing 1s steps(9), blink .5s step-end infinite
+alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.dim-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.dim-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 1100px) {
+  .tile-media,
+  .project-media { flex: 0 0 260px; max-width: 45%; }
+}
+@media (max-width: 880px) {
+  .tile-bar,
+  .project-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  .tile-media,
+  .project-media {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+  .tile-title,
+  .project-title { font-size: 1.15rem; }
+}
+
+/* ---------- Backwards-compatibility: map old visuals to tile-card (if used) ---------- */
+.tile .tile-card,
+.tile-card {
+  z-index: 0;
+  background: #1d1f21;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 10px;
+  padding: 0;
 }
