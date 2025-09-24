@@ -447,7 +447,7 @@ a:hover {color: #1abc9c;}
 .tile-tech,
 .project-tech {
   margin: 6px 0;
-  color: #bfeee0;
+  color: #bfeee0 !important;
 }
 .project-links {
   margin: 0;
