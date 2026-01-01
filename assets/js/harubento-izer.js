@@ -5,7 +5,7 @@ const bentoConfig = {
     enabled: true,
     container: '#bento-nav',
     logo: 'HarutoHiroki',
-    logoUrl: '#',
+    logoUrl: '/',
     links: [
       { label: 'Home', url: '/', active: true},
       { label: 'Works', url: 'projects.html'},

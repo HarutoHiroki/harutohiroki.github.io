@@ -1,5 +1,19 @@
 [
   {
+    "name": "Yet Another BentoBox Inspired Framework",
+    "category": "Frontend",
+    "tagline": "A lightweight JS framework inspired by the highly popular Japanese Lunchbox",
+    "description": "A lightweight, modular JavaScript framework inspired by the Japanese Bento Box, designed to build visually engaging, component-driven web interfaces with pure HTML, CSS, and vanilla JS, no heavy frameworks or dependencies. Born from a desire to avoid the bloat, complexity, and dependency hell of modern frontend stacks, this project embodies the philosophy of simplicity and full control, as discussed in my blog.",
+    "tech": "CSS, JavaScript",
+    "year": 2026,
+    "images": [
+      { "src": "assets/images/projects/bentoui-1.webp", "alt": "Yet Another BentoBox Inspired Framework homepage" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://harutohiroki.com/bento-ui"}
+    ]
+  },
+  {
     "name": "Starweaver Audio Labs",
     "category": "Frontend",
     "tagline": "Company website for audio hardware",
@@ -7,7 +21,7 @@
     "tech": "HTML, CSS, JavaScript",
     "year": 2025,
     "images": [
-      { "src": "assets/images/projects/starweaver-1.png", "alt": "Starweaver Audio Labs website homepage" }
+      { "src": "assets/images/projects/starweaver-1.webp", "alt": "Starweaver Audio Labs website homepage" }
     ],
     "links": [
       {"label": "Website", "url": "https://starweaver.harutohiroki.com"}
@@ -21,7 +35,7 @@
     "tech": "KiCad, FPGA (York-Nano), Audio DAC (AK4118 AEQ), Analog Devices Linear Regulators (LT3045; LT3094)",
     "year": 2025,
     "images": [
-      { "src": "assets/images/projects/polaris-1.png", "alt": "High performance audio DAC PCB prototype" }
+      { "src": "assets/images/projects/polaris-1.webp", "alt": "High performance audio DAC PCB prototype" }
     ],
     "links": [
       {"label": "Website", "url": "https://starweaver.harutohiroki.com/products"}
@@ -35,7 +49,7 @@
     "tech": "JavaScript, D3.js, Web Audio API",
     "year": 2023,
     "images": [
-      { "src": "assets/images/projects/graphtool-1.png", "alt": "Screenshot of Haruto's Graph Tool interface showing EQ curves" }
+      { "src": "assets/images/projects/graphtool-1.webp", "alt": "Screenshot of Haruto's Graph Tool interface showing EQ curves" }
     ],
     "links": [
       {"label": "Website", "url": "https://graphtool.harutohiroki.com/"},
@@ -51,7 +65,7 @@
     "tech": "Javascript, Java, Google Cloud Vision API, React.js, express.js",
     "year": 2023,
     "images": [
-      { "src": "assets/images/projects/paperpp-1.png", "alt": "Screenshot of Paper++ interface showing uploaded image and generated code" }
+      { "src": "assets/images/projects/paperpp-1.webp", "alt": "Screenshot of Paper++ interface showing uploaded image and generated code" }
     ],
     "links": [
       {"label": "DevPost", "url": "https://devpost.com/software/paper-pm7okl"},
@@ -66,7 +80,7 @@
     "tech": "JavaScript, Node.js, Discord.js",
     "year": 2020,
     "images": [
-      { "src": "assets/images/projects/alexflipnote-1.png", "alt": "Screenshot of alexflipnote.js NPM page" }
+      { "src": "assets/images/projects/alexflipnote-1.webp", "alt": "Screenshot of alexflipnote.js NPM page" }
     ],
     "links": [
       {"label": "NPM", "url": "https://www.npmjs.com/package/alexflipnote.js"},
@@ -81,7 +95,7 @@
     "tech": "HTML, CSS, JavaScript, Web Audio API",
     "year": 2019,
     "images": [
-      { "src": "assets/images/projects/personal-1.png", "alt": "Personal website homepage" }
+      { "src": "assets/images/projects/personal-1.webp", "alt": "Personal website homepage" }
     ],
     "links": [
       {"label": "Website", "url": "https://harutohiroki.github.io"}
