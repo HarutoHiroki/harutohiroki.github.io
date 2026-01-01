@@ -130,7 +130,7 @@ const bentoConfig = {
       y: 3,
       content: {
         username: 'HarutoHiroki',
-        apiKey: '__LASTFM_API_KEY__', // I know it's still exposed here, but oh well
+        apiKey: 'e8b54b9a65ca13b66db86cb4398f1f02', // I know it's still exposed here, but oh well
         title: 'Recently Played'
       }
     },
