@@ -8,7 +8,7 @@
       "personal",
       "intro"
     ],
-    "file": "hello-world.md",
+    "file": "hello-world",
     "readTime": 3
   },
   {
@@ -21,7 +21,7 @@
       "web-dev",
       "opinion"
     ],
-    "file": "why-vanilla-js.md",
+    "file": "why-vanilla-js",
     "readTime": 4
   }
 ]
