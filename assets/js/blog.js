@@ -48,9 +48,8 @@ class BlogEngine {
     this.showLoading();
 
     try {
-      // Get base path for fetching (handles subdirectory deployment)
-      const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-      const indexUrl = basePath + this.config.indexFile;
+      // Use relative path from current page (works on GitHub Pages and local dev)
+      const indexUrl = this.config.indexFile;
       
       console.log('Loading posts from:', indexUrl);
       
@@ -388,9 +387,8 @@ class BlogEngine {
     }
 
     try {
-      // Load markdown file with proper base path
-      const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-      const postUrl = basePath + `${this.config.postsDirectory}/${post.file}`;
+      // Load markdown file using relative path
+      const postUrl = `${this.config.postsDirectory}/${post.file}`;
       
       const response = await fetch(postUrl);
       if (!response.ok) {
