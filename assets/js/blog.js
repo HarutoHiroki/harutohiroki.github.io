@@ -430,15 +430,10 @@ class BlogEngine {
     }
 
     try {
-      // Try to load markdown file - handles both GitHub Pages (no extension) and local dev (.md)
-      const baseUrl = `${this.config.postsDirectory}/${post.file}`;
-      let response = await fetch(baseUrl);
+      // Load markdown file using configured path
+      const postUrl = `${this.config.postsDirectory}/${post.file}`;
       
-      // If failed and doesn't end with .md, try adding .md extension (for local dev)
-      if (!response.ok && !post.file.endsWith('.md')) {
-        response = await fetch(baseUrl + '.md');
-      }
-      
+      const response = await fetch(postUrl);
       if (!response.ok) {
         throw new Error('Failed to load post');
       }
