@@ -24,18 +24,58 @@ class BlogEngine {
     this.articleEl = document.querySelector(this.config.articleContainer);
     this.listEl = document.querySelector(this.config.listContainer);
 
+    // Bind hash change handler
+    this._boundHashHandler = this.handleHashChange.bind(this);
+    window.addEventListener('hashchange', this._boundHashHandler);
+
     this.init();
   }
 
+  /**
+   * Parse the current hash to get route info
+   * Supports: #post/slug, #tag/tagname, or empty for list
+   */
+  parseHash() {
+    const hash = window.location.hash.slice(1); // Remove #
+    if (!hash) return { type: 'list' };
+    
+    const parts = hash.split('/');
+    if (parts[0] === 'post' && parts[1]) {
+      return { type: 'post', slug: decodeURIComponent(parts[1]) };
+    }
+    if (parts[0] === 'tag' && parts[1]) {
+      return { type: 'tag', tag: decodeURIComponent(parts[1]) };
+    }
+    return { type: 'list' };
+  }
+
+  /**
+   * Handle hash changes for navigation
+   */
+  async handleHashChange() {
+    const route = this.parseHash();
+    
+    if (route.type === 'post') {
+      await this.showPost(route.slug, false); // false = don't update hash again
+    } else if (route.type === 'tag') {
+      this.filterByTag(route.tag);
+      this.showListView();
+    } else {
+      this.showListView();
+    }
+  }
+
   async init() {
-    // Check URL for specific post
-    const urlParams = new URLSearchParams(window.location.search);
-    const postSlug = urlParams.get('post');
-
     await this.loadPosts();
-
-    if (postSlug) {
-      await this.showPost(postSlug);
+    
+    // Handle initial route based on hash
+    const route = this.parseHash();
+    
+    if (route.type === 'post') {
+      await this.showPost(route.slug, false);
+    } else if (route.type === 'tag') {
+      this.filterByTag(route.tag);
+      this.renderPostList();
     } else {
       this.renderPostList();
     }
@@ -331,7 +371,7 @@ class BlogEngine {
     ).join('');
 
     return `
-      <a href="?post=${post.slug}" class="blog-post-card" data-slug="${post.slug}">
+      <a href="#post/${encodeURIComponent(post.slug)}" class="blog-post-card" data-slug="${post.slug}">
         <h2 class="blog-post-card__title">${this.escapeHtml(post.title)}</h2>
         <div class="blog-post-card__meta">
           <span class="blog-post-card__date">
@@ -361,15 +401,18 @@ class BlogEngine {
   /**
    * Show a specific blog post
    */
-  async showPost(slug) {
+  async showPost(slug, updateHash = true) {
     const post = this.posts.find(p => p.slug === slug);
     if (!post) {
       this.showList();
       return;
     }
 
-    // Update URL without reload
-    history.pushState({ post: slug }, '', `?post=${slug}`);
+    // Update hash without triggering handler again
+    if (updateHash) {
+      window.location.hash = `post/${encodeURIComponent(slug)}`;
+      return; // hashchange event will call showPost again with updateHash=false
+    }
 
     // Hide list, show article
     if (this.listEl) this.listEl.style.display = 'none';
@@ -429,17 +472,10 @@ class BlogEngine {
     
     if (tagsEl) {
       tagsEl.innerHTML = (post.tags || []).map(tag => 
-        `<span class="blog-article__tag" data-tag="${this.escapeHtml(tag)}" style="cursor: pointer;">${this.escapeHtml(tag)}</span>`
+        `<a href="#tag/${encodeURIComponent(tag)}" class="blog-article__tag" data-tag="${this.escapeHtml(tag)}">${this.escapeHtml(tag)}</a>`
       ).join('');
       
-      // Add click handlers for article tags
-      tagsEl.querySelectorAll('.blog-article__tag').forEach(tagEl => {
-        tagEl.addEventListener('click', () => {
-          const tag = tagEl.dataset.tag;
-          this.filterByTag(tag);
-          this.showList();
-        });
-      });
+      // Click handlers not needed - hash navigation handles it
     }
 
     if (contentEl) {
@@ -456,13 +492,22 @@ class BlogEngine {
   }
 
   /**
-   * Show the post list
+   * Show the post list view (updates display without changing hash)
    */
-  showList() {
-    history.pushState({}, '', window.location.pathname);
+  showListView() {
     if (this.listEl) this.listEl.style.display = 'block';
     if (this.articleEl) this.articleEl.style.display = 'none';
     document.title = 'Blog - HarutoHiroki';
+    this.renderPostList();
+  }
+
+  /**
+   * Show the post list (navigates to list by clearing hash)
+   */
+  showList() {
+    // Clear hash to go back to list
+    history.pushState(null, '', window.location.pathname);
+    this.showListView();
   }
 
   /**
@@ -890,16 +935,4 @@ class BlogEngine {
   }
 }
 
-// Handle browser back/forward
-window.addEventListener('popstate', (e) => {
-  if (typeof blogEngine !== 'undefined') {
-    const urlParams = new URLSearchParams(window.location.search);
-    const postSlug = urlParams.get('post');
-    
-    if (postSlug) {
-      blogEngine.showPost(postSlug);
-    } else {
-      blogEngine.showList();
-    }
-  }
-});
+// No popstate handler needed - hashchange handles everything
