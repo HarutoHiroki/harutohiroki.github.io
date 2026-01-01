@@ -6,12 +6,12 @@
 class BlogEngine {
   constructor(config = {}) {
     this.config = {
-      postsDirectory: config.postsDirectory || 'posts',
+      postsDirectory: config.postsDirectory || '/posts',
       postsPerPage: config.postsPerPage || 10,
       container: config.container || '#blog-posts',
       articleContainer: config.articleContainer || '#blog-article',
       listContainer: config.listContainer || '#blog-list',
-      indexFile: config.indexFile || 'posts/index.json'
+      indexFile: config.indexFile || '/posts/index.json'
     };
 
     this.posts = [];

@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog - HarutoHiroki">
   <title>Blog - HarutoHiroki</title>
+  
+  <!-- Meta Data -->
+  <meta property="og:site_name" content="harutohiroki.com"/>
+  <meta property="og:title" content="HarutoHiroki's Blog" />
+  <meta property="og:url" content="https://harutohiroki.com/blog.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/assets/images/cropped.png"/>
+  <meta property="og:description" content="Thoughts, tutorials, and random musings by HarutoHiroki"/>
+  <meta property="og:locale" content="en_US" />
+  
+  <meta name="twitter:title" content="HarutoHiroki's Blog"/>
+  <meta name="twitter:description" content="Thoughts, tutorials, and random musings by HarutoHiroki"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@hiroaki_haruto"/>
+  <meta name="twitter:image" content="/assets/images/cropped.png"/>
+  <meta name="twitter:url" content="https://harutohiroki.com/blog.html"/>
+  
+  <meta name="description" content="Thoughts, tutorials, and random musings by HarutoHiroki" />
+  <meta name="keywords" content="HarutoHiroki, Blog, Developer, Programming, Web Development">
+  <link rel="canonical" href="https://harutohiroki.com/blog.html"/>
+  <meta name="theme-color" content="#00FFD9">
+  
   <link rel="icon" type="image/png" href="assets/images/transparent.png">
   <link rel="stylesheet" href="assets/css/bento.css">
   <link rel="stylesheet" href="assets/css/blog.css">
@@ -70,10 +91,11 @@
 
     // Initialize blog engine
     const blogEngine = new BlogEngine({
-      postsDirectory: 'posts',
+      postsDirectory: '/posts',
       postsPerPage: 10,
       container: '#blog-posts',
-      articleContainer: '#blog-article'
+      articleContainer: '#blog-article',
+      indexFile: '/posts/index.json'
     });
   </script>
 </body>
