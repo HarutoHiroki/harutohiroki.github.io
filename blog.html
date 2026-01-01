@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog - HarutoHiroki">
+  <title>Blog - HarutoHiroki</title>
+  <link rel="icon" type="image/png" href="assets/images/transparent.png">
+  <link rel="stylesheet" href="assets/css/bento.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body>
+  <nav id="bento-nav" class="bento-nav"></nav>
+
+  <!-- Main Container -->
+  <main class="bento-container">
+    <!-- Blog List View -->
+    <div id="blog-list" class="blog-list">
+      <header class="blog-header">
+        <h1 class="blog-header__title">Blog</h1>
+        <p class="blog-header__subtitle">Thoughts, tutorials, and random musings</p>
+      </header>
+      <div id="blog-posts" class="blog-posts"></div>
+    </div>
+
+    <!-- Blog Article View (hidden by default) -->
+    <article id="blog-article" class="blog-article" style="display: none;">
+      <a href="#" class="blog-article__back" onclick="blogEngine.showList(); return false;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to posts
+      </a>
+      <header class="blog-article__header">
+        <h1 id="article-title" class="blog-article__title"></h1>
+        <div class="blog-article__meta">
+          <span id="article-date" class="blog-article__date"></span>
+          <span class="blog-article__separator">•</span>
+          <span id="article-readtime" class="blog-article__readtime"></span>
+        </div>
+        <div id="article-tags" class="blog-article__tags"></div>
+      </header>
+      <div id="article-content" class="blog-article__content"></div>
+    </article>
+  </main>
+
+  <script src="assets/js/bento.js"></script>
+  <script src="assets/js/blog.js"></script>
+  <script>
+    // Initialize navigation only (no grid)
+    const blogNav = new BentoUI({
+      container: null,
+      nav: {
+        enabled: true,
+        container: '#bento-nav',
+        logo: 'HarutoHiroki',
+        logoUrl: 'index.html',
+        links: [
+          { label: 'Home', url: 'index.html' },
+          { label: 'Works', url: 'projects.html' },
+          { label: 'Blog', url: 'blog.html', active: true },
+          { label: 'Graphs', url: 'https://graphtool.harutohiroki.com' },
+          { label: 'Contact', url: 'mailto:root@harutohiroki.com' }
+        ],
+        theme: 'dark'
+      },
+      backToTop: { enabled: true },
+      cards: []
+    });
+
+    // Initialize blog engine
+    const blogEngine = new BlogEngine({
+      postsDirectory: 'posts',
+      postsPerPage: 10,
+      container: '#blog-posts',
+      articleContainer: '#blog-article'
+    });
+  </script>
+</body>
+</html>

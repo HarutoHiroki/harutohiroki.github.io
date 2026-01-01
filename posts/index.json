@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World!",
+    "date": "2025-12-31",
+    "excerpt": "Welcome to my blog! 🎉 This is the first post on my new blog, and I'm excited to finally have a place to share my thoughts, projects, and random musings with the world. I'm HarutoHiroki...",
+    "tags": [
+      "personal",
+      "intro"
+    ],
+    "file": "hello-world.md",
+    "readTime": 3
+  },
+  {
+    "slug": "why-vanilla-js",
+    "title": "Why I Built This Site With Vanilla JavaScript",
+    "date": "2026-01-01",
+    "excerpt": "In 2026, the web development landscape is dominated by frameworks. React, Vue, Svelte, Solid, Qwik... the list goes on. So why did I decide to build this entire site, including this blog, with plain v...",
+    "tags": [
+      "javascript",
+      "web-dev",
+      "opinion"
+    ],
+    "file": "why-vanilla-js.md",
+    "readTime": 4
+  }
+]

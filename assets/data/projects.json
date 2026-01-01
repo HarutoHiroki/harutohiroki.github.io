@@ -1,5 +1,33 @@
 [
   {
+    "name": "Starweaver Audio Labs",
+    "category": "Frontend",
+    "tagline": "Company website for audio hardware",
+    "description": "A website I built for my audio hardware startup, Starweaver Audio Labs. The site showcases our products, shares our story, and provides resources for audiophiles and audio engineers. It features a clean, modern design with intuitive navigation to help visitors explore our offerings and learn more about our mission to deliver high-quality audio solutions.",
+    "tech": "HTML, CSS, JavaScript",
+    "year": 2025,
+    "images": [
+      { "src": "assets/images/projects/starweaver-1.png", "alt": "Starweaver Audio Labs website homepage" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://starweaver.harutohiroki.com"}
+    ]
+  },
+  {
+    "name": "Project Polaris",
+    "category": "Hardware",
+    "tagline": "High performance audio DAC",
+    "description": "A high performance audio DAC (digital-to-analog converter) designed for audiophiles and audio engineers who demand the best sound quality. The Polaris DAC features a custom PCB design with high-quality components, including a premium FPGA (York-Nano), low-noise linear power supply, and precision clocking to minimize jitter and distortion. The result is a clean, detailed sound that faithfully reproduces the original recording, making it ideal for critical listening and professional audio applications.",
+    "tech": "KiCad, FPGA (York-Nano), Audio DAC (AK4118 AEQ), Analog Devices Linear Regulators (LT3045; LT3094)",
+    "year": 2025,
+    "images": [
+      { "src": "assets/images/projects/polaris-1.png", "alt": "High performance audio DAC PCB prototype" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://starweaver.harutohiroki.com/products"}
+    ]
+  },
+  {
     "name": "Haruto's GraphTool",
     "category": "Frontend",
     "tagline": "Interactive graph visualizer",
@@ -14,34 +42,6 @@
       {"label": "Source Code", "url": "https://github.com/HarutoHiroki/PublicGraphTool"}
     ],
     "notes": "Ongoing maintenance; accepts contributions."
-  },
-  {
-    "name": "Personal Website",
-    "category": "Frontend",
-    "tagline": "Portfolio and blog site",
-    "description": "My personal website, built to showcase my projects, share my blog posts, and provide a central hub for my online presence. The site features a clean, modern design with easy navigation to help visitors explore my work and learn more about me.",
-    "tech": "HTML, CSS, JavaScript, Web Audio API",
-    "year": 2019,
-    "images": [
-      { "src": "assets/images/projects/personal-1.png", "alt": "Personal website homepage" }
-    ],
-    "links": [
-      {"label": "Website", "url": "https://harutohiroki.github.io"}
-    ]
-  },
-  {
-    "name": "Starweaver Audio Labs",
-    "category": "Frontend",
-    "tagline": "Company website for audio hardware",
-    "description": "A website I built for my audio hardware startup, Starweaver Audio Labs. The site showcases our products, shares our story, and provides resources for audiophiles and audio engineers. It features a clean, modern design with intuitive navigation to help visitors explore our offerings and learn more about our mission to deliver high-quality audio solutions.",
-    "tech": "HTML, CSS, JavaScript",
-    "year": 2025,
-    "images": [
-      { "src": "assets/images/projects/starweaver-1.png", "alt": "Starweaver Audio Labs website homepage" }
-    ],
-    "links": [
-      {"label": "Website", "url": "https://starweaver.harutohiroki.com"}
-    ]
   },
   {
     "name": "Paper++",
@@ -59,20 +59,6 @@
     ]
   },
   {
-    "name": "Project Polaris",
-    "category": "Hardware",
-    "tagline": "High performance audio DAC",
-    "description": "A high performance audio DAC (digital-to-analog converter) designed for audiophiles and audio engineers who demand the best sound quality. The Polaris DAC features a custom PCB design with high-quality components, including a premium FPGA (York-Nano), low-noise linear power supply, and precision clocking to minimize jitter and distortion. The result is a clean, detailed sound that faithfully reproduces the original recording, making it ideal for critical listening and professional audio applications.",
-    "tech": "KiCad, FPGA (York-Nano), Audio DAC (AK4118 AEQ), Analog Devices Linear Regulators (LT3045, LT3094)",
-    "year": 2025,
-    "images": [
-      { "src": "assets/images/projects/polaris-1.png", "alt": "High performance audio DAC PCB prototype" }
-    ],
-    "links": [
-      {"label": "Website", "url": "https://starweaver.harutohiroki.com/products"}
-    ]
-  },
-  {
     "name": "alexflipnote.js",
     "category": "Backend",
     "tagline": "Node.js library handling image generation and manipulation APIs from AlexFlipnote",
@@ -85,6 +71,20 @@
     "links": [
       {"label": "NPM", "url": "https://www.npmjs.com/package/alexflipnote.js"},
       {"label": "Source Code", "url": "https://github.com/HarutoHiroki/alexflipnote.js"}
+    ]
+  },
+  {
+    "name": "Personal Website",
+    "category": "Frontend",
+    "tagline": "Portfolio and blog site",
+    "description": "My personal website, built to showcase my projects, share my blog posts, and provide a central hub for my online presence. The site features a clean, modern design with easy navigation to help visitors explore my work and learn more about me.",
+    "tech": "HTML, CSS, JavaScript, Web Audio API",
+    "year": 2019,
+    "images": [
+      { "src": "assets/images/projects/personal-1.png", "alt": "Personal website homepage" }
+    ],
+    "links": [
+      {"label": "Website", "url": "https://harutohiroki.github.io"}
     ]
   }
 ]

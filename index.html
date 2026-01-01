@@ -1,213 +1,27 @@
-<html lang="en">
-  <head>
-    <title>HarutoHiroki</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HarutoHiroki's Homepage">
+  <title>HarutoHiroki</title>
+  <link rel="icon" type="image/png" href="assets/images/transparent.png">
+  <link rel="stylesheet" href="assets/css/bento.css">
+</head>
+<body>
+  <nav id="bento-nav" class="bento-nav"></nav>
 
-    <!-- Meta Data -->
-    <meta property="og:site_name" content="harutohiroki.com"/>
-    <meta property="og:title" content="HarutoHiroki's Homepage" />
-    <meta property="og:url" content="https://harutohiroki.com/"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="/assets/images/cropped.png"/>
-    <meta property="og:description" content="HarutoHiroki's Personal Website"/>
-    <meta property="og:locale" content="en_US" />
-    
-    <meta name="twitter:title" content="HarutoHiroki"/>
-    <meta name="twitter:description" content="HarutoHiroki's Personal Website"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@hiroaki_haruto"/>
-    <meta name="twitter:image" content="assets/images/cropped.png"/>
-    <meta name="twitter:url" content="https://harutohiroki.com/"/>
-    
-    <meta name="description" content="HarutoHiroki's Homepage" />
-    <link rel="icon" type="image/x-icon" href="assets/images/transparent.png"> 
-    <link rel="icon" type="image/png" href="assets/images/transparent.png"> 
-    <meta name="revisit-after" content="2 days">
-    <meta name="keywords" content="HarutoHiroki, Twitter, Developer, Github, Discord, Discord Bots, Discord.js, Haruto, GraphTool">
-    <link rel="canonical" href="https://harutohiroki.com/"/>
-    <meta name="theme-color" content="#00FFD9">
-    
-    <!-- CSS -->
-    <link href="assets/css/main.css" type="text/css" rel="stylesheet">
-    <link href="assets/css/flair.css" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <!-- JavaScript -->
-    <script src="assets/js/smoothscroll.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/main.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/jquery.min.js"></script>
-  </head>
+  <!-- Main Container -->
+  <main class="bento-container">
+    <div id="bento-grid" class="bento-grid"></div>
+  </main>
 
-  <body class= "sound_playing">
-    <span class="loader">
-      <img src="assets/images/logo.png">
-      <h1>LOADING</h1>
-      <script>
-        $(window).on("load",function(){
-            $(".loader").fadeOut(360);
-        });
-      </script>
-    </span>
-    
-    <section class="fullscreen">
-      <!-- <div class="background" style="background-image: url('assets/images/unknown-min.png');"></div> -->
-      <div class="background">
-        <div class="video-container">
-          <video src="assets/images/bg.webm" id="home-video" autoplay muted loop ></video>
-        </div>
-        <audio id="bgm" loop src="assets/audio/Oku-No-In.mp3" type="audio/mpeg"></audio>
-      </div>
+  <!-- Footer -->
+  <footer class="bento-footer">
+    <p class="bento-footer__copyright">© 2019-26 HarutoHiroki</p>
+  </footer>
 
-      <div class="center-object">
-        <div class="bar">
-          <!-- Navigation Button -->
-          <div id="navdrop" class="nav-bar" style="background-color: rgba(255, 255, 255, 0); position: absolute; left: 5%; top:5%;">
-            <span class="nav-bars" style="background-color: rgba(255, 255, 255, 0);"></span>
-            <span class="nav-close-btn" style="background-color: rgba(255, 255, 255, 0);"></span>
-            <div class="dropdown">
-              <div class="dropdown-content">
-                <a href="https://github.com/HarutoHiroki" target="_blank" class="asbestos-text">GitHub</a>
-                <a href="https://harutohiroki.com/projects" target="_blank" class="asbestos-text">Works</a>
-                <a href="mailto:root@harutohiroki.com" class="asbestos-text">Contact</a>
-                <a href="https://ko-fi.com/harutohiroki" target="_blank" class="asbestos-text">Donate</a>
-              </div>
-            </div>
-          </div>
-          <div class="bar-btn-and-logo">
-            <a id="bar1" href="https://github.com/HarutoHiroki" class="btn" target="_blank" >GitHub </a>   
-            <a id="bar2" href="https://harutohiroki.com/projects" class="btn" target="_blank" > Works </a>
-            <a href="/" ><img src="assets/images/haruto-BW.svg" style="width: 75px; max-width: 75px; height: auto; padding: 0;" alt="Logo" /></a>
-            <a id="bar3" href="mailto:root@harutohiroki.com" class="btn" >Contact</a>   
-            <a id="bar4" href="https://www.paypal.me/realharutohiroki" class="btn" style="padding: 0 !important;" target="_blank" >Donate</a>
-          </div>
-        </div>
-
-        <div class="container" style="padding: 0 0em;">
-          <section class="me unset">
-            <div class="unset">
-              <h1 class="title">HarutoHiroki</h1>
-            </div>
-          </section>
-          <div class="buttons">
-            <a href="#information" class="btn" style="border: 3px solid #1abc9c; height: auto">About me</a>
-          </div>
-          <div class="box-container row"></div>
-        </div>
-        <p class="bgm-toggle">Sound</p>
-        <ul class="sound_vis bgm-toggle" style="position: absolute; bottom: 5; right: 5;">
-          <li class="sound_vis line1"></li>
-          <li class="sound_vis line2"></li>
-          <li class="sound_vis line3"></li>
-          <li class="sound_vis line4"></li>
-          <li class="sound_vis line5"></li>
-          <li class="sound_vis line6"></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="container" id="information">
-      <span class="center">
-        <div class="box-container row" style="background-color: #18191a; filter:drop-shadow(5px 5px 0 rgba(36, 38, 41, 0.6))">
-          <div class="one-full column" style="margin-bottom: 10px;"><h1 style="color: #1abc9c;">About me</h1></div>
-          <div class="one-full column" style="margin-bottom: 6px;">
-            <p>
-              Hi, I'm <span style="color: #1abc9c;">Phong</span>, better known online as <span style="color: #1abc9c;">HarutoHiroki</span>.
-              I'm a freelance <span style="color: #1abc9c;">Full-Stack Developer</span> with deep passion and love for
-              <span style="color: #1abc9c;">Virtual Reality</span> and <span style="color: #1abc9c;">Music</span>. I have over
-              <span style="color: #e74c3c;">6 years</span> of coding experience, mainly specializing in
-              <span style="color: #1abc9c;">Back-end</span> development. In recent years, I've developed an interest in the
-              <span style="color: #1abc9c;">Front-end</span> world, resulting in the creation of this website and me going
-              <span style="color: #1abc9c;">Full-Stack</span>. This website will be a continuous work in progress, a project close to
-              my heart, where I show my expertise in both back-end and front-end development.
-            </p>
-          </div>
-        </div>
-        <div class="box-container row" style="background-color: #18191a; filter:drop-shadow(5px 5px 0 rgba(36, 38, 41, 0.6))">
-          <div class="one-full column" style="margin-bottom: 10px;"><h1 style="color: #1abc9c;">My Skills</h1></div>
-          <div class="one-full column" style="margin-bottom: 6px;">
-            <p>
-              My toolkit is diverse, encompassing languages like <span style="color: #1abc9c;">HTML, CSS, JavaScript, Node.js, and Java.
-              </span> I leverage these in various projects, using tools like <span style="color: #1abc9c;">Visual Studio Code</span>,
-              <span style="color: #1abc9c;">Google Cloud Platform</span>, and <span style="color: #1abc9c;">Amazon Web Services</span>
-              to bring ideas to life. I also have experience with microcontrollers like
-              <span style="color: #1abc9c;">Arduino, Raspberry Pi, and ESP32.</span>
-            </p>
-          </div>
-        </div>
-        <div class="box-container row" style="background-color: #18191a; filter:drop-shadow(5px 5px 0 rgba(36, 38, 41, 0.6))">
-          <div class="one-full column" style="margin-bottom: 10px;"><h1 style="color: #1abc9c;">Interests</h1></div>
-          <div class="one-full column" style="margin-bottom: 6px;">
-            <p>
-              I Love <span style="color: #1abc9c;">Programming</span> and the unique satisfaction of successfully debugging code. 
-              I also have a deep-rooted love for <span style="color: #1abc9c;">Music</span>, from
-              <span style="color: #1abc9c;">Classical</span> and <span style="color: #1abc9c;">Orchestral</span> to 
-              <span style="color: #1abc9c;">J-Pop</span> and <span style="color: #1abc9c;">Original Game Soundtracks</span>. I'm
-              also interested in the immersive realm of <span style="color: #1abc9c;">Virtual Reality</span>, where I explore both 
-              the technology behind VR and the mesmerizing experiences it creates.
-            </p>
-          </div>
-        </div>
-        <div class="box-container row" style="background-color: #18191a; filter:drop-shadow(5px 5px 0 rgba(36, 38, 41, 0.6))">
-          <div class="one-full column" style="margin-bottom: 0px;"><h1 style="color: #1abc9c;">Projects</h1></div>
-          <div class="one-full column proj_links" style="margin-bottom: 6px;">
-            <h5 style="margin-bottom:5px;">Active</h5>
-            <p style="margin-bottom:1em;">
-              <span style="color: #00ffd9;" title="Active Project">> </span>
-              <a href="https://graphtool.harutohiroki.com/" target="_blank">Haruto's Graph Tool</a>, a fork of the
-              <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">CrinGraph</a> public repository,
-              customized for the <span style="color: #1abc9c;">real-time</span> comparison and creation of 
-              <span style="color: #1abc9c;">equalization</span> profiles for headphones and in-ear monitors.
-            </p>
-            <p style="margin-bottom:1em">
-              <span style="color: #00ffd9;" title="Active Project">> </span>
-              <a href="https://github.com/HarutoHiroki/HarutoGraphExtension" target="_blank">Haruto's Graph Extension</a>, 
-              a Manifest V2 browser extension that enables the usage of any supported GraphTool's expansive EQ function
-              any website with a single click.
-            </p>
-            <h5 style="margin-bottom:5px;">Archived</h5>
-            <p style="margin-bottom:1em">
-              <span style="color: #e74c3c;" title="Archived Project">> </span>
-              <a href="https://devpost.com/software/paper-pm7okl" target="_blank">Paper++</a>, a program that converts 
-              user-submitted, handwritten code to correctly formatted Java files, running them and returning the output.
-            </p>
-            <p style="margin-bottom:1em">
-              <span style="color: #e74c3c;" title="Archived Project">> </span>
-              <a href="https://cryptonix.harutohiroki.com/" target="_blank">Cryptonix X</a>, a multi-purpose Moderation,
-              Utility, and Image Generation Discord bot, written in <span style="color: #f7df1e">JavaScript</span> using the
-              Discord.js library.
-            </p>
-            <p style="margin-bottom:1em">
-              <span style="color: #e74c3c;" title="Archived Project">> </span>
-              <a href="https://github.com/HarutoHiroki/alexflipnote.js" target="_blank">alexflipnote.js</a>, a lightweight 
-              and user-friendly <span style="color: #f7df1e">JavaScript</span> wrapper for the Image Generation API by
-              <a href="https://api.alexflipnote.dev/" target="_blank" style="color: #14bae4 !important;">AlexFlipnote</a>.
-            </p>
-            <p style="margin-bottom:1em">
-              <span style="color: #e74c3c;" title="Archived Project">> </span>
-              <a href="https://github.com/HarutoHiroki/Discord.js-Bot" target="_blank">Discord.js Bot</a>, a project designed 
-              to assist beginners in coding Discord.js bots.
-            </p>
-          </div>
-        </div> 
-        <div class="box-container row" style="background-color: #18191a; filter:drop-shadow(5px 5px 0 rgba(36, 38, 41, 0.6))">
-          <div class="one-full column"><h1 style="color: #1abc9c;">Stats</h1></div>
-          <embed id="wakatime_svg" src="https://wakatime.com/share/@harutohiroki/32e5afbf-d102-41f8-9d33-371701c0f303.svg" class="wkt_svg"></embed>
-          <embed id="wakatime_svg_mobile" src="https://wakatime.com/share/@harutohiroki/941e68d6-b741-4c6c-b5ea-df6f650af484.svg" style="margin-bottom:5px; display:none;"></embed>
-        </div>
-      </span>
-    </section>
-
-    <footer class="center box-container" style="border-radius: 0; background-color:black;">
-      <p style="margin: 0; padding-top: 10px;">Made with love from HarutoHiroki</p>
-      <div class="box-container row center bottom-bar">
-        <a href="https://www.youtube.com/@harutohiroki" target="_blank"><img src="assets/images/svg/YouTube.svg" alt="YouTube SVG"></a>
-        <a href="https://github.com/HarutoHiroki" target="_blank"><img src="assets/images/svg/GitHub.svg" alt="GitHub SVG"></a>
-        <a href="https://ko-fi.com/harutohiroki" target="_blank"><img src="assets/images/svg/KoFi.svg" alt="Ko-fi SVG"></a>
-        <a href="https://www.twitter.com/harutohiroki" target="_blank"><img src="assets/images/svg/Twitter.svg" alt="Twitter SVG"></a>
-        <a href="https://www.twitch.tv/harutohiroki" target="_blank"><img src="assets/images/svg/Twitch.svg" alt="Twitch SVG"></a>
-        <a href="https://throne.me/harutohiroki" target="_blank"><img src="assets/images/svg/Throne.svg" alt="Throne SVG"></a>
-      </div>
-      <p style="margin: 0; padding-bottom: 10px;">© 2019-25 HarutoHiroki</p>
-    </footer>
-  </body>
+  <script src="assets/js/bento.js"></script>
+  <script src="assets/js/harubento-izer.js"></script>
+</body>
 </html>

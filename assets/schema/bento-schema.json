@@ -1,0 +1,573 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bentoui.dev/schema/config.json",
+  "title": "BentoUI Configuration Schema",
+  "description": "JSON Schema for BentoUI framework configuration",
+  "type": "object",
+  "properties": {
+    "container": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ],
+      "description": "CSS selector for the grid container element, or null to skip grid setup",
+      "default": "#bento-grid"
+    },
+    "nav": {
+      "type": "object",
+      "description": "Navigation bar configuration",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether to render the navigation bar",
+          "default": true
+        },
+        "container": {
+          "type": "string",
+          "description": "CSS selector for the nav container",
+          "default": "#bento-nav"
+        },
+        "logo": {
+          "type": "string",
+          "description": "Logo text or brand name",
+          "default": "BentoUI"
+        },
+        "logoUrl": {
+          "type": "string",
+          "description": "URL for logo link",
+          "default": "#"
+        },
+        "links": {
+          "type": "array",
+          "description": "Navigation links",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Link display text"
+              },
+              "url": {
+                "type": "string",
+                "description": "Link URL"
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Whether this link is currently active",
+                "default": false
+              }
+            },
+            "required": ["label", "url"]
+          },
+          "default": []
+        },
+        "theme": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": ["dark", "light"],
+              "description": "Default theme (simplified format)"
+            },
+            {
+              "type": "object",
+              "description": "Theme configuration (legacy format)",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "description": "Whether to show theme toggle button",
+                  "default": true
+                },
+                "default": {
+                  "type": "string",
+                  "enum": ["dark", "light"],
+                  "description": "Default theme",
+                  "default": "dark"
+                }
+              }
+            }
+          ],
+          "default": "dark"
+        }
+      }
+    },
+    "backToTop": {
+      "type": "object",
+      "description": "Back to top button configuration",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether to show back to top button",
+          "default": true
+        }
+      }
+    },
+    "cards": {
+      "type": "array",
+      "description": "Array of card configurations",
+      "items": {
+        "$ref": "#/definitions/card"
+      },
+      "default": []
+    }
+  },
+  "definitions": {
+    "card": {
+      "type": "object",
+      "description": "Card configuration",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["text", "image", "stat", "chart", "empty", "bio", "media", "list", "code", "github", "profile", "song", "latestPost"],
+          "description": "Card content type",
+          "default": "empty"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12,
+          "description": "Card width in grid units",
+          "default": 4
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Card height in grid units",
+          "default": 2
+        },
+        "x": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11,
+          "description": "Card X position (0-indexed, column start)"
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Card Y position (0-indexed, row start)"
+        },
+        "content": {
+          "oneOf": [
+            { "$ref": "#/definitions/textContent" },
+            { "$ref": "#/definitions/imageContent" },
+            { "$ref": "#/definitions/statContent" },
+            { "$ref": "#/definitions/chartContent" },
+            { "$ref": "#/definitions/emptyContent" },
+            { "$ref": "#/definitions/bioContent" },
+            { "$ref": "#/definitions/mediaContent" },
+            { "$ref": "#/definitions/listContent" },
+            { "$ref": "#/definitions/codeContent" },
+            { "$ref": "#/definitions/githubContent" },
+            { "$ref": "#/definitions/profileContent" },
+            { "$ref": "#/definitions/songContent" },
+            { "$ref": "#/definitions/latestPostContent" }
+          ],
+          "description": "Card content based on type"
+        }
+      },
+      "required": ["type"]
+    },
+    "textStyleConfig": {
+      "type": "object",
+      "description": "Text styling configuration (available on most card types)",
+      "properties": {
+        "inlineStyles": {
+          "type": "boolean",
+          "description": "Enable inline text styling markup. Supports: **bold**, *italic*, __underline__, ~~strikethrough~~, ==highlight== (or ==#color|text== for custom colors), `code`, [text](color:#fff), {{#color}}text{{/}}, ^^^jump^^^ (bouncing text), %%rainbow%% (animated rainbow). Styles can be combined/nested.",
+          "default": false
+        },
+        "hoverOnly": {
+          "type": "boolean",
+          "description": "If true, inline styles only appear on hover. If false, styles are always visible.",
+          "default": false
+        }
+      }
+    },
+    "textContent": {
+      "type": "object",
+      "description": "Text card content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Card title - supports inline styling markup when inlineStyles is enabled"
+        },
+        "description": {
+          "type": "string",
+          "description": "Card description text - supports inline styling markup when inlineStyles is enabled"
+        },
+        "footer": {
+          "type": "string",
+          "description": "Optional footer text - supports inline styling markup when inlineStyles is enabled"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      }
+    },
+    "imageContent": {
+      "type": "object",
+      "description": "Image card content",
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "Image source URL"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image alt text for accessibility"
+        },
+        "caption": {
+          "type": "string",
+          "description": "Optional image caption"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["src"]
+    },
+    "statContent": {
+      "type": "object",
+      "description": "Stat card content",
+      "properties": {
+        "value": {
+          "type": ["string", "number"],
+          "description": "Large stat value to display"
+        },
+        "label": {
+          "type": "string",
+          "description": "Label describing the stat"
+        },
+        "trend": {
+          "type": "object",
+          "description": "Optional trend indicator",
+          "properties": {
+            "direction": {
+              "type": "string",
+              "enum": ["positive", "negative"],
+              "description": "Trend direction"
+            },
+            "value": {
+              "type": "string",
+              "description": "Trend value text (e.g., '+12%')"
+            }
+          }
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["value", "label"]
+    },
+    "chartContent": {
+      "type": "object",
+      "description": "Chart card content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Chart title"
+        },
+        "data": {
+          "type": "array",
+          "description": "Chart data points",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Data point label"
+              },
+              "value": {
+                "type": "number",
+                "description": "Data point value"
+              }
+            },
+            "required": ["label", "value"]
+          }
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["data"]
+    },
+    "emptyContent": {
+      "type": "object",
+      "description": "Empty card content (placeholder)",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Optional placeholder message"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      }
+    },
+    "bioContent": {
+      "type": "object",
+      "description": "Bio card content",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "Avatar image URL"
+        },
+        "name": {
+          "type": "string",
+          "description": "Person's name"
+        },
+        "role": {
+          "type": "string",
+          "description": "Job title or role"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short bio description"
+        },
+        "socialLinks": {
+          "type": "array",
+          "description": "Social media links",
+          "items": {
+            "$ref": "#/definitions/socialLink"
+          }
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["name"]
+    },
+    "mediaContent": {
+      "type": "object",
+      "description": "Media card content (video/audio)",
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "Media source URL"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["video", "audio"],
+          "description": "Media type"
+        },
+        "caption": {
+          "type": "string",
+          "description": "Optional media caption"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["src", "type"]
+    },
+    "listContent": {
+      "type": "object",
+      "description": "List card content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "List title"
+        },
+        "items": {
+          "type": "array",
+          "description": "List items",
+          "items": {
+            "type": "string"
+          }
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["items"]
+    },
+    "codeContent": {
+      "type": "object",
+      "description": "Code card content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Code block title"
+        },
+        "code": {
+          "type": "string",
+          "description": "Code snippet"
+        },
+        "language": {
+          "type": "string",
+          "description": "Programming language for syntax highlighting"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["code"]
+    },
+    "githubContent": {
+      "type": "object",
+      "description": "GitHub activity card content - displays contribution graph",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "GitHub username to display contributions for"
+        },
+        "title": {
+          "type": "string",
+          "description": "Card title",
+          "default": "GitHub Activity"
+        },
+        "months": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1, "maximum": 12 },
+            { "type": "string", "enum": ["auto"] }
+          ],
+          "description": "Number of months to display (1-12) or 'auto' to calculate based on card size",
+          "default": "auto"
+        },
+        "freeform": {
+          "type": "boolean",
+          "description": "If true, fill the SVG with as many dates as fit, not grouped by months or 7-per-column. Good for small cards.",
+          "default": false
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["username"]
+    },
+    "profileContent": {
+      "type": "object",
+      "description": "Enhanced profile/bio card content with more details",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "Avatar image URL"
+        },
+        "name": {
+          "type": "string",
+          "description": "Person's name"
+        },
+        "alias": {
+          "type": "string",
+          "description": "Online alias or username (displayed as '// alias')"
+        },
+        "role": {
+          "type": "string",
+          "description": "Job title or role"
+        },
+        "location": {
+          "type": "string",
+          "description": "Geographic location"
+        },
+        "bio": {
+          "type": "string",
+          "description": "Short bio description"
+        },
+        "interests": {
+          "type": "array",
+          "description": "List of interests with icons",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "enum": ["vr", "music", "code", "github", "link"],
+                "description": "Interest icon"
+              },
+              "label": {
+                "type": "string",
+                "description": "Interest label"
+              }
+            },
+            "required": ["label"]
+          }
+        },
+        "skills": {
+          "type": "array",
+          "description": "List of skills displayed as tags",
+          "items": {
+            "type": "string"
+          }
+        },
+        "socialLinks": {
+          "type": "array",
+          "description": "Social media links",
+          "items": {
+            "$ref": "#/definitions/socialLink"
+          }
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["name"]
+    },
+    "songContent": {
+      "type": "object",
+      "description": "Last.fm now playing card content",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Last.fm username"
+        },
+        "apiKey": {
+          "type": "string",
+          "description": "Last.fm API key"
+        },
+        "title": {
+          "type": "string",
+          "description": "Card title",
+          "default": "Now Playing"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      },
+      "required": ["username", "apiKey"]
+    },
+    "latestPostContent": {
+      "type": "object",
+      "description": "Latest blog post card content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Card header label",
+          "default": "Latest Post"
+        },
+        "blogUrl": {
+          "type": "string",
+          "description": "URL to the blog page",
+          "default": "blog.html"
+        },
+        "postsIndexUrl": {
+          "type": "string",
+          "description": "URL to the posts index.json file",
+          "default": "posts/index.json"
+        },
+        "textStyle": {
+          "$ref": "#/definitions/textStyleConfig"
+        }
+      }
+    },
+    "socialLink": {
+      "type": "object",
+      "description": "Social media link",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "enum": ["github", "twitter", "linkedin", "link", "youtube", "twitch", "kofi", "music", "vr", "code", "location", "throne", "lastfm"],
+          "description": "Social platform icon"
+        },
+        "url": {
+          "type": "string",
+          "description": "Profile URL"
+        },
+        "label": {
+          "type": "string",
+          "description": "Accessible label for the link"
+        }
+      },
+      "required": ["icon", "url"]
+    }
+  }
+}
