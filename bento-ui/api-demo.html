@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BentoUI API Demo - Interactive API methods demonstration">
+  <title>BentoUI - API Demo</title>
+  <link rel="icon" type="image/png" href="../assets/images/transparent.png">
+  <link rel="stylesheet" href="bento.css">
+  <style>
+    .api-controls {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: var(--color-bg-nav);
+      padding: 1rem;
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      max-width: 90vw;
+    }
+    .api-btn {
+      background: var(--color-bg-tertiary);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-sm);
+      transition: all var(--transition-base);
+    }
+    .api-btn:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+    .api-btn--danger {
+      border-color: var(--color-negative);
+    }
+    .api-btn--danger:hover {
+      background: var(--color-negative);
+    }
+  </style>
+</head>
+<body>
+  <nav id="bento-nav" class="bento-nav"></nav>
+
+  <!-- Main Container -->
+  <main class="bento-container">
+    <div id="bento-grid" class="bento-grid"></div>
+  </main>
+
+  <!-- API Controls -->
+  <div class="api-controls">
+    <button class="api-btn" onclick="addRandomCard()">Add Card</button>
+    <button class="api-btn" onclick="removeLastCard()">Remove Last</button>
+    <button class="api-btn" onclick="updateRandomCard()">Update Random</button>
+    <button class="api-btn" onclick="bento.toggleTheme()">Toggle Theme</button>
+    <button class="api-btn" onclick="resetCards()">Reset</button>
+    <button class="api-btn api-btn--danger" onclick="clearAll()">Clear All</button>
+  </div>
+
+  <script src="bento.js"></script>
+  <script>
+    // Initial cards for the API demo
+    const initialCards = [
+      {
+        type: 'text',
+        width: 6,
+        height: 2,
+        content: {
+          title: 'API Demo - Interactive Playground',
+          description: 'Use the buttons at the bottom to interact with BentoUI\'s API. Watch the grid update in real-time as you add, remove, and modify cards!',
+          footer: 'Open console (F12) to see API calls'
+        }
+      },
+      {
+        type: 'code',
+        width: 6,
+        height: 2,
+        content: {
+          title: 'Available API Methods',
+          language: 'javascript',
+          code: 'bento.addCard(config)    // Add new card\nbento.removeCard(index)  // Remove by index\nbento.updateCard(i, cfg) // Update card\nbento.setCards(array)    // Replace all\nbento.toggleTheme()      // Dark/light\nbento.destroy()          // Cleanup'
+        }
+      },
+      {
+        type: 'stat',
+        width: 3,
+        height: 2,
+        content: {
+          value: '0',
+          label: 'Cards Added',
+          trend: { direction: 'positive', value: 'Dynamic' }
+        }
+      },
+      {
+        type: 'stat',
+        width: 3,
+        height: 2,
+        content: {
+          value: '0',
+          label: 'Cards Removed',
+          trend: { direction: 'negative', value: 'Dynamic' }
+        }
+      },
+      {
+        type: 'list',
+        width: 3,
+        height: 2,
+        content: {
+          title: 'Try These Actions',
+          items: [
+            'Add random cards',
+            'Remove the last card',
+            'Update a random card',
+            'Toggle dark/light theme',
+            'Reset to initial state'
+          ]
+        }
+      },
+      {
+        type: 'text',
+        width: 3,
+        height: 2,
+        content: {
+          title: 'Pro Tip',
+          description: 'Open your browser\'s console (F12) to see the API calls being made. You can also call the methods directly from the console!',
+          textStyle: { inlineStyles: true }
+        }
+      }
+    ];
+
+    // Stats tracking
+    let cardsAdded = 0;
+    let cardsRemoved = 0;
+
+    // BentoUI Configuration
+    const bentoConfig = {
+      container: '#bento-grid',
+      nav: {
+        enabled: true,
+        container: '#bento-nav',
+        logo: 'API Demo',
+        logoUrl: 'index.html',
+        links: [
+          { label: 'Home', url: 'index.html' },
+          { label: 'Card Types', url: 'card-types.html' },
+          { label: 'Text Styling', url: 'text-styling.html' },
+          { label: 'API Demo', url: '#', active: true }
+        ],
+        theme: 'dark'
+      },
+      backToTop: { enabled: true },
+      cards: [...initialCards]
+    };
+
+    // Initialize
+    const bento = new BentoUI(bentoConfig);
+
+    // Random card types for demo
+    const randomCardTypes = [
+      {
+        type: 'text',
+        content: () => ({
+          title: `Card #${Date.now().toString().slice(-4)}`,
+          description: 'This card was dynamically added using bento.addCard()!',
+          footer: new Date().toLocaleTimeString()
+        })
+      },
+      {
+        type: 'stat',
+        content: () => ({
+          value: Math.floor(Math.random() * 100),
+          label: 'Random Stat',
+          trend: {
+            direction: Math.random() > 0.5 ? 'positive' : 'negative',
+            value: `${Math.random() > 0.5 ? '+' : '-'}${Math.floor(Math.random() * 20)}%`
+          }
+        })
+      },
+      {
+        type: 'list',
+        content: () => ({
+          title: 'Dynamic List',
+          items: [
+            `Item ${Math.floor(Math.random() * 100)}`,
+            `Item ${Math.floor(Math.random() * 100)}`,
+            `Item ${Math.floor(Math.random() * 100)}`
+          ]
+        })
+      },
+      {
+        type: 'empty',
+        content: () => ({
+          message: `Placeholder ${Date.now().toString().slice(-4)}`
+        })
+      }
+    ];
+
+    // API Demo Functions
+    function addRandomCard() {
+      const randomType = randomCardTypes[Math.floor(Math.random() * randomCardTypes.length)];
+      const newCard = {
+        type: randomType.type,
+        width: Math.floor(Math.random() * 3) + 2, // 2-4
+        height: Math.floor(Math.random() * 2) + 1, // 1-2
+        content: randomType.content()
+      };
+
+      console.log('%cbento.addCard()', 'color: #2ecc71; font-weight: bold;', newCard);
+      bento.addCard(newCard);
+      
+      cardsAdded++;
+      updateStats();
+    }
+
+    function removeLastCard() {
+      const totalCards = bento.config.cards.length;
+      if (totalCards > 0) {
+        const index = totalCards - 1;
+        console.log('%cbento.removeCard(' + index + ')', 'color: #e74c3c; font-weight: bold;');
+        bento.removeCard(index);
+        cardsRemoved++;
+        updateStats();
+      } else {
+        console.log('No cards to remove!', 'color: #f39c12;');
+      }
+    }
+
+    function updateRandomCard() {
+      const totalCards = bento.config.cards.length;
+      if (totalCards > 2) {
+        // Skip first 2 header cards
+        const index = Math.floor(Math.random() * (totalCards - 2)) + 2;
+        const updates = {
+          content: {
+            title: `Updated at ${new Date().toLocaleTimeString()}`
+          }
+        };
+        console.log('%cbento.updateCard(' + index + ', updates)', 'color: #3498db; font-weight: bold;', updates);
+        bento.updateCard(index, updates);
+      } else {
+        console.log('Need more cards to update!', 'color: #f39c12;');
+      }
+    }
+
+    function resetCards() {
+      console.log('%cbento.setCards(initialCards)', 'color: #9b59b6; font-weight: bold;');
+      bento.setCards([...initialCards]);
+      cardsAdded = 0;
+      cardsRemoved = 0;
+      updateStats();
+    }
+
+    function clearAll() {
+      console.log('%cbento.setCards([])', 'color: #e74c3c; font-weight: bold;');
+      bento.setCards([
+        {
+          type: 'empty',
+          width: 12,
+          height: 3,
+          content: {
+            message: 'All cards cleared! Click "Reset" to restore.'
+          }
+        }
+      ]);
+    }
+
+    function updateStats() {
+      // Find and update the stat cards
+      const cards = bento.config.cards;
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i].type === 'stat') {
+          if (cards[i].content.label === 'Cards Added') {
+            bento.updateCard(i, { content: { value: cardsAdded.toString() } });
+          } else if (cards[i].content.label === 'Cards Removed') {
+            bento.updateCard(i, { content: { value: cardsRemoved.toString() } });
+          }
+        }
+      }
+    }
+
+    // Console welcome message
+    console.log('%cBentoUI API Demo', 'font-size: 20px; font-weight: bold; color: #1abc9c');
+    console.log('%cTry these commands:', 'font-weight: bold;');
+    console.log('  addRandomCard()    - Add a random card');
+    console.log('  removeLastCard()   - Remove the last card');
+    console.log('  updateRandomCard() - Update a random card');
+    console.log('  bento.toggleTheme()- Toggle theme');
+    console.log('  resetCards()       - Reset to initial state');
+    console.log('  clearAll()         - Clear all cards');
+  </script>
+</body>
+</html>

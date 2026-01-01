@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BentoUI Text Styling - Rich text formatting and animations">
+  <title>BentoUI - Text Styling Reference</title>
+  <link rel="icon" type="image/png" href="../assets/images/transparent.png">
+  <link rel="stylesheet" href="bento.css">
+</head>
+<body>
+  <nav id="bento-nav" class="bento-nav"></nav>
+
+  <!-- Main Container -->
+  <main class="bento-container">
+    <div id="bento-grid" class="bento-grid"></div>
+  </main>
+
+  <script src="bento.js"></script>
+  <script>
+    // Text Styling Reference Demo
+    const bentoConfig = {
+      container: '#bento-grid',
+      nav: {
+        enabled: true,
+        container: '#bento-nav',
+        logo: 'Text Styling',
+        logoUrl: 'index.html',
+        links: [
+          { label: 'Home', url: 'index.html' },
+          { label: 'Card Types', url: 'card-types.html' },
+          { label: 'Text Styling', url: '#', active: true },
+          { label: 'API Demo', url: 'api-demo.html' }
+        ],
+        theme: 'dark'
+      },
+      backToTop: { enabled: true },
+      cards: [
+        // Header
+        {
+          type: 'text',
+          width: 12,
+          height: 1,
+          x: 0, y: 0,
+          content: {
+            title: 'Rich Text Styling Reference',
+            description: 'BentoUI supports inline text markup for beautiful formatted content'
+          }
+        },
+
+        // Basic Formatting
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 1,
+          content: {
+            title: 'Basic Formatting',
+            description: '**Bold text** uses double asterisks. *Italic text* uses single asterisks. __Underlined text__ uses double underscores. ~~Strikethrough~~ uses double tildes.',
+            footer: '**bold** *italic* __underline__ ~~strike~~',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 1,
+          content: {
+            title: 'Basic Formatting Syntax',
+            language: 'markdown',
+            code: '**Bold text**\n*Italic text*\n__Underlined text__\n~~Strikethrough text~~'
+          }
+        },
+
+        // Highlights
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 3,
+          content: {
+            title: 'Highlights',
+            description: '==Default highlight== uses the accent color. ==#ff6b6b|Custom red highlight==. ==#4ecdc4|Custom teal highlight==. ==#95e1d3|Light green highlight==.',
+            footer: '==text== or ==#color|text==',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 3,
+          content: {
+            title: 'Highlight Syntax',
+            language: 'markdown',
+            code: '==Default highlight==\n==#ff6b6b|Red highlight==\n==#4ecdc4|Teal highlight==\n==#95e1d3|Green highlight=='
+          }
+        },
+
+        // Colored Text
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 5,
+          content: {
+            title: 'Colored Text',
+            description: '{{#e74c3c}}Red text{{/}}, {{#3498db}}blue text{{/}}, {{#2ecc71}}green text{{/}}, {{#9b59b6}}purple text{{/}}, {{#f39c12}}orange text{{/}}, and {{#1abc9c}}teal text{{/}}!',
+            footer: '{{#hexcolor}}text{{/}}',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 5,
+          content: {
+            title: 'Colored Text Syntax',
+            language: 'markdown',
+            code: '{{#e74c3c}}Red text{{/}}\n{{#3498db}}Blue text{{/}}\n{{#2ecc71}}Green text{{/}}\n{{#9b59b6}}Purple text{{/}}'
+          }
+        },
+
+        // Inline Code
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 7,
+          content: {
+            title: 'Inline Code',
+            description: 'Use backticks for `inline code` like `const x = 5` or `npm install bento-ui`. Great for technical documentation!',
+            footer: '`code here`',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 7,
+          content: {
+            title: 'Inline Code Syntax',
+            language: 'markdown',
+            code: '`inline code`\n`const x = 5`\n`npm install package`'
+          }
+        },
+
+        // Animations
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 9,
+          content: {
+            title: 'Animated Text',
+            description: '^^^Bouncing text^^^ jumps character by character! %%Rainbow text%% cycles through spectrum colors!',
+            footer: '^^^bounce^^^ or %%rainbow%%',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 9,
+          content: {
+            title: 'Animation Syntax',
+            language: 'markdown',
+            code: '^^^Bouncing text^^^\n%%Rainbow text%%\n\n// Can be combined:\n^^^%%Rainbow Bounce%%^^^'
+          }
+        },
+
+        // Custom Styling
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 11,
+          content: {
+            title: 'Custom CSS Styling',
+            description: '[Large red bold](color:#e74c3c;size:1.5em;weight:bold) text! [Blue italic](color:#3498db;style:italic) text! [Underlined](decoration:underline) text!',
+            footer: '[text](prop:value;prop:value)',
+            textStyle: { inlineStyles: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 11,
+          content: {
+            title: 'Custom CSS Syntax',
+            language: 'markdown',
+            code: '[styled](color:#e74c3c;size:1.5em)\n[styled](weight:bold;bg:#333)\n\n// Available properties:\ncolor, bg, size, weight,\nstyle, decoration, shadow,\ntransform, spacing'
+          }
+        },
+
+        // Hover Mode
+        {
+          type: 'text',
+          width: 6,
+          height: 2,
+          x: 0, y: 13,
+          content: {
+            title: 'Hover-Only Mode',
+            description: 'This text has **hidden styles** that only appear ==on hover==! The {{#1abc9c}}colors{{/}} and ^^^animations^^^ are invisible until you hover.',
+            footer: 'textStyle: { hoverOnly: true }',
+            textStyle: { inlineStyles: true, hoverOnly: true }
+          }
+        },
+        {
+          type: 'code',
+          width: 6,
+          height: 2,
+          x: 6, y: 13,
+          content: {
+            title: 'Hover Mode Config',
+            language: 'javascript',
+            code: 'content: {\n  title: "My Title",\n  description: "**styled** text",\n  textStyle: {\n    inlineStyles: true,\n    hoverOnly: true  // Magic!\n  }\n}'
+          }
+        },
+
+        // Nesting Example
+        {
+          type: 'text',
+          width: 12,
+          height: 2,
+          x: 0, y: 15,
+          content: {
+            title: 'Combining and Nesting Styles',
+            description: 'Styles can be **combined**: ==**bold highlight**==, *{{#e74c3c}}italic red{{/}}*, and even ^^^%%rainbow bounce%%^^^! Create ==^^^bouncing highlight^^^== or *__italic underlines__*. The possibilities are endless!',
+            footer: 'Nest and combine any inline styles for rich formatting',
+            textStyle: { inlineStyles: true }
+          }
+        }
+      ]
+    };
+
+    const bento = new BentoUI(bentoConfig);
+  </script>
+</body>
+</html>

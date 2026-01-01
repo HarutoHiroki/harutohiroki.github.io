@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BentoUI Card Types Reference - All 13 card types with examples">
+  <title>BentoUI - Card Types Reference</title>
+  <link rel="icon" type="image/png" href="../assets/images/transparent.png">
+  <link rel="stylesheet" href="bento.css">
+</head>
+<body>
+  <nav id="bento-nav" class="bento-nav"></nav>
+
+  <!-- Main Container -->
+  <main class="bento-container">
+    <div id="bento-grid" class="bento-grid"></div>
+  </main>
+
+  <script src="bento.js"></script>
+  <script>
+    // Card Types Reference Demo
+    const bentoConfig = {
+      container: '#bento-grid',
+      nav: {
+        enabled: true,
+        container: '#bento-nav',
+        logo: 'Card Types',
+        logoUrl: 'index.html',
+        links: [
+          { label: 'Home', url: 'index.html' },
+          { label: 'Card Types', url: '#', active: true },
+          { label: 'Text Styling', url: 'text-styling.html' },
+          { label: 'API Demo', url: 'api-demo.html' }
+        ],
+        theme: 'dark'
+      },
+      backToTop: { enabled: true },
+      cards: [
+        // Header
+        {
+          type: 'text',
+          width: 12,
+          height: 1,
+          x: 0, y: 0,
+          content: {
+            title: 'All 13 Card Types',
+            description: 'A comprehensive reference of every card type available in BentoUI'
+          }
+        },
+
+        // 1. Text Card
+        {
+          type: 'text',
+          width: 4,
+          height: 2,
+          x: 0, y: 1,
+          content: {
+            title: '1. Text Card',
+            description: 'The most basic card type. Supports title, description, footer, and rich text styling.',
+            footer: 'type: "text"'
+          }
+        },
+
+        // 2. Image Card
+        {
+          type: 'image',
+          width: 4,
+          height: 2,
+          x: 4, y: 1,
+          content: {
+            src: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=300&fit=crop',
+            alt: 'Gradient background',
+            caption: '2. Image Card'
+          }
+        },
+
+        // 3. Stat Card
+        {
+          type: 'stat',
+          width: 4,
+          height: 2,
+          x: 8, y: 1,
+          content: {
+            value: '3',
+            label: 'Stat Card',
+            trend: {
+              direction: 'positive',
+              value: '+15%'
+            }
+          }
+        },
+
+        // 4. Chart Card
+        {
+          type: 'chart',
+          width: 4,
+          height: 2,
+          x: 0, y: 3,
+          content: {
+            title: '4. Chart Card',
+            data: [
+              { label: 'A', value: 80 },
+              { label: 'B', value: 45 },
+              { label: 'C', value: 90 },
+              { label: 'D', value: 60 }
+            ]
+          }
+        },
+
+        // 5. List Card
+        {
+          type: 'list',
+          width: 4,
+          height: 2,
+          x: 4, y: 3,
+          content: {
+            title: '5. List Card',
+            items: [
+              'Bullet point items',
+              'Supports text styling',
+              'Auto-scrolling',
+              'Styled bullets'
+            ]
+          }
+        },
+
+        // 6. Code Card
+        {
+          type: 'code',
+          width: 4,
+          height: 2,
+          x: 8, y: 3,
+          content: {
+            title: '6. Code Card',
+            language: 'javascript',
+            code: 'const hello = "world";\nconsole.log(hello);'
+          }
+        },
+
+        // 7. Bio Card
+        {
+          type: 'bio',
+          width: 4,
+          height: 3,
+          x: 0, y: 5,
+          content: {
+            avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=BioCard',
+            name: '7. Bio Card',
+            role: 'Simple Profile',
+            description: 'A simple profile card with avatar, name, role, bio, and social links.',
+            socialLinks: [
+              { icon: 'github', url: '#', label: 'GitHub' },
+              { icon: 'twitter', url: '#', label: 'Twitter' }
+            ]
+          }
+        },
+
+        // 8. Profile Card
+        {
+          type: 'profile',
+          width: 4,
+          height: 3,
+          x: 4, y: 5,
+          content: {
+            avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=ProfileCard',
+            name: '8. Profile Card',
+            alias: 'enhanced',
+            role: 'Extended Bio Card',
+            location: 'Earth',
+            bio: 'Full-featured profile with location, interests, skills, and more.',
+            interests: [
+              { icon: 'code', label: 'Code' },
+              { icon: 'music', label: 'Music' }
+            ],
+            skills: ['HTML', 'CSS', 'JS'],
+            socialLinks: [
+              { icon: 'github', url: '#', label: 'GitHub' }
+            ]
+          }
+        },
+
+        // 9. GitHub Card
+        {
+          type: 'github',
+          width: 4,
+          height: 3,
+          x: 8, y: 5,
+          content: {
+            username: 'HarutoHiroki',
+            title: '9. GitHub Card',
+            months: 'auto'
+          }
+        },
+
+        // 10. Song Card
+        {
+          type: 'song',
+          width: 4,
+          height: 2,
+          x: 0, y: 8,
+          content: {
+            username: 'demo',
+            apiKey: '', // Requires API key
+            title: '10. Song Card'
+          }
+        },
+
+        // 11. Latest Post Card
+        {
+          type: 'latestPost',
+          width: 4,
+          height: 2,
+          x: 4, y: 8,
+          content: {
+            title: '11. Latest Post',
+            blogUrl: '../blog.html',
+            postsIndexUrl: '../posts/index.json'
+          }
+        },
+
+        // 12. Media Card (placeholder)
+        {
+          type: 'text',
+          width: 4,
+          height: 2,
+          x: 8, y: 8,
+          content: {
+            title: '12. Media Card',
+            description: 'Supports video and audio content with native HTML5 controls and optional captions.',
+            footer: 'type: "media", video/audio'
+          }
+        },
+
+        // 13. Empty Card
+        {
+          type: 'empty',
+          width: 4,
+          height: 1,
+          x: 0, y: 10,
+          content: {
+            message: '13. Empty Card - Placeholder'
+          }
+        },
+
+        // Summary
+        {
+          type: 'text',
+          width: 8,
+          height: 1,
+          x: 4, y: 10,
+          content: {
+            title: 'All Card Types Demonstrated',
+            description: 'Each card type serves a specific purpose and can be customized via the content object.'
+          }
+        }
+      ]
+    };
+
+    const bento = new BentoUI(bentoConfig);
+  </script>
+</body>
+</html>
