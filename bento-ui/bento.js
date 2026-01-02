@@ -1497,7 +1497,8 @@
         const showReadTime = cardHeight >= 2;
         
         if (post) {
-          const postUrl = `${blogUrl}?post=${encodeURIComponent(post.slug)}`;
+          // Use hash-based routing to match the blog engine's URL format
+          const postUrl = `${blogUrl}#post/${encodeURIComponent(post.slug)}`;
           // Parse as local time by appending T00:00:00 to avoid UTC interpretation
           const dateFormatted = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
             year: 'numeric',

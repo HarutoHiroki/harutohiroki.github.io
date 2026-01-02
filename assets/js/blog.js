@@ -610,9 +610,10 @@ class BlogEngine {
     html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-    html = html.replace(/___(.+?)___/g, '<strong><em>$1</em></strong>');
-    html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
-    html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+    // Underscore-based formatting: only match at word boundaries to avoid matching inside words like node_modules
+    html = html.replace(/(?<![a-zA-Z0-9])___(.+?)___(?![a-zA-Z0-9])/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/(?<![a-zA-Z0-9])__(.+?)__(?![a-zA-Z0-9])/g, '<strong>$1</strong>');
+    html = html.replace(/(?<![a-zA-Z0-9])_(.+?)_(?![a-zA-Z0-9])/g, '<em>$1</em>');
 
     // Strikethrough
     html = html.replace(/~~(.+?)~~/g, '<del>$1</del>');
