@@ -1,5 +1,5 @@
 /**
- * BlogEngine - Markdown Blog System for BentoUI
+ * BlogEngine - Markdown Blog System for YABE UI
  * Loads and renders blog posts from .md files
  */
 
@@ -610,7 +610,7 @@ class BlogEngine {
     html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-    // Underscore-based formatting: only match at word boundaries
+    // Underscore-based formatting: only match at word boundaries to avoid matching inside words like node_modules
     html = html.replace(/(?<![a-zA-Z0-9])___(.+?)___(?![a-zA-Z0-9])/g, '<strong><em>$1</em></strong>');
     html = html.replace(/(?<![a-zA-Z0-9])__(.+?)__(?![a-zA-Z0-9])/g, '<strong>$1</strong>');
     html = html.replace(/(?<![a-zA-Z0-9])_(.+?)_(?![a-zA-Z0-9])/g, '<em>$1</em>');
@@ -673,28 +673,68 @@ class BlogEngine {
    * Create rainbow animated text
    */
   createRainbowText(text) {
-    const chars = text.split('').map((char, i) => {
-      const delay = (i * 0.1).toFixed(2);
-      if (char === ' ') {
-        return '<span class="bento-text-rainbow-char" style="--rainbow-delay: ' + delay + 's">&nbsp;</span>';
+    // Split text while preserving HTML tags
+    const parts = [];
+    const regex = /(<[^>]+>)|(.)/g;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match[1]) {
+        // HTML tag - keep as-is
+        parts.push({ type: 'tag', value: match[1] });
+      } else if (match[2]) {
+        // Single character
+        parts.push({ type: 'char', value: match[2] });
       }
-      return '<span class="bento-text-rainbow-char" style="--rainbow-delay: ' + delay + 's">' + char + '</span>';
+    }
+    
+    let charIndex = 0;
+    const result = parts.map(part => {
+      if (part.type === 'tag') {
+        return part.value;
+      } else {
+        const delay = (charIndex * 0.1).toFixed(2);
+        charIndex++;
+        if (part.value === ' ') {
+          return '<span class="bento-text-rainbow-char" style="--rainbow-delay: ' + delay + 's"> </span>';
+        }
+        return '<span class="bento-text-rainbow-char" style="--rainbow-delay: ' + delay + 's">' + part.value + '</span>';
+      }
     }).join('');
-    return '<span class="bento-text-rainbow">' + chars + '</span>';
+    return '<span class="bento-text-rainbow">' + result + '</span>';
   }
 
   /**
    * Create jumping/bouncing text
    */
   createJumpText(text) {
-    const chars = text.split('').map((char, i) => {
-      const delay = (i * 0.05).toFixed(2);
-      if (char === ' ') {
-        return '<span class="bento-text-jump-char" style="--jump-delay: ' + delay + 's">&nbsp;</span>';
+    // Split text while preserving HTML tags
+    const parts = [];
+    const regex = /(<[^>]+>)|(.)/g;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match[1]) {
+        // HTML tag - keep as-is
+        parts.push({ type: 'tag', value: match[1] });
+      } else if (match[2]) {
+        // Single character
+        parts.push({ type: 'char', value: match[2] });
       }
-      return '<span class="bento-text-jump-char" style="--jump-delay: ' + delay + 's">' + char + '</span>';
+    }
+    
+    let charIndex = 0;
+    const result = parts.map(part => {
+      if (part.type === 'tag') {
+        return part.value;
+      } else {
+        const delay = (charIndex * 0.05).toFixed(2);
+        charIndex++;
+        if (part.value === ' ') {
+          return '<span class="bento-text-jump-char" style="--jump-delay: ' + delay + 's"> </span>';
+        }
+        return '<span class="bento-text-jump-char" style="--jump-delay: ' + delay + 's">' + part.value + '</span>';
+      }
     }).join('');
-    return '<span class="bento-text-jump">' + chars + '</span>';
+    return '<span class="bento-text-jump">' + result + '</span>';
   }
 
   /**

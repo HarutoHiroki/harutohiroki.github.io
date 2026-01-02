@@ -29,8 +29,8 @@ Yes I know if I compare my self written vanilla JS site to a React app it's not 
 With vanilla JS, my "build process" is:
 
 1. Write code
-2. Refresh browser
-3. Done
+2. Refresh browser (optional)
+3. Monke see change happen
 
 No webpack. No babel. No 47 configuration files. No waiting for hot module replacement. Just instant ~~gratification~~ feedback.
 

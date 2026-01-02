@@ -1,9 +1,9 @@
 /**
- * BENTO UI FRAMEWORK v1.0.0
- * A flat, responsive Bento-box layout system driven by JSON configuration
+ * YABE UI FRAMEWORK v1.0.0
+ * Yet Another BEnto UI themed framework 
  * 
  * @version 1.0.0
- * @license MIT
+ * @license GPL3.0
  * @author HarutoHiroki (https://harutohiroki.com)
  */
 
@@ -432,8 +432,8 @@
    *   `code`                - Inline code
    *   [text](color:#fff)    - Custom styled text with CSS properties
    *   {{#color}}text{{/}}   - Colored text shorthand
-   *   ^^^text^^^            - Jump/bounce effect (each character bounces)
-   *   %%text%%              - Rainbow text effect (animated colors)
+   *   ^^text^^              - Jump/bounce effect (each character bounces)
+   *   ++text++              - Rainbow text effect (animated colors)
    * 
    * @param {string} text - Text to parse
    * @param {boolean} enableStyles - Whether to enable inline styling
@@ -559,8 +559,8 @@
           return parts;
         }
         
-        // Process jump effect: ^^^text^^^
-        result = result.replace(/\^\^\^([^^]+)\^\^\^/g, (match, innerText) => {
+        // Process jump effect: ^^text^^
+        result = result.replace(/\^\^(.+?)\^\^/g, (match, innerText) => {
           changed = true;
           const processedInner = processStyles(innerText);
           // Split while preserving HTML tags
@@ -581,8 +581,8 @@
           return `<span class="bento-text-jump">${wrappedParts}</span>`;
         });
         
-        // Process rainbow effect: %%text%%
-        result = result.replace(/%%([^%]+)%%/g, (match, innerText) => {
+        // Process rainbow effect: ++text++
+        result = result.replace(/\+\+(.+?)\+\+/g, (match, innerText) => {
           changed = true;
           const processedInner = processStyles(innerText);
           // Split into words, then wrap each word's characters

@@ -1,15 +1,16 @@
 [
   {
-    "slug": "hello-world",
-    "title": "Hello World!",
-    "date": "2025-12-31",
-    "excerpt": "Welcome to my blog! 🎉 This is the first post on my new blog, and I'm excited to finally have a place to share my thoughts, projects, and random musings with the world. I'm HarutoHiroki...",
+    "slug": "why-bento-box",
+    "title": "Why Did I build yet another Bento Box themed UI Library?",
+    "date": "2026-01-02",
+    "excerpt": "In this day and age, with LLMs and AI tools making coding easier than ever, everyone seems to be making a new framework every other second. A sane developer would probably just pick an existing popula...",
     "tags": [
-      "personal",
-      "intro"
+      "javascript",
+      "web-dev",
+      "opinion"
     ],
-    "file": "hello-world.md",
-    "readTime": 3
+    "file": "why-bento-box.md",
+    "readTime": 5
   },
   {
     "slug": "why-vanilla-js",
@@ -23,5 +24,17 @@
     ],
     "file": "why-vanilla-js.md",
     "readTime": 4
+  },
+  {
+    "slug": "hello-world",
+    "title": "Hello World!",
+    "date": "2025-12-31",
+    "excerpt": "Welcome to my blog! 🎉 This is the first post on my new blog, and I'm excited to finally have a place to share my thoughts, projects, and random musings with the world. I'm HarutoHiroki (or Phong, if...",
+    "tags": [
+      "personal",
+      "intro"
+    ],
+    "file": "hello-world.md",
+    "readTime": 3
   }
 ]

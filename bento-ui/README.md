@@ -376,12 +376,12 @@ Enable rich text formatting with the `textStyle.inlineStyles` option:
 | `__underline__` | Underlined text |
 | `~~strikethrough~~` | ~~Strikethrough~~ |
 | `==highlight==` | Highlighted text |
-| `==#ff0|text==` | Custom color highlight |
+| `==#ff0\|text==` | Custom color highlight |
 | `` `code` `` | Inline code |
 | `{{#red}}text{{/}}` | Colored text |
 | `[text](color:#fff)` | Custom CSS styling |
-| `^^^jump^^^` | Bouncing animation |
-| `%%rainbow%%` | Rainbow animation |
+| `^^jump^^` | Bouncing animation |
+| `++rainbow++` | Rainbow animation |
 
 ## Configuration Options
 

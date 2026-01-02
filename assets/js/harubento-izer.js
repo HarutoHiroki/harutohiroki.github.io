@@ -100,7 +100,7 @@ const bentoConfig = {
       content: {
         title: '2026 Goals',
         items: [
-          'Get CompTIA Security+ %%Certified%%',
+          'Get CompTIA Security+ ++Certified++',
           'Finish some NDA projects',
           'Get a j*b + survive'
         ],

@@ -173,7 +173,7 @@
       "properties": {
         "inlineStyles": {
           "type": "boolean",
-          "description": "Enable inline text styling markup. Supports: **bold**, *italic*, __underline__, ~~strikethrough~~, ==highlight== (or ==#color|text== for custom colors), `code`, [text](color:#fff), {{#color}}text{{/}}, ^^^jump^^^ (bouncing text), %%rainbow%% (animated rainbow). Styles can be combined/nested.",
+          "description": "Enable inline text styling markup. Supports: **bold**, *italic*, __underline__, ~~strikethrough~~, ==highlight== (or ==#color|text== for custom colors), `code`, [text](color:#fff), {{#color}}text{{/}}, ^^jump^^ (bouncing text), ++rainbow++ (animated rainbow). Styles can be combined/nested.",
           "default": false
         },
         "hoverOnly": {

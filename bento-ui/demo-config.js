@@ -54,8 +54,8 @@ const bentoConfig = {
       y: 0,
       content: {
         title: 'Welcome to BentoUI',
-        description: 'A modern, **flat design** UI framework for creating beautiful *Bento-box style* layouts. Built with ==pure HTML, CSS, and vanilla JavaScript== - **zero dependencies** required! This demo showcases all %%13 card types%% and the powerful ^^^inline text styling^^^ system.',
-        footer: 'Version 1.0.0 • MIT License',
+        description: 'A modern, **flat design** UI framework for creating beautiful *Bento-box style* layouts. Built with ==pure HTML, CSS, and vanilla JavaScript== - **zero dependencies** required! This demo showcases all ++13 card types++ and the powerful ^^inline text styling^^ system.',
+        footer: 'Version 1.0.0 • GPL 3.0 License',
         textStyle: {
           inlineStyles: true,
           hoverOnly: false
@@ -197,7 +197,7 @@ const bentoConfig = {
       y: 6,
       content: {
         title: 'Hover Styling',
-        description: 'Hover over this card to see **hidden** ==styles== appear! %%Rainbowww%% and ^^^bounceeee^^^ work on hover too!',
+        description: 'Hover over this card to see **hidden** ==styles== appear! ++Rainbowww++ and ^^bounceeee^^ work on hover too!',
         textStyle: {
           inlineStyles: true,
           hoverOnly: true
@@ -216,8 +216,8 @@ const bentoConfig = {
       y: 7,
       content: {
         title: 'Animation Effects',
-        description: 'BentoUI includes fun animations: ^^^bouncing text^^^ that jumps character by character, and %%rainbow text%% with animated colors!',
-        footer: 'Use ^^^text^^^ or %%text%% syntax',
+        description: 'BentoUI includes fun animations: ^^bouncing text^^ that jumps character by character, and ++rainbow text++ with animated colors!',
+        footer: 'Use ^^text^^ or ++text++ syntax',
         textStyle: {
           inlineStyles: true,
           hoverOnly: false
