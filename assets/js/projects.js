@@ -7,9 +7,9 @@ const bento = new BentoUI({
     enabled: true,
     container: '#bento-nav',
     logo: 'HarutoHiroki',
-    logoUrl: 'index.html',
+    logoUrl: '/',
     links: [
-      { label: 'Home', url: 'index.html' },
+      { label: 'Home', url: '/' },
       { label: 'Works', url: 'projects.html', active: true },
       { label: 'Blog', url: 'blog.html' },
       { label: 'Graphs', url: 'https://graphtool.harutohiroki.com' },
