@@ -37,9 +37,7 @@
     "images": [
       { "src": "assets/images/projects/polaris-1.webp", "alt": "High performance audio DAC PCB prototype" }
     ],
-    "links": [
-      {"label": "Website", "url": "https://starweaver.harutohiroki.com/products"}
-    ]
+    "links": []
   },
   {
     "name": "Haruto's GraphTool",
@@ -98,7 +96,7 @@
       { "src": "assets/images/projects/personal-1.webp", "alt": "Personal website homepage" }
     ],
     "links": [
-      {"label": "Website", "url": "https://harutohiroki.github.io"}
+      {"label": "Website", "url": "https://harutohiroki.com/legacy"}
     ]
   }
 ]
