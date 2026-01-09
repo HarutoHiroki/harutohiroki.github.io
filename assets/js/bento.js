@@ -1018,6 +1018,22 @@
       
       html += '</div>';
       return html;
+    },
+
+    /**
+     * Render featured blog post card
+     */
+    featuredPost: function(content, cardHeight) {
+      const { title, blogUrl, postsIndexUrl } = content;
+      let html = '<div class="bento-card__content bento-card__latestpost-content">';
+      
+      // Reuses 'latestpost' classes for styling, differentiated by parent card class in JS
+      html += `<div class="bento-card__latestpost-info" data-posts-index="${sanitizeHTML(postsIndexUrl || 'posts/index.json')}" data-blog-url="${sanitizeHTML(blogUrl || 'blog.html')}" data-title="${sanitizeHTML(title || 'Featured Post')}" data-card-height="${cardHeight || 2}">`;
+      html += '<div class="bento-card__latestpost-loading">Loading...</div>';
+      html += '</div>';
+      
+      html += '</div>';
+      return html;
     }
   };
 
@@ -1336,6 +1352,9 @@
       
       // Initialize latest post cards
       this.initLatestPostCards();
+      
+      // Initialize featured post cards
+      this.initFeaturedPostCards();
     }
 
     /**
@@ -1461,7 +1480,7 @@
     initLatestPostCards() {
       if (!this.gridContainer) return;
       
-      const postContainers = this.gridContainer.querySelectorAll('.bento-card__latestpost-info[data-posts-index]');
+      const postContainers = this.gridContainer.querySelectorAll('.bento-card--latestPost .bento-card__latestpost-info[data-posts-index]');
       postContainers.forEach(container => {
         const postsIndexUrl = container.dataset.postsIndex;
         const blogUrl = container.dataset.blogUrl;
@@ -1480,79 +1499,124 @@
     async fetchLatestPost(container, postsIndexUrl, blogUrl) {
       try {
         const response = await fetch(postsIndexUrl);
-        
         if (!response.ok) throw new Error('Failed to fetch posts');
-        
         const posts = await response.json();
         
         // Sort by date (newest first) and get the latest
         const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-        const post = sortedPosts[0];
-        const cardTitle = container.dataset.title || 'Latest Post';
-        const cardHeight = parseInt(container.dataset.cardHeight) || 2;
-        
-        // Dynamic content based on card height
-        const excerptLines = cardHeight >= 3 ? 4 : cardHeight >= 2 ? 3 : 2;
-        const maxTags = cardHeight >= 3 ? 4 : 3;
-        const showReadTime = cardHeight >= 2;
-        
-        if (post) {
-          // Use hash-based routing to match the blog engine's URL format
-          const postUrl = `${blogUrl}#post/${encodeURIComponent(post.slug)}`;
-          // Parse as local time by appending T00:00:00 to avoid UTC interpretation
-          const dateFormatted = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-          });
-          
-          let html = '';
-          
-          // Left accent bar
-          html += '<div class="bento-card__latestpost-accent"></div>';
-          
-          // Main content area
-          html += '<div class="bento-card__latestpost-main">';
-          
-          // Label and meta row
-          html += '<div class="bento-card__latestpost-top">';
-          html += `<span class="bento-card__latestpost-label">${sanitizeHTML(cardTitle)}</span>`;
-          html += '<div class="bento-card__latestpost-topmeta">';
-          if (showReadTime && post.readTime) {
-            html += `<span class="bento-card__latestpost-readtime">${post.readTime} min read</span>`;
-            html += '<span class="bento-card__latestpost-separator">•</span>';
-          }
-          html += `<span class="bento-card__latestpost-date">${dateFormatted}</span>`;
-          html += '</div>';
-          html += '</div>';
-          
-          // Post title (clickable)
-          html += `<a href="${sanitizeHTML(postUrl)}" class="bento-card__latestpost-name">${sanitizeHTML(post.title || 'Untitled')}</a>`;
-          
-          // Excerpt with dynamic line clamp
-          html += `<p class="bento-card__latestpost-excerpt" style="-webkit-line-clamp: ${excerptLines}; line-clamp: ${excerptLines};">${sanitizeHTML(post.excerpt || '')}</p>`;
-          
-          // Bottom row with tags and read more
-          html += '<div class="bento-card__latestpost-bottom">';
-          if (Array.isArray(post.tags) && post.tags.length > 0) {
-            html += '<div class="bento-card__latestpost-tags">';
-            post.tags.slice(0, maxTags).forEach(tag => {
-              html += `<span class="bento-card__latestpost-tag">#${sanitizeHTML(tag)}</span>`;
-            });
-            html += '</div>';
-          }
-          html += `<a href="${sanitizeHTML(postUrl)}" class="bento-card__latestpost-readmore">Read more →</a>`;
-          html += '</div>';
-          
-          html += '</div>';
-          container.innerHTML = html;
-        } else {
-          container.innerHTML = '<div class="bento-card__latestpost-error">No posts found</div>';
-        }
+        this._renderPostToContainer(container, sortedPosts[0], blogUrl);
       } catch (error) {
         console.warn('BentoUI: Failed to fetch latest post:', error);
         container.innerHTML = '<div class="bento-card__latestpost-error">Could not load post</div>';
       }
+    }
+
+    /**
+     * Initialize featured blog post cards
+     */
+    initFeaturedPostCards() {
+      if (!this.gridContainer) return;
+      
+      const postContainers = this.gridContainer.querySelectorAll('.bento-card--featuredPost .bento-card__latestpost-info[data-posts-index]');
+      postContainers.forEach(container => {
+        const postsIndexUrl = container.dataset.postsIndex;
+        const blogUrl = container.dataset.blogUrl;
+        
+        if (postsIndexUrl) {
+          this.fetchFeaturedPost(container, postsIndexUrl, blogUrl);
+        } else {
+          container.innerHTML = '<div class="bento-card__latestpost-error">Posts index URL required</div>';
+        }
+      });
+    }
+
+    /**
+     * Fetch featured blog post from index.json
+     */
+    async fetchFeaturedPost(container, postsIndexUrl, blogUrl) {
+      try {
+        const response = await fetch(postsIndexUrl);
+        if (!response.ok) throw new Error('Failed to fetch posts');
+        const posts = await response.json();
+        
+        // Find featured post (pinned: true), fallback to latest
+        const featuredPosts = posts.filter(p => p.pinned === true).sort((a, b) => new Date(b.date) - new Date(a.date));
+        const post = featuredPosts[0] || posts.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+        
+        this._renderPostToContainer(container, post, blogUrl);
+      } catch (error) {
+        console.warn('BentoUI: Failed to fetch featured post:', error);
+        container.innerHTML = '<div class="bento-card__latestpost-error">Could not load post</div>';
+      }
+    }
+
+    /**
+     * Common helper to render blog post HTML into a container
+     * Reuses latestpost styling for consistency
+     */
+    _renderPostToContainer(container, post, blogUrl) {
+      if (!post) {
+        container.innerHTML = '<div class="bento-card__latestpost-error">No posts found</div>';
+        return;
+      }
+
+      const cardTitle = container.dataset.title || 'Blog Post';
+      const cardHeight = parseInt(container.dataset.cardHeight) || 2;
+      
+      // Dynamic content based on card height
+      const excerptLines = cardHeight >= 3 ? 4 : cardHeight >= 2 ? 3 : 2;
+      const maxTags = cardHeight >= 3 ? 4 : 3;
+      const showReadTime = cardHeight >= 2;
+
+      // Use hash-based routing to match the blog engine's URL format
+      const postUrl = `${blogUrl}#post/${encodeURIComponent(post.slug)}`;
+      // Parse as local time by appending T00:00:00 to avoid UTC interpretation
+      const dateFormatted = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+      
+      let html = '';
+
+      // Left accent bar
+      html += '<div class="bento-card__latestpost-accent"></div>';
+
+      // Main content area
+      html += '<div class="bento-card__latestpost-main">';
+
+      // Label and meta row
+      html += '<div class="bento-card__latestpost-top">';
+      html += `<span class="bento-card__latestpost-label">${sanitizeHTML(cardTitle)}</span>`;
+      html += '<div class="bento-card__latestpost-topmeta">';
+      if (showReadTime && post.readTime) {
+        html += `<span class="bento-card__latestpost-readtime">${post.readTime} min read</span>`;
+        html += '<span class="bento-card__latestpost-separator">•</span>';
+      }
+      html += `<span class="bento-card__latestpost-date">${dateFormatted}</span>`;
+      html += '</div>';
+      html += '</div>';
+
+      // Post title (clickable)
+      html += `<a href="${sanitizeHTML(postUrl)}" class="bento-card__latestpost-name">${sanitizeHTML(post.title || 'Untitled')}</a>`;
+
+      // Excerpt with dynamic line clamp
+      html += `<p class="bento-card__latestpost-excerpt" style="-webkit-line-clamp: ${excerptLines}; line-clamp: ${excerptLines};">${sanitizeHTML(post.excerpt || '')}</p>`;
+
+      // Bottom row with tags and read more
+      html += '<div class="bento-card__latestpost-bottom">';
+      if (Array.isArray(post.tags) && post.tags.length > 0) {
+        html += '<div class="bento-card__latestpost-tags">';
+        post.tags.slice(0, maxTags).forEach(tag => {
+          html += `<span class="bento-card__latestpost-tag">#${sanitizeHTML(tag)}</span>`;
+        });
+        html += '</div>';
+      }
+      html += `<a href="${sanitizeHTML(postUrl)}" class="bento-card__latestpost-readmore">Read more →</a>`;
+      html += '</div>';
+
+      html += '</div>';
+      container.innerHTML = html;
     }
 
     /**

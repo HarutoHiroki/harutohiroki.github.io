@@ -111,13 +111,13 @@ const bentoConfig = {
       }
     },
     {
-      type: 'latestPost',
+      type: 'featuredPost',
       width: 6,
       height: 2,
       x: 3,
       y: 3,
       content: {
-        title: 'Latest Blog Post',
+        title: 'Featured Blog Post',
         blogUrl: 'blog.html',
         postsIndexUrl: 'posts/index.json'
       }

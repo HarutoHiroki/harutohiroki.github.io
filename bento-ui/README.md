@@ -491,8 +491,10 @@ BentoUI includes a built-in markdown blog engine. To add a blog to your site:
      ---
      title: My Post Title
      date: 2025-01-01
+     revised: 2025-01-15                      # Optional
      tags: [tag1, tag2]
-     excerpt: A short summary of the post
+     excerpt: A short summary of the post     # Optional
+     pinned: true                             # Optional, for pinning posts
      ---
      # Post Content
      ...

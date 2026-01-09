@@ -10,8 +10,11 @@
  * ---
  * title: My Post Title
  * date: 2026-01-01
+ * revised: 2026-01-05 (optional)
  * tags: [tag1, tag2]
- * excerpt: A brief description of the post
+ * excerpt: A brief description of the post (optional)
+ * pin: true (optional, for pinning posts)
+ * override: true (required, used to pin a post and unpin others)
  * ---
  */
 
@@ -55,11 +58,50 @@ function parseFrontmatter(content) {
              (value.startsWith("'") && value.endsWith("'"))) {
       value = value.slice(1, -1);
     }
+    // Parse booleans
+    else if (value.toLowerCase() === 'true') {
+      value = true;
+    } else if (value.toLowerCase() === 'false') {
+      value = false;
+    }
     
     frontmatter[key] = value;
   }
   
   return frontmatter;
+}
+
+/**
+ * Update frontmatter in a markdown file
+ */
+function updateFrontmatter(filePath, updates) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const normalizedContent = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
+  const match = normalizedContent.match(frontmatterRegex);
+  
+  if (!match) return;
+
+  let frontmatterLines = match[1].split('\n');
+  const otherContent = normalizedContent.substring(match[0].length);
+
+  for (const [key, value] of Object.entries(updates)) {
+    const entryIndex = frontmatterLines.findIndex(line => line.trim().startsWith(key + ':'));
+    if (value === null) {
+      // Remove key if it exists
+      if (entryIndex !== -1) frontmatterLines.splice(entryIndex, 1);
+    } else {
+      const newLine = `${key}: ${value}`;
+      if (entryIndex !== -1) {
+        frontmatterLines[entryIndex] = newLine;
+      } else {
+        frontmatterLines.push(newLine);
+      }
+    }
+  }
+
+  const newContent = `---\n${frontmatterLines.join('\n')}\n---${otherContent}`;
+  fs.writeFileSync(filePath, newContent, 'utf8');
 }
 
 /**
@@ -139,7 +181,7 @@ function generateIndex() {
   
   console.log(`Found ${files.length} markdown file(s):\n`);
   
-  const posts = [];
+  const rawPosts = [];
   
   for (const file of files) {
     const filePath = path.join(POSTS_DIR, file);
@@ -151,14 +193,61 @@ function generateIndex() {
       continue;
     }
     
+    rawPosts.push({ file, filePath, content, frontmatter });
+  }
+
+  // Handle pinning and override logic
+  const overridePost = rawPosts.find(p => p.frontmatter.override === true);
+  
+  if (overridePost) {
+    console.log(`Detected override in ${overridePost.file}. Unpinning other posts...`);
+    rawPosts.forEach(p => {
+      if (p !== overridePost && p.frontmatter.pin === true) {
+        console.log(`   Unpinning ${p.file}`);
+        updateFrontmatter(p.filePath, { pin: null });
+        p.frontmatter.pin = false;
+      }
+    });
+    // Ensure override post is pinned and clear override flag
+    console.log(`   Removing override flag from ${overridePost.file}`);
+    updateFrontmatter(overridePost.filePath, { pin: true, override: null });
+    overridePost.frontmatter.pin = true;
+    overridePost.frontmatter.override = false;
+  } else {
+    // Check if multiple posts are pinned
+    const pinnedPosts = rawPosts.filter(p => p.frontmatter.pin === true)
+      .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+    
+    if (pinnedPosts.length > 1) {
+      console.log('Multiple pinned posts detected. Maintaining only the newest pin...');
+      pinnedPosts.slice(1).forEach(p => {
+        console.log(`   Unpinning ${p.file}`);
+        updateFrontmatter(p.filePath, { pin: null });
+        p.frontmatter.pin = false;
+      });
+    }
+  }
+
+  // Clean up any stray override flags (always requested)
+  rawPosts.forEach(p => {
+    if (p.frontmatter.override === true) {
+      updateFrontmatter(p.filePath, { override: null });
+      p.frontmatter.override = false;
+    }
+  });
+
+  const posts = [];
+  for (const { file, content, frontmatter } of rawPosts) {
     const slug = generateSlug(file);
     const post = {
       slug: slug,
       title: frontmatter.title || slug,
       date: frontmatter.date || new Date().toISOString().split('T')[0],
+      revised: frontmatter.revised || null,
       excerpt: frontmatter.excerpt || extractExcerpt(content),
       tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
       file: file,
+      pinned: frontmatter.pin === true,
       readTime: estimateReadTime(content)
     };
     
@@ -166,7 +255,9 @@ function generateIndex() {
     console.log(`${file}`);
     console.log(`   Title: ${post.title}`);
     console.log(`   Date: ${post.date}`);
+    if (post.revised) console.log(`   Revised: ${post.revised}`);
     console.log(`   Tags: ${post.tags.join(', ') || 'none'}`);
+    if (post.pinned) console.log('   PINNED: yes');
     console.log(`   Read time: ~${post.readTime} min\n`);
   }
   

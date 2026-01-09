@@ -116,4 +116,6 @@ For my portfolio and blog, the answer was a resounding **no**.
 
 ---
 
-*What do you think? Am I a dinosaur refusing to adapt, or is there wisdom in simplicity?*
+What do you think? Am I a dinosaur refusing to adapt, or is there wisdom in simplicity?
+
+*- HarutoHiroki*

@@ -1,21 +1,9 @@
 [
   {
-    "slug": "why-bento-box",
-    "title": "Why Did I build yet another Bento Box themed UI Library?",
-    "date": "2026-01-02",
-    "excerpt": "In this day and age, with LLMs and AI tools making coding easier than ever, everyone seems to be making a new framework every other second. A sane developer would probably just pick an existing popula...",
-    "tags": [
-      "javascript",
-      "web-dev",
-      "opinion"
-    ],
-    "file": "why-bento-box.md",
-    "readTime": 5
-  },
-  {
     "slug": "why-vanilla-js",
     "title": "Why I Built This Site With Vanilla JavaScript",
     "date": "2026-01-01",
+    "revised": null,
     "excerpt": "In 2026, the web development landscape is dominated by frameworks. React, Vue, Svelte, Solid, Qwik... the list goes on. So why did I decide to build this entire site, including this blog, with plain v...",
     "tags": [
       "javascript",
@@ -23,18 +11,21 @@
       "opinion"
     ],
     "file": "why-vanilla-js.md",
+    "pinned": false,
     "readTime": 4
   },
   {
     "slug": "hello-world",
     "title": "Hello World!",
     "date": "2025-12-31",
-    "excerpt": "Welcome to my blog! 🎉 This is the first post on my new blog, and I'm excited to finally have a place to share my thoughts, projects, and random musings with the world. I'm HarutoHiroki (or Phong, if...",
+    "revised": "2026-01-09",
+    "excerpt": "Welcome to my corner of the internet. As this is the first time I'm writing a blog post, I thought it would be fitting to introduce myself and a few more things about this blog. The name's HarutoHirok...",
     "tags": [
       "personal",
       "intro"
     ],
     "file": "hello-world.md",
+    "pinned": true,
     "readTime": 3
   }
 ]

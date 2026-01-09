@@ -75,9 +75,8 @@ class BlogEngine {
       await this.showPost(route.slug, false);
     } else if (route.type === 'tag') {
       this.filterByTag(route.tag);
-      this.renderPostList();
     } else {
-      this.renderPostList();
+      this.applyFilters();
     }
   }
 
@@ -98,8 +97,10 @@ class BlogEngine {
         throw new Error(`Failed to load posts index: ${response.status} ${response.statusText}`);
       }
       this.posts = await response.json();
-      // Sort by date (newest first)
+      
+      // Initial sort by date (newest first)
       this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
       this.filteredPosts = [...this.posts];
       console.log('Loaded posts:', this.posts.length);
     } catch (error) {
@@ -184,13 +185,21 @@ class BlogEngine {
     }
 
     // Sort posts
-    if (this.currentSort === 'newest') {
-      filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (this.currentSort === 'oldest') {
-      filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-    } else if (this.currentSort === 'title') {
-      filtered.sort((a, b) => a.title.localeCompare(b.title));
-    }
+    filtered.sort((a, b) => {
+      // Pinned posts always come first regardless of sort order
+      if (a.pinned && !b.pinned) return -1;
+      if (!a.pinned && b.pinned) return 1;
+      
+      // Secondary sort based on user selection
+      if (this.currentSort === 'newest') {
+        return new Date(b.date) - new Date(a.date);
+      } else if (this.currentSort === 'oldest') {
+        return new Date(a.date) - new Date(b.date);
+      } else if (this.currentSort === 'title') {
+        return a.title.localeCompare(b.title);
+      }
+      return 0;
+    });
 
     this.filteredPosts = filtered;
     this.renderPostList();
@@ -225,7 +234,6 @@ class BlogEngine {
         : 'No posts yet';
       this.containerEl.innerHTML = `
         <div class="blog-empty">
-          <div class="blog-empty__icon">📝</div>
           <h3 class="blog-empty__title">${message}</h3>
           <p>${this.searchQuery || this.currentTag ? 'Try adjusting your search or filters.' : 'Check back soon for new content!'}</p>
         </div>
@@ -365,14 +373,25 @@ class BlogEngine {
    */
   renderPostCard(post) {
     const date = this.formatDate(post.date);
+    const revisedDate = post.revised ? this.formatDate(post.revised) : null;
     const readTime = post.readTime || this.estimateReadTime(post.excerpt || '');
     const tags = (post.tags || []).map(tag => 
       `<span class="blog-post-card__tag" data-tag="${this.escapeHtml(tag)}">${this.escapeHtml(tag)}</span>`
     ).join('');
 
+    const pinnedBadge = post.pinned ? `
+      <div class="blog-post-card__pinned-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 9V4l1 0c.55 0 1-.45 1-1s-.45-1-1-1H7c-.55 0-1 .45-1 1s.45 1 1 1l1 0v5c0 1.66-1.34 3-3 3v2h5.97l.03 7 1 .03.03-7.03H19v-2c-1.66 0-3-1.34-3-3z"/>
+        </svg>
+        Pinned
+      </div>
+    ` : '';
+
     return `
-      <a href="#post/${encodeURIComponent(post.slug)}" class="blog-post-card" data-slug="${post.slug}">
+      <a href="#post/${encodeURIComponent(post.slug)}" class="blog-post-card ${post.pinned ? 'blog-post-card--pinned' : ''}" data-slug="${post.slug}">
         <h2 class="blog-post-card__title">${this.escapeHtml(post.title)}</h2>
+        ${pinnedBadge}
         <div class="blog-post-card__meta">
           <span class="blog-post-card__date">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -383,6 +402,16 @@ class BlogEngine {
             </svg>
             ${date}
           </span>
+          ${revisedDate ? `
+            <span class="blog-post-card__separator">•</span>
+            <span class="blog-post-card__revised" title="Last revised: ${revisedDate}">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Revised ${revisedDate}
+            </span>
+          ` : ''}
           <span class="blog-post-card__separator">•</span>
           <span class="blog-post-card__readtime">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -462,12 +491,22 @@ class BlogEngine {
     // Update meta elements
     const titleEl = document.getElementById('article-title');
     const dateEl = document.getElementById('article-date');
+    const revisedDateTextEl = document.getElementById('article-revised-date-text');
+    const revisedWrapperEl = document.getElementById('article-revised-wrapper');
     const readtimeEl = document.getElementById('article-readtime');
     const tagsEl = document.getElementById('article-tags');
     const contentEl = document.getElementById('article-content');
 
     if (titleEl) titleEl.textContent = post.title;
     if (dateEl) dateEl.textContent = this.formatDate(post.date);
+    
+    if (post.revised && revisedDateTextEl && revisedWrapperEl) {
+      revisedDateTextEl.textContent = `Revised ${this.formatDate(post.revised)}`;
+      revisedWrapperEl.style.display = 'inline';
+    } else if (revisedWrapperEl) {
+      revisedWrapperEl.style.display = 'none';
+    }
+
     if (readtimeEl) readtimeEl.textContent = `${this.estimateReadTime(markdown)} min read`;
     
     if (tagsEl) {

@@ -58,6 +58,16 @@
         <h1 id="article-title" class="blog-article__title"></h1>
         <div class="blog-article__meta">
           <span id="article-date" class="blog-article__date"></span>
+          <span id="article-revised-wrapper" style="display: none;">
+            <span class="blog-article__separator">•</span>
+            <span id="article-revised-date" class="blog-article__revised" style="display: inline-flex; align-items: center; gap: var(--spacing-1); color: var(--color-accent); font-weight: var(--font-weight-medium);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              <span id="article-revised-date-text"></span>
+            </span>
+          </span>
           <span class="blog-article__separator">•</span>
           <span id="article-readtime" class="blog-article__readtime"></span>
         </div>
