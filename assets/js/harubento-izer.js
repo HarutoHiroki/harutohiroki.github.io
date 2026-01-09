@@ -56,7 +56,7 @@ const bentoConfig = {
       y: 0,
       content: {
         title: 'Welcome to my homepage..!',
-        description: 'Ello there, I\'m {{#1abc9c}}Phong{{/}}, also known as {{#1abc9c}}HarutoHiroki{{/}} online. As you can probably infer from the card on the left, I\'m a {{#1abc9c}}programmer{{/}} and a {{#1abc9c}}hardware tinkerer{{/}} who also loves {{#1abc9c}}Music{{/}} and {{#1abc9c}}VR{{/}}. This is my personal homepage where I showcase some of my projects and share my thoughts. Feel free to explore around and check out my work!',
+        description: 'Ello there, I\'m {{#1abc9c}}Phong{{/}}, more known as {{#1abc9c}}HarutoHiroki{{/}} online. As you can probably infer from the card on the left, I\'m a {{#1abc9c}}programmer{{/}} and a {{#1abc9c}}hardware tinkerer{{/}} who also loves {{#1abc9c}}Music{{/}} and {{#1abc9c}}VR{{/}}. This is my personal homepage where I showcase some of my projects and share my thoughts. Feel free to explore around and check out my work!',
         textStyle: {
           inlineStyles: true,
           hoverOnly: true
