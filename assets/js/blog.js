@@ -98,8 +98,12 @@ class BlogEngine {
       }
       this.posts = await response.json();
       
-      // Initial sort by date (newest first)
-      this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      // Initial sort by pinned (pinned first) then by date (newest first)
+      this.posts.sort((a, b) => {
+        if (a.pinned && !b.pinned) return -1;
+        if (!a.pinned && b.pinned) return 1;
+        return new Date(b.date) - new Date(a.date);
+      });
       
       this.filteredPosts = [...this.posts];
       console.log('Loaded posts:', this.posts.length);

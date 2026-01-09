@@ -261,8 +261,12 @@ function generateIndex() {
     console.log(`   Read time: ~${post.readTime} min\n`);
   }
   
-  // Sort by date (newest first)
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  // Sort by pinned (pinned first) then by date (newest first) for final output
+  posts.sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
   
   // Write index.json
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(posts, null, 2), 'utf8');

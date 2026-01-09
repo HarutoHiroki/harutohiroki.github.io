@@ -2,7 +2,7 @@
 title: Hello World!
 date: 2025-12-31
 revised: 2026-01-09
-tags: [personal, intro]
+tags: [personal]
 pin: true
 ---
 
@@ -18,6 +18,13 @@ The name's HarutoHiroki. I'm a programmer and hardware tinkerer who's passionate
 - **Music** - I love music of all kinds, from classical to pop
 - **Programming** - I love building things that (sometimes) work
 - **Security & Privacy** - Because in this digital age, it's more important than ever
+
+## Leisurely Pursuits
+
+When I'm not coding or tinkering with hardware, I'm most likely:
+- Watching anime / Reading manga ("Violet Evergarden" is Top.1)
+- Drone flying (or crashing)
+- Doomscrolling
 
 ## What to Expect
 
