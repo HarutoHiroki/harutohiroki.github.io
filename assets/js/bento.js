@@ -781,7 +781,7 @@
       let html = '<div class="bento-card__content">';
       
       if (avatar) {
-        html += `<img class="bento-card__avatar" src="${sanitizeHTML(avatar)}" alt="${sanitizeHTML(name || 'Avatar')}" width="80" height="80" loading="lazy">`;
+        html += `<img class="bento-card__avatar" src="${sanitizeHTML(avatar)}" alt="${sanitizeHTML(name || 'Avatar')}" loading="lazy">`;
       }
       if (name) {
         html += `<h3 class="bento-card__name">${parseInlineStyles(name, enableInlineStyles)}</h3>`;
@@ -920,7 +920,7 @@
       // Left side - avatar and basic info
       html += '<div class="bento-card__profile-header">';
       if (avatar) {
-        html += `<img class="bento-card__profile-avatar" src="${sanitizeHTML(avatar)}" alt="${sanitizeHTML(name || 'Profile')}" width="72" height="72" loading="lazy">`;
+        html += `<img class="bento-card__profile-avatar" src="${sanitizeHTML(avatar)}" alt="${sanitizeHTML(name || 'Profile')}" loading="lazy">`;
       }
       html += '<div class="bento-card__profile-info">';
       if (name) {
