@@ -10,23 +10,27 @@ Welcome to my corner of the internet.
 
 As this is the first time I'm writing a blog post, I thought it would be fitting to introduce myself and a few more things about this blog.
 
-## Who Am I?
+## {#1abc9c:Who Am I?}
 
-The name's HarutoHiroki. I'm a programmer and hardware tinkerer who's passionate about:
+The name's HarutoHiroki. I'm a programmer and hardware tinkerer who's passionate about lots of things but mainly:
 
 - **Virtual Reality** - The technology that allowed me to immerse myself in new worlds
 - **Music** - I love music of all kinds, from classical to pop
 - **Programming** - I love building things that (sometimes) work
 - **Security & Privacy** - Because in this digital age, it's more important than ever
 
-## Leisurely Pursuits
+## {#1abc9c:Leisurely Pursuits}
 
 When I'm not coding or tinkering with hardware, I'm most likely:
-- Watching anime / Reading manga ("Violet Evergarden" is Top.1)
+
+- Watching anime / Reading manga ("Violet Evergarden" is No.1)
 - Drone flying (or crashing)
+- Biking
 - Doomscrolling
 
-## What to Expect
+All while listening to music, of course. Yes, I touch grass... *sometimes*.
+
+## {#1abc9c:What to Expect}
 
 On this blog, you'll find posts about:
 
@@ -34,13 +38,13 @@ On this blog, you'll find posts about:
 - Tech opinions (probably some hot takes)
 - Random thoughts and experiences
 
-## The Tech Stack
+## {#1abc9c:The Tech Stack}
 
-This blog is built with my own BentoUI framework - pure vanilla JavaScript, no React, no Vue, no frameworks. Just good old HTML, CSS, and JS. 
-Some call me a crazy demon for this, and they are correct.
+This blog is built using pure vanilla JavaScript, no React, no Vue, no nonsense. Just good old {#e34c26:HTML}, {#264de4:CSS}, and {#f7df1e:JS}. 
+Some call me a crazy demon for this, and they are **++correct++**. 
 The blog posts themselves are written in Markdown for easy writing and version control, and I also added some custom text styling features to make things more fun.
 
-## Why Start a Blog in 2026?
+## {#1abc9c:Why Start a Blog in 2026?}
 
 In an age of social media and short-form content, why bother with a blog? Well, a few reasons:
 

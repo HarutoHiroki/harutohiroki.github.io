@@ -645,6 +645,11 @@ class BlogEngine {
       return `<span class="bento-text-colored" style="--bento-text-color: ${color}; color: ${color}">${text}</span>`;
     });
 
+    // Colored text shorthand: {{#color}}text{{/}}
+    html = html.replace(/\{\{([#a-zA-Z0-9]+)\}\}([\s\S]*?)\{\{\/\}\}/g, (match, color, text) => {
+      return `<span class="bento-text-colored" style="--bento-text-color: ${color}; color: ${color}">${text}</span>`;
+    });
+
     // Underline text: __underline__ (different from bold)
     // Note: We use a special pattern to differentiate from bold
     html = html.replace(/\+_(.+?)_\+/g, '<span class="bento-text-underline">$1</span>');

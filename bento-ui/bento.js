@@ -1,9 +1,9 @@
 /**
- * YABE UI FRAMEWORK v1.0.0
- * Yet Another BEnto UI themed framework 
+ * YABE UI library v1.0.0
+ * Yet Another BEnto UI themed library 
  * 
  * @version 1.0.0
- * @license GPL3.0
+ * @license GPL-3
  * @author HarutoHiroki (https://harutohiroki.com)
  */
 

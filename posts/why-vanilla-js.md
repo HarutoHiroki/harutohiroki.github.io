@@ -6,7 +6,7 @@ tags: [javascript, web-dev, opinion]
 
 In 2026, the web development landscape is dominated by frameworks. React, Vue, Svelte, Solid, Qwik... the list goes on. So why did I decide to build this entire site, including this blog, with plain vanilla JavaScript?
 
-## The Framework Fatigue is Real
+## {#1abc9c:The Framework Fatigue is Real}
 
 Don't get me wrong - frameworks have their place. They solve real problems:
 
@@ -17,7 +17,7 @@ Don't get me wrong - frameworks have their place. They solve real problems:
 
 But somewhere along the way, especially with the rise of LLMs and AI-assisted coding, I've noticed a trend of over-reliance on frameworks for even the simplest projects. Everyone and their grandma seems to be using React with a noticeable purple gradient for everything from to-do lists to personal blogs.
 
-## The Problems I Had With Frameworks
+## {#1abc9c:The Problems I Had With Frameworks}
 
 ### 1. Bundle Size Bloat
 
@@ -39,7 +39,7 @@ No webpack. No babel. No 47 configuration files. No waiting for hot module repla
 Every npm package is a potential security vulnerability, a potential breaking change, a potential abandoned project. My site has **zero npm dependencies** for production.
 Literally proving my point, just last month a critical vulnerability was found with react (React2Shell) that could allow RCE attacks. If I were using React, I'd have to scramble to patch or update my dependencies. With vanilla JS, if I fuck up, it's on me.
 
-## What Vanilla JS Gave Me
+## {#1abc9c:What Vanilla JS Gave Me}
 
 ### Full Control
 
@@ -57,7 +57,7 @@ I kinda didn't like the complexity and overhead that comes with modern framework
 
 As said above, everyone and their grandma is now moving to React for everything, EVEN THINGS NOT NEEDED TO BE WEB APPS. From wechat ruining it's beautiful native experience with WebApp slop, to the hillarious method of preventing OOM by Discord: killing itself if it uses >4GB of RAM.
 
-## The Counter-Arguments
+## {#1abc9c:The Counter-Arguments}
 
 ### "But muh developer experience!"
 
@@ -97,7 +97,7 @@ For a portfolio/blog? I don't need to scale. This isn't Twitter. If this somehow
 
 Static HTML. Search engines love it. No need for server-side rendering frameworks to solve a problem I created by using client-side rendering in the first place.
 
-## When TO Use Frameworks
+## {#1abc9c:When TO Use Frameworks}
 
 I'm not saying frameworks are bad. Use them when:
 
@@ -106,7 +106,7 @@ I'm not saying frameworks are bad. Use them when:
 - The project genuinely benefits from the framework's features
 - You're building something that needs the ecosystem (like admin dashboards)
 
-## Conclusion
+## {#1abc9c:Conclusion}
 
 The web platform has evolved massively. CSS can do things that used to require JavaScript. JavaScript can do things that used to require libraries. The browser's APIs are powerful and well-documented.
 

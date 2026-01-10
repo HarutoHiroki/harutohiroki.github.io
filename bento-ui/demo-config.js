@@ -1,6 +1,6 @@
 /**
  * BentoUI Demo Configuration
- * This file showcases all the features of the BentoUI framework
+ * This file showcases all the features of the BentoUI library
  * 
  * To use the Last.fm integration, replace the apiKey with your own from:
  * https://www.last.fm/api/account/create
@@ -54,7 +54,7 @@ const bentoConfig = {
       y: 0,
       content: {
         title: 'Welcome to BentoUI',
-        description: 'A modern, **flat design** UI framework for creating beautiful *Bento-box style* layouts. Built with ==pure HTML, CSS, and vanilla JavaScript== - **zero dependencies** required! This demo showcases all ++13 card types++ and the powerful ^^inline text styling^^ system.',
+        description: 'A modern, **flat design** UI library for creating beautiful *Bento-box style* layouts. Built with ==pure HTML, CSS, and vanilla JavaScript== - **zero dependencies** required! This demo showcases all ++13 card types++ and the powerful ^^inline text styling^^ system.',
         footer: 'Version 1.0.0 • GPL 3.0 License',
         textStyle: {
           inlineStyles: true,
